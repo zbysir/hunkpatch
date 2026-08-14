@@ -1,0 +1,1088 @@
+[
+  {
+    "name": "simple-replace",
+    "content": "alpha\nbravo\ncharlie\n",
+    "hunk": [
+      "-bravo\n",
+      "+BRAVO\n"
+    ],
+    "before": "bravo\n",
+    "after": "BRAVO\n",
+    "before_lines": [
+      "bravo\n"
+    ],
+    "after_lines": [
+      "BRAVO\n"
+    ],
+    "directly_apply_ok": true,
+    "directly_apply": "alpha\nBRAVO\ncharlie\n",
+    "flexi_ok": true,
+    "flexi": "alpha\nBRAVO\ncharlie\n",
+    "dmp_diff_lines": [
+      "-bravo\n",
+      "+alpha\n",
+      "+bravo\n",
+      "+charlie\n"
+    ],
+    "made_explicit": [
+      "-bravo\n",
+      "+BRAVO\n"
+    ],
+    "apply_hunks_ok": true,
+    "apply_hunks": "alpha\nBRAVO\ncharlie\n"
+  },
+  {
+    "name": "replace-with-context",
+    "content": "alpha\nbravo\ncharlie\n",
+    "hunk": [
+      " alpha\n",
+      "-bravo\n",
+      "+BRAVO\n",
+      " charlie\n"
+    ],
+    "before": "alpha\nbravo\ncharlie\n",
+    "after": "alpha\nBRAVO\ncharlie\n",
+    "before_lines": [
+      "alpha\n",
+      "bravo\n",
+      "charlie\n"
+    ],
+    "after_lines": [
+      "alpha\n",
+      "BRAVO\n",
+      "charlie\n"
+    ],
+    "directly_apply_ok": true,
+    "directly_apply": "alpha\nBRAVO\ncharlie\n",
+    "flexi_ok": true,
+    "flexi": "alpha\nBRAVO\ncharlie\n",
+    "dmp_diff_lines": [
+      " alpha\n",
+      " bravo\n",
+      " charlie\n"
+    ],
+    "made_explicit": [
+      " alpha\n",
+      " \n",
+      "-bravo\n",
+      "+BRAVO\n",
+      " \n",
+      " charlie\n",
+      " \n",
+      " \n"
+    ],
+    "apply_hunks_ok": true,
+    "apply_hunks": "alpha\nBRAVO\ncharlie\n"
+  },
+  {
+    "name": "pure-insert",
+    "content": "alpha\nbravo\n",
+    "hunk": [
+      " alpha\n",
+      "+INSERTED\n"
+    ],
+    "before": "alpha\n",
+    "after": "alpha\nINSERTED\n",
+    "before_lines": [
+      "alpha\n"
+    ],
+    "after_lines": [
+      "alpha\n",
+      "INSERTED\n"
+    ],
+    "directly_apply_ok": true,
+    "directly_apply": "alpha\nINSERTED\nbravo\n",
+    "flexi_ok": true,
+    "flexi": "alpha\nINSERTED\nbravo\n",
+    "dmp_diff_lines": [
+      " alpha\n",
+      "+bravo\n"
+    ],
+    "made_explicit": [
+      " alpha\n",
+      "+INSERTED\n"
+    ],
+    "apply_hunks_ok": true,
+    "apply_hunks": "alpha\nINSERTED\nbravo\n"
+  },
+  {
+    "name": "pure-delete",
+    "content": "alpha\nbravo\ncharlie\n",
+    "hunk": [
+      "-bravo\n"
+    ],
+    "before": "bravo\n",
+    "after": "",
+    "before_lines": [
+      "bravo\n"
+    ],
+    "after_lines": [],
+    "directly_apply_ok": true,
+    "directly_apply": "alpha\ncharlie\n",
+    "flexi_ok": true,
+    "flexi": "alpha\ncharlie\n",
+    "dmp_diff_lines": [
+      "-bravo\n",
+      "+alpha\n",
+      "+bravo\n",
+      "+charlie\n"
+    ],
+    "made_explicit": [
+      "-bravo\n"
+    ],
+    "apply_hunks_ok": true,
+    "apply_hunks": "alpha\ncharlie\n"
+  },
+  {
+    "name": "context-only",
+    "content": "alpha\nbravo\n",
+    "hunk": [
+      " alpha\n"
+    ],
+    "before": "alpha\n",
+    "after": "alpha\n",
+    "before_lines": [
+      "alpha\n"
+    ],
+    "after_lines": [
+      "alpha\n"
+    ],
+    "directly_apply_ok": true,
+    "directly_apply": "alpha\nbravo\n",
+    "flexi_ok": true,
+    "flexi": "alpha\nbravo\n",
+    "dmp_diff_lines": [
+      " alpha\n",
+      "+bravo\n"
+    ],
+    "made_explicit": [
+      " alpha\n"
+    ],
+    "apply_hunks_ok": true,
+    "apply_hunks": "alpha\nbravo\n"
+  },
+  {
+    "name": "noop",
+    "content": "alpha\nbravo\n",
+    "hunk": [
+      "-alpha\n",
+      "+alpha\n"
+    ],
+    "before": "alpha\n",
+    "after": "alpha\n",
+    "before_lines": [
+      "alpha\n"
+    ],
+    "after_lines": [
+      "alpha\n"
+    ],
+    "directly_apply_ok": true,
+    "directly_apply": "alpha\nbravo\n",
+    "flexi_ok": true,
+    "flexi": "alpha\nbravo\n",
+    "dmp_diff_lines": [
+      " alpha\n",
+      "+bravo\n"
+    ],
+    "made_explicit": [
+      "-alpha\n",
+      "+alpha\n"
+    ],
+    "apply_hunks_ok": true,
+    "apply_hunks": "alpha\nbravo\n"
+  },
+  {
+    "name": "delete-whole-file",
+    "content": "abc\n",
+    "hunk": [
+      "-abc\n"
+    ],
+    "before": "abc\n",
+    "after": "",
+    "before_lines": [
+      "abc\n"
+    ],
+    "after_lines": [],
+    "directly_apply_ok": true,
+    "directly_apply": "\n",
+    "flexi_ok": true,
+    "flexi": "\n",
+    "dmp_diff_lines": [
+      " abc\n"
+    ],
+    "made_explicit": [
+      "-abc\n"
+    ],
+    "apply_hunks_ok": true,
+    "apply_hunks": "\n"
+  },
+  {
+    "name": "cjk-short-context-repeated",
+    "content": "中文测试\nother\n中文测试\n",
+    "hunk": [
+      "-中文测试\n",
+      "+已改过\n"
+    ],
+    "before": "中文测试\n",
+    "after": "已改过\n",
+    "before_lines": [
+      "中文测试\n"
+    ],
+    "after_lines": [
+      "已改过\n"
+    ],
+    "directly_apply_ok": false,
+    "directly_apply": "",
+    "flexi_ok": true,
+    "flexi": "已改过\nother\n中文测试\n",
+    "dmp_diff_lines": [
+      " 中文测试\n",
+      "+other\n",
+      "+中文测试\n"
+    ],
+    "made_explicit": [
+      "-中文测试\n",
+      "+已改过\n"
+    ],
+    "apply_hunks_ok": true,
+    "apply_hunks": "中文测试\nother\n中文测试\n"
+  },
+  {
+    "name": "cjk-ten-char-context",
+    "content": "中文测试内容一二三四\nx\n中文测试内容一二三四\n",
+    "hunk": [
+      "-中文测试内容一二三四\n",
+      "+已改过\n"
+    ],
+    "before": "中文测试内容一二三四\n",
+    "after": "已改过\n",
+    "before_lines": [
+      "中文测试内容一二三四\n"
+    ],
+    "after_lines": [
+      "已改过\n"
+    ],
+    "directly_apply_ok": true,
+    "directly_apply": "已改过\nx\n中文测试内容一二三四\n",
+    "flexi_ok": true,
+    "flexi": "已改过\nx\n中文测试内容一二三四\n",
+    "dmp_diff_lines": [
+      " 中文测试内容一二三四\n",
+      "+x\n",
+      "+中文测试内容一二三四\n"
+    ],
+    "made_explicit": [
+      "-中文测试内容一二三四\n",
+      "+已改过\n",
+      " \n",
+      " \n"
+    ],
+    "apply_hunks_ok": true,
+    "apply_hunks": "已改过\nx\n中文测试内容一二三四\n"
+  },
+  {
+    "name": "short-context-once",
+    "content": "短\nother line here\n",
+    "hunk": [
+      "-短\n",
+      "+长\n"
+    ],
+    "before": "短\n",
+    "after": "长\n",
+    "before_lines": [
+      "短\n"
+    ],
+    "after_lines": [
+      "长\n"
+    ],
+    "directly_apply_ok": true,
+    "directly_apply": "长\nother line here\n",
+    "flexi_ok": true,
+    "flexi": "长\nother line here\n",
+    "dmp_diff_lines": [
+      " 短\n",
+      "+other line here\n"
+    ],
+    "made_explicit": [
+      "-短\n",
+      "+长\n"
+    ],
+    "apply_hunks_ok": true,
+    "apply_hunks": "长\nother line here\n"
+  },
+  {
+    "name": "short-context-thrice",
+    "content": "短\nx\n短\ny\n短\n",
+    "hunk": [
+      "-短\n",
+      "+长\n"
+    ],
+    "before": "短\n",
+    "after": "长\n",
+    "before_lines": [
+      "短\n"
+    ],
+    "after_lines": [
+      "长\n"
+    ],
+    "directly_apply_ok": false,
+    "directly_apply": "",
+    "flexi_ok": true,
+    "flexi": "长\nx\n短\ny\n短\n",
+    "dmp_diff_lines": [
+      " 短\n",
+      "+x\n",
+      "+短\n",
+      "+y\n",
+      "+短\n"
+    ],
+    "made_explicit": [
+      "-短\n",
+      "+长\n"
+    ],
+    "apply_hunks_ok": true,
+    "apply_hunks": "短\nx\n短\ny\n短\n"
+  },
+  {
+    "name": "context-missing-leading-space",
+    "content": "alpha\nbravo\n",
+    "hunk": [
+      "alpha\n",
+      "+INSERTED\n"
+    ],
+    "before": "",
+    "after": "INSERTED\n",
+    "before_lines": [],
+    "after_lines": [
+      "INSERTED\n"
+    ],
+    "directly_apply_ok": false,
+    "directly_apply": "",
+    "flexi_ok": true,
+    "flexi": "INSERTED\nalpha\nbravo\n",
+    "dmp_diff_lines": [
+      "+alpha\n",
+      "+bravo\n"
+    ],
+    "made_explicit": [
+      "alpha\n",
+      "+INSERTED\n"
+    ],
+    "apply_hunks_ok": false,
+    "apply_hunks": ""
+  },
+  {
+    "name": "non-ascii-first-char",
+    "content": "alpha\nbravo\n",
+    "hunk": [
+      "中\n",
+      "+INSERTED\n"
+    ],
+    "before": "",
+    "after": "INSERTED\n",
+    "before_lines": [],
+    "after_lines": [
+      "INSERTED\n"
+    ],
+    "directly_apply_ok": false,
+    "directly_apply": "",
+    "flexi_ok": true,
+    "flexi": "INSERTED\nalpha\nbravo\n",
+    "dmp_diff_lines": [
+      "+alpha\n",
+      "+bravo\n"
+    ],
+    "made_explicit": [
+      "中\n",
+      "+INSERTED\n"
+    ],
+    "apply_hunks_ok": false,
+    "apply_hunks": ""
+  },
+  {
+    "name": "lone-minus-line",
+    "content": "alpha\n\nbravo\n",
+    "hunk": [
+      "-\n",
+      "+X\n"
+    ],
+    "before": "\n",
+    "after": "X\n",
+    "before_lines": [
+      "\n"
+    ],
+    "after_lines": [
+      "X\n"
+    ],
+    "directly_apply_ok": false,
+    "directly_apply": "",
+    "flexi_ok": true,
+    "flexi": "alphaX\n\nbravo\n",
+    "dmp_diff_lines": [
+      "-\n",
+      "+alpha\n",
+      "+\n",
+      "+bravo\n"
+    ],
+    "made_explicit": [
+      "-\n",
+      "+X\n"
+    ],
+    "apply_hunks_ok": true,
+    "apply_hunks": "alpha\n\nbravo\n"
+  },
+  {
+    "name": "single-space-line",
+    "content": "alpha\n \nbravo\n",
+    "hunk": [
+      " \n",
+      "+X\n"
+    ],
+    "before": "\n",
+    "after": "\nX\n",
+    "before_lines": [
+      "\n"
+    ],
+    "after_lines": [
+      "\n",
+      "X\n"
+    ],
+    "directly_apply_ok": false,
+    "directly_apply": "",
+    "flexi_ok": true,
+    "flexi": "alpha\nX\n \nbravo\n",
+    "dmp_diff_lines": [
+      "-\n",
+      "+alpha\n",
+      "+ \n",
+      "+bravo\n"
+    ],
+    "made_explicit": [
+      " \n",
+      "+X\n"
+    ],
+    "apply_hunks_ok": false,
+    "apply_hunks": ""
+  },
+  {
+    "name": "tab-indent",
+    "content": "func x() {\n\treturn 1\n}\n",
+    "hunk": [
+      "-\treturn 1\n",
+      "+\treturn 2\n"
+    ],
+    "before": "\treturn 1\n",
+    "after": "\treturn 2\n",
+    "before_lines": [
+      "\treturn 1\n"
+    ],
+    "after_lines": [
+      "\treturn 2\n"
+    ],
+    "directly_apply_ok": true,
+    "directly_apply": "func x() {\n\treturn 2\n}\n",
+    "flexi_ok": true,
+    "flexi": "func x() {\n\treturn 2\n}\n",
+    "dmp_diff_lines": [
+      "-\treturn 1\n",
+      "+func x() {\n",
+      "+\treturn 1\n",
+      "+}\n"
+    ],
+    "made_explicit": [
+      "-\treturn 1\n",
+      "+\treturn 2\n"
+    ],
+    "apply_hunks_ok": true,
+    "apply_hunks": "func x() {\n\treturn 2\n}\n"
+  },
+  {
+    "name": "bom",
+    "content": "﻿alpha\nbravo\n",
+    "hunk": [
+      "-﻿alpha\n",
+      "+ALPHA\n"
+    ],
+    "before": "﻿alpha\n",
+    "after": "ALPHA\n",
+    "before_lines": [
+      "﻿alpha\n"
+    ],
+    "after_lines": [
+      "ALPHA\n"
+    ],
+    "directly_apply_ok": true,
+    "directly_apply": "ALPHA\nbravo\n",
+    "flexi_ok": true,
+    "flexi": "ALPHA\nbravo\n",
+    "dmp_diff_lines": [
+      " ﻿alpha\n",
+      "+bravo\n"
+    ],
+    "made_explicit": [
+      "-﻿alpha\n",
+      "+ALPHA\n"
+    ],
+    "apply_hunks_ok": true,
+    "apply_hunks": "ALPHA\nbravo\n"
+  },
+  {
+    "name": "nel",
+    "content": "alpha\nbravo\n",
+    "hunk": [
+      "-alpha\n",
+      "+ALPHA\n"
+    ],
+    "before": "alpha\n",
+    "after": "ALPHA\n",
+    "before_lines": [
+      "alpha\n"
+    ],
+    "after_lines": [
+      "ALPHA\n"
+    ],
+    "directly_apply_ok": true,
+    "directly_apply": "ALPHA\nbravo\n",
+    "flexi_ok": true,
+    "flexi": "ALPHA\nbravo\n",
+    "dmp_diff_lines": [
+      " alpha\n",
+      "+bravo\n"
+    ],
+    "made_explicit": [
+      "-alpha\n",
+      "+ALPHA\n"
+    ],
+    "apply_hunks_ok": true,
+    "apply_hunks": "ALPHA\nbravo\n"
+  },
+  {
+    "name": "bom-via-strip-blank-lines",
+    "content": "alpha\nbravo\n",
+    "hunk": [
+      "-﻿  alpha\n",
+      "+X\n"
+    ],
+    "before": "﻿  alpha\n",
+    "after": "X\n",
+    "before_lines": [
+      "﻿  alpha\n"
+    ],
+    "after_lines": [
+      "X\n"
+    ],
+    "directly_apply_ok": true,
+    "directly_apply": "X\nbravo\n",
+    "flexi_ok": true,
+    "flexi": "X\nbravo\n",
+    "dmp_diff_lines": [
+      "-﻿  alpha\n",
+      "+alpha\n",
+      "+bravo\n"
+    ],
+    "made_explicit": [
+      "-﻿  alpha\n",
+      "+X\n"
+    ],
+    "apply_hunks_ok": true,
+    "apply_hunks": "X\nbravo\n"
+  },
+  {
+    "name": "nel-via-strip-blank-lines",
+    "content": "alpha\nbravo\n",
+    "hunk": [
+      "-  alpha\n",
+      "+X\n"
+    ],
+    "before": "  alpha\n",
+    "after": "X\n",
+    "before_lines": [
+      "  alpha\n"
+    ],
+    "after_lines": [
+      "X\n"
+    ],
+    "directly_apply_ok": false,
+    "directly_apply": "",
+    "flexi_ok": false,
+    "flexi": "",
+    "dmp_diff_lines": [
+      "-  alpha\n",
+      "+alpha\n",
+      "+bravo\n"
+    ],
+    "made_explicit": [
+      "-  alpha\n",
+      "+X\n"
+    ],
+    "apply_hunks_ok": true,
+    "apply_hunks": "alpha\nbravo\n"
+  },
+  {
+    "name": "emoji",
+    "content": "const a = '🎉'\nb\n",
+    "hunk": [
+      "-const a = '🎉'\n",
+      "+const a = '🎊'\n"
+    ],
+    "before": "const a = '🎉'\n",
+    "after": "const a = '🎊'\n",
+    "before_lines": [
+      "const a = '🎉'\n"
+    ],
+    "after_lines": [
+      "const a = '🎊'\n"
+    ],
+    "directly_apply_ok": true,
+    "directly_apply": "const a = '🎊'\nb\n",
+    "flexi_ok": true,
+    "flexi": "const a = '🎊'\nb\n",
+    "dmp_diff_lines": [
+      " const a = '🎉'\n",
+      "+b\n"
+    ],
+    "made_explicit": [
+      "-const a = '🎉'\n",
+      "+const a = '🎊'\n",
+      " \n",
+      " \n"
+    ],
+    "apply_hunks_ok": true,
+    "apply_hunks": "const a = '🎊'\nb\n"
+  },
+  {
+    "name": "empty-content",
+    "content": "",
+    "hunk": [
+      "-anything\n",
+      "+else\n"
+    ],
+    "before": "anything\n",
+    "after": "else\n",
+    "before_lines": [
+      "anything\n"
+    ],
+    "after_lines": [
+      "else\n"
+    ],
+    "directly_apply_ok": false,
+    "directly_apply": "",
+    "flexi_ok": false,
+    "flexi": "",
+    "dmp_diff_lines": [
+      "-anything\n"
+    ],
+    "made_explicit": [
+      "-anything\n",
+      "+else\n"
+    ],
+    "apply_hunks_ok": true,
+    "apply_hunks": ""
+  },
+  {
+    "name": "no-trailing-newline",
+    "content": "alpha\nbravo",
+    "hunk": [
+      "-bravo\n",
+      "+BRAVO\n"
+    ],
+    "before": "bravo\n",
+    "after": "BRAVO\n",
+    "before_lines": [
+      "bravo\n"
+    ],
+    "after_lines": [
+      "BRAVO\n"
+    ],
+    "directly_apply_ok": true,
+    "directly_apply": "alpha\nBRAVO\n",
+    "flexi_ok": true,
+    "flexi": "alpha\nBRAVO\n",
+    "dmp_diff_lines": [
+      "-bravo\n",
+      "+alpha\n",
+      "+bravo\n"
+    ],
+    "made_explicit": [
+      "-bravo\n",
+      "+BRAVO\n"
+    ],
+    "apply_hunks_ok": true,
+    "apply_hunks": "alpha\nBRAVO\n"
+  },
+  {
+    "name": "crlf",
+    "content": "alpha\r\nbravo\r\n",
+    "hunk": [
+      "-bravo\n",
+      "+BRAVO\n"
+    ],
+    "before": "bravo\n",
+    "after": "BRAVO\n",
+    "before_lines": [
+      "bravo\n"
+    ],
+    "after_lines": [
+      "BRAVO\n"
+    ],
+    "directly_apply_ok": true,
+    "directly_apply": "alpha\nBRAVO\n",
+    "flexi_ok": true,
+    "flexi": "alpha\nBRAVO\n",
+    "dmp_diff_lines": [
+      "+alpha\n",
+      " bravo\n"
+    ],
+    "made_explicit": [
+      "-bravo\n",
+      "+BRAVO\n"
+    ],
+    "apply_hunks_ok": true,
+    "apply_hunks": "alpha\nBRAVO\n"
+  },
+  {
+    "name": "repeated-lines-file",
+    "content": "a\na\na\n",
+    "hunk": [
+      "-a\n",
+      "+A\n"
+    ],
+    "before": "a\n",
+    "after": "A\n",
+    "before_lines": [
+      "a\n"
+    ],
+    "after_lines": [
+      "A\n"
+    ],
+    "directly_apply_ok": false,
+    "directly_apply": "",
+    "flexi_ok": true,
+    "flexi": "A\na\na\n",
+    "dmp_diff_lines": [
+      " a\n",
+      "+a\n",
+      "+a\n"
+    ],
+    "made_explicit": [
+      "-a\n",
+      "+A\n"
+    ],
+    "apply_hunks_ok": true,
+    "apply_hunks": "a\na\na\n"
+  },
+  {
+    "name": "long-context-last-line-wrong",
+    "content": "  const v01 = \"value number 01 here\"\n  const v02 = \"value number 02 here\"\n  const v03 = \"value number 03 here\"\n  const v04 = \"value number 04 here\"\n  const v05 = \"value number 05 here\"\n  const v06 = \"value number 06 here\"\n  const v07 = \"value number 07 here\"\n  const v08 = \"value number 08 here\"\n  const v09 = \"value number 09 here\"\n  const v10 = \"value number 10 here\"\n  const v11 = \"value number 11 here\"\n  const v12 = \"value number 12 here\"\n",
+    "hunk": [
+      "   const v01 = \"value number 01 here\"\n",
+      "   const v02 = \"value number 02 here\"\n",
+      "   const v03 = \"value number 03 here\"\n",
+      "   const v04 = \"value number 04 here\"\n",
+      "   const v05 = \"value number 05 here\"\n",
+      "   const v06 = \"value number 06 here\"\n",
+      "   const v07 = \"value number 07 here\"\n",
+      "-  const v08 = \"WRONG\"\n",
+      "+  const v08 = \"CHANGED\"\n"
+    ],
+    "before": "  const v01 = \"value number 01 here\"\n  const v02 = \"value number 02 here\"\n  const v03 = \"value number 03 here\"\n  const v04 = \"value number 04 here\"\n  const v05 = \"value number 05 here\"\n  const v06 = \"value number 06 here\"\n  const v07 = \"value number 07 here\"\n  const v08 = \"WRONG\"\n",
+    "after": "  const v01 = \"value number 01 here\"\n  const v02 = \"value number 02 here\"\n  const v03 = \"value number 03 here\"\n  const v04 = \"value number 04 here\"\n  const v05 = \"value number 05 here\"\n  const v06 = \"value number 06 here\"\n  const v07 = \"value number 07 here\"\n  const v08 = \"CHANGED\"\n",
+    "before_lines": [
+      "  const v01 = \"value number 01 here\"\n",
+      "  const v02 = \"value number 02 here\"\n",
+      "  const v03 = \"value number 03 here\"\n",
+      "  const v04 = \"value number 04 here\"\n",
+      "  const v05 = \"value number 05 here\"\n",
+      "  const v06 = \"value number 06 here\"\n",
+      "  const v07 = \"value number 07 here\"\n",
+      "  const v08 = \"WRONG\"\n"
+    ],
+    "after_lines": [
+      "  const v01 = \"value number 01 here\"\n",
+      "  const v02 = \"value number 02 here\"\n",
+      "  const v03 = \"value number 03 here\"\n",
+      "  const v04 = \"value number 04 here\"\n",
+      "  const v05 = \"value number 05 here\"\n",
+      "  const v06 = \"value number 06 here\"\n",
+      "  const v07 = \"value number 07 here\"\n",
+      "  const v08 = \"CHANGED\"\n"
+    ],
+    "directly_apply_ok": false,
+    "directly_apply": "",
+    "flexi_ok": false,
+    "flexi": "",
+    "dmp_diff_lines": [
+      "   const v01 = \"value number 01 here\"\n",
+      "   const v02 = \"value number 02 here\"\n",
+      "   const v03 = \"value number 03 here\"\n",
+      "   const v04 = \"value number 04 here\"\n",
+      "   const v05 = \"value number 05 here\"\n",
+      "   const v06 = \"value number 06 here\"\n",
+      "   const v07 = \"value number 07 here\"\n",
+      "-  const v08 = \"WRONG\"\n",
+      "+  const v08 = \"value number 08 here\"\n",
+      "+  const v09 = \"value number 09 here\"\n",
+      "+  const v10 = \"value number 10 here\"\n",
+      "+  const v11 = \"value number 11 here\"\n",
+      "+  const v12 = \"value number 12 here\"\n"
+    ],
+    "made_explicit": [
+      " \n",
+      "   const v04 = \"value number 04 here\"\n",
+      " \n",
+      "   const v05 = \"value number 05 here\"\n",
+      " \n",
+      "   const v06 = \"value number 06 here\"\n",
+      " \n",
+      "   const v07 = \"value number 07 here\"\n",
+      " \n",
+      "+  const v08 = \"CHANGED\"\n",
+      " \n",
+      " \n",
+      "+\n"
+    ],
+    "apply_hunks_ok": true,
+    "apply_hunks": "const v01 = \"value number 01 here\"\n  const v02 = \"value number 02 here\"\n  const v03 = \"value number 03 here\"\n  const v04 = \"value number 04 here\"\n  const v05 = \"value number 05 here\"\n  const v06 = \"value number 06 here\"\n  const v07 = \"value number 07 here\"\n\n\n  const v08 = \"CHANGED\"\n  const v08 = \"value number 08 here\"\n  const v09 = \"value number 09 here\"\n  const v10 = \"value number 10 here\"\n  const v11 = \"value number 11 here\"\n  const v12 = \"value number 12 here\"\n"
+  },
+  {
+    "name": "long-context-middle-line-wrong",
+    "content": "  const v01 = \"value number 01 here\"\n  const v02 = \"value number 02 here\"\n  const v03 = \"value number 03 here\"\n  const v04 = \"value number 04 here\"\n  const v05 = \"value number 05 here\"\n  const v06 = \"value number 06 here\"\n  const v07 = \"value number 07 here\"\n  const v08 = \"value number 08 here\"\n  const v09 = \"value number 09 here\"\n  const v10 = \"value number 10 here\"\n  const v11 = \"value number 11 here\"\n  const v12 = \"value number 12 here\"\n",
+    "hunk": [
+      "   const v01 = \"value number 01 here\"\n",
+      "   const v02 = \"value number 02 here\"\n",
+      "   const v03 = \"value number 03 here\"\n",
+      "   const vXX = \"WRONG\"\n",
+      "   const v05 = \"value number 05 here\"\n",
+      "   const v06 = \"value number 06 here\"\n",
+      "   const v07 = \"value number 07 here\"\n",
+      "   const v08 = \"value number 08 here\"\n",
+      "-  const v09 = \"value number 09 here\"\n",
+      "+  const v09 = \"CHANGED\"\n"
+    ],
+    "before": "  const v01 = \"value number 01 here\"\n  const v02 = \"value number 02 here\"\n  const v03 = \"value number 03 here\"\n  const vXX = \"WRONG\"\n  const v05 = \"value number 05 here\"\n  const v06 = \"value number 06 here\"\n  const v07 = \"value number 07 here\"\n  const v08 = \"value number 08 here\"\n  const v09 = \"value number 09 here\"\n",
+    "after": "  const v01 = \"value number 01 here\"\n  const v02 = \"value number 02 here\"\n  const v03 = \"value number 03 here\"\n  const vXX = \"WRONG\"\n  const v05 = \"value number 05 here\"\n  const v06 = \"value number 06 here\"\n  const v07 = \"value number 07 here\"\n  const v08 = \"value number 08 here\"\n  const v09 = \"CHANGED\"\n",
+    "before_lines": [
+      "  const v01 = \"value number 01 here\"\n",
+      "  const v02 = \"value number 02 here\"\n",
+      "  const v03 = \"value number 03 here\"\n",
+      "  const vXX = \"WRONG\"\n",
+      "  const v05 = \"value number 05 here\"\n",
+      "  const v06 = \"value number 06 here\"\n",
+      "  const v07 = \"value number 07 here\"\n",
+      "  const v08 = \"value number 08 here\"\n",
+      "  const v09 = \"value number 09 here\"\n"
+    ],
+    "after_lines": [
+      "  const v01 = \"value number 01 here\"\n",
+      "  const v02 = \"value number 02 here\"\n",
+      "  const v03 = \"value number 03 here\"\n",
+      "  const vXX = \"WRONG\"\n",
+      "  const v05 = \"value number 05 here\"\n",
+      "  const v06 = \"value number 06 here\"\n",
+      "  const v07 = \"value number 07 here\"\n",
+      "  const v08 = \"value number 08 here\"\n",
+      "  const v09 = \"CHANGED\"\n"
+    ],
+    "directly_apply_ok": false,
+    "directly_apply": "",
+    "flexi_ok": false,
+    "flexi": "",
+    "dmp_diff_lines": [
+      "   const v01 = \"value number 01 here\"\n",
+      "   const v02 = \"value number 02 here\"\n",
+      "   const v03 = \"value number 03 here\"\n",
+      "-  const vXX = \"WRONG\"\n",
+      "+  const v04 = \"value number 04 here\"\n",
+      "   const v05 = \"value number 05 here\"\n",
+      "   const v06 = \"value number 06 here\"\n",
+      "   const v07 = \"value number 07 here\"\n",
+      "   const v08 = \"value number 08 here\"\n",
+      "   const v09 = \"value number 09 here\"\n",
+      "+  const v10 = \"value number 10 here\"\n",
+      "+  const v11 = \"value number 11 here\"\n",
+      "+  const v12 = \"value number 12 here\"\n"
+    ],
+    "made_explicit": [
+      "   const v01 = \"value number 01 here\"\n",
+      " \n",
+      "   const v02 = \"value number 02 here\"\n",
+      " \n",
+      "   const v03 = \"value number 03 here\"\n",
+      " \n",
+      "+  const vXX = \"WRONG\"\n",
+      "+\n",
+      "   const v05 = \"value number 05 here\"\n",
+      " \n",
+      "   const v06 = \"value number 06 here\"\n",
+      " \n",
+      "   const v07 = \"value number 07 here\"\n",
+      " \n",
+      "   const v08 = \"value number 08 here\"\n",
+      " \n",
+      "-  const v09 = \"value number 09 here\"\n",
+      "+  const v09 = \"CHANGED\"\n",
+      " \n",
+      " \n",
+      " \n"
+    ],
+    "apply_hunks_ok": true,
+    "apply_hunks": "const v01 = \"value number 01 here\"\n  const v02 = \"value number 02 here\"\n  const v03 = \"value number 03 here\"\n\n  const vXX = \"WRONG\"\n  const v04 = \"value number 04 here\"\n  const v05 = \"value number 05 here\"\n  const v06 = \"value number 06 here\"\n  const v07 = \"value number 07 here\"\n  const v08 = \"value number 08 here\"\n  const v09 = \"CHANGED\"\n  const v10 = \"value number 10 here\"\n  const v11 = \"value number 11 here\"\n  const v12 = \"value number 12 here\"\n"
+  },
+  {
+    "name": "long-context-two-changes",
+    "content": "  const v01 = \"value number 01 here\"\n  const v02 = \"value number 02 here\"\n  const v03 = \"value number 03 here\"\n  const v04 = \"value number 04 here\"\n  const v05 = \"value number 05 here\"\n  const v06 = \"value number 06 here\"\n  const v07 = \"value number 07 here\"\n  const v08 = \"value number 08 here\"\n  const v09 = \"value number 09 here\"\n  const v10 = \"value number 10 here\"\n  const v11 = \"value number 11 here\"\n  const v12 = \"value number 12 here\"\n",
+    "hunk": [
+      "   const v01 = \"value number 01 here\"\n",
+      "   const v02 = \"value number 02 here\"\n",
+      "   const v03 = \"value number 03 here\"\n",
+      "   const v04 = \"value number 04 here\"\n",
+      "-  const v05 = \"value number 05 here\"\n",
+      "+  const v05 = \"A\"\n",
+      "   const v06 = \"value number 06 here\"\n",
+      "   const vZZ = \"WRONG\"\n",
+      "   const v08 = \"value number 08 here\"\n",
+      "-  const v09 = \"value number 09 here\"\n",
+      "+  const v09 = \"B\"\n"
+    ],
+    "before": "  const v01 = \"value number 01 here\"\n  const v02 = \"value number 02 here\"\n  const v03 = \"value number 03 here\"\n  const v04 = \"value number 04 here\"\n  const v05 = \"value number 05 here\"\n  const v06 = \"value number 06 here\"\n  const vZZ = \"WRONG\"\n  const v08 = \"value number 08 here\"\n  const v09 = \"value number 09 here\"\n",
+    "after": "  const v01 = \"value number 01 here\"\n  const v02 = \"value number 02 here\"\n  const v03 = \"value number 03 here\"\n  const v04 = \"value number 04 here\"\n  const v05 = \"A\"\n  const v06 = \"value number 06 here\"\n  const vZZ = \"WRONG\"\n  const v08 = \"value number 08 here\"\n  const v09 = \"B\"\n",
+    "before_lines": [
+      "  const v01 = \"value number 01 here\"\n",
+      "  const v02 = \"value number 02 here\"\n",
+      "  const v03 = \"value number 03 here\"\n",
+      "  const v04 = \"value number 04 here\"\n",
+      "  const v05 = \"value number 05 here\"\n",
+      "  const v06 = \"value number 06 here\"\n",
+      "  const vZZ = \"WRONG\"\n",
+      "  const v08 = \"value number 08 here\"\n",
+      "  const v09 = \"value number 09 here\"\n"
+    ],
+    "after_lines": [
+      "  const v01 = \"value number 01 here\"\n",
+      "  const v02 = \"value number 02 here\"\n",
+      "  const v03 = \"value number 03 here\"\n",
+      "  const v04 = \"value number 04 here\"\n",
+      "  const v05 = \"A\"\n",
+      "  const v06 = \"value number 06 here\"\n",
+      "  const vZZ = \"WRONG\"\n",
+      "  const v08 = \"value number 08 here\"\n",
+      "  const v09 = \"B\"\n"
+    ],
+    "directly_apply_ok": false,
+    "directly_apply": "",
+    "flexi_ok": false,
+    "flexi": "",
+    "dmp_diff_lines": [
+      "   const v01 = \"value number 01 here\"\n",
+      "   const v02 = \"value number 02 here\"\n",
+      "   const v03 = \"value number 03 here\"\n",
+      "   const v04 = \"value number 04 here\"\n",
+      "   const v05 = \"value number 05 here\"\n",
+      "   const v06 = \"value number 06 here\"\n",
+      "-  const vZZ = \"WRONG\"\n",
+      "+  const v07 = \"value number 07 here\"\n",
+      "   const v08 = \"value number 08 here\"\n",
+      "   const v09 = \"value number 09 here\"\n",
+      "+  const v10 = \"value number 10 here\"\n",
+      "+  const v11 = \"value number 11 here\"\n",
+      "+  const v12 = \"value number 12 here\"\n"
+    ],
+    "made_explicit": [
+      "   const v01 = \"value number 01 here\"\n",
+      " \n",
+      "   const v02 = \"value number 02 here\"\n",
+      " \n",
+      "   const v03 = \"value number 03 here\"\n",
+      " \n",
+      "   const v04 = \"value number 04 here\"\n",
+      " \n",
+      "-  const v05 = \"value number 05 here\"\n",
+      "+  const v05 = \"A\"\n",
+      " \n",
+      "   const v06 = \"value number 06 here\"\n",
+      " \n",
+      "+  const vZZ = \"WRONG\"\n",
+      "+\n",
+      "   const v08 = \"value number 08 here\"\n",
+      " \n",
+      "-  const v09 = \"value number 09 here\"\n",
+      "+  const v09 = \"B\"\n",
+      " \n",
+      " \n",
+      " \n"
+    ],
+    "apply_hunks_ok": true,
+    "apply_hunks": "const v01 = \"value number 01 here\"\n  const v02 = \"value number 02 here\"\n  const v03 = \"value number 03 here\"\n  const v04 = \"value number 04 here\"\n  const v05 = \"A\"\n  const v06 = \"value number 06 here\"\n\n  const vZZ = \"WRONG\"\n  const v07 = \"value number 07 here\"\n  const v08 = \"value number 08 here\"\n  const v09 = \"B\"\n  const v10 = \"value number 10 here\"\n  const v11 = \"value number 11 here\"\n  const v12 = \"value number 12 here\"\n"
+  },
+  {
+    "name": "long-context-all-indent-wrong",
+    "content": "  const v01 = \"value number 01 here\"\n  const v02 = \"value number 02 here\"\n  const v03 = \"value number 03 here\"\n  const v04 = \"value number 04 here\"\n  const v05 = \"value number 05 here\"\n  const v06 = \"value number 06 here\"\n  const v07 = \"value number 07 here\"\n  const v08 = \"value number 08 here\"\n  const v09 = \"value number 09 here\"\n  const v10 = \"value number 10 here\"\n  const v11 = \"value number 11 here\"\n  const v12 = \"value number 12 here\"\n",
+    "hunk": [
+      " const v01 = \"value number 01 here\"\n",
+      " const v02 = \"value number 02 here\"\n",
+      " const v03 = \"value number 03 here\"\n",
+      " const v04 = \"value number 04 here\"\n",
+      " const v05 = \"value number 05 here\"\n",
+      " const v06 = \"value number 06 here\"\n",
+      "-const v07 = \"value number 07 here\"\n",
+      "+const v07 = \"CHANGED\"\n"
+    ],
+    "before": "const v01 = \"value number 01 here\"\nconst v02 = \"value number 02 here\"\nconst v03 = \"value number 03 here\"\nconst v04 = \"value number 04 here\"\nconst v05 = \"value number 05 here\"\nconst v06 = \"value number 06 here\"\nconst v07 = \"value number 07 here\"\n",
+    "after": "const v01 = \"value number 01 here\"\nconst v02 = \"value number 02 here\"\nconst v03 = \"value number 03 here\"\nconst v04 = \"value number 04 here\"\nconst v05 = \"value number 05 here\"\nconst v06 = \"value number 06 here\"\nconst v07 = \"CHANGED\"\n",
+    "before_lines": [
+      "const v01 = \"value number 01 here\"\n",
+      "const v02 = \"value number 02 here\"\n",
+      "const v03 = \"value number 03 here\"\n",
+      "const v04 = \"value number 04 here\"\n",
+      "const v05 = \"value number 05 here\"\n",
+      "const v06 = \"value number 06 here\"\n",
+      "const v07 = \"value number 07 here\"\n"
+    ],
+    "after_lines": [
+      "const v01 = \"value number 01 here\"\n",
+      "const v02 = \"value number 02 here\"\n",
+      "const v03 = \"value number 03 here\"\n",
+      "const v04 = \"value number 04 here\"\n",
+      "const v05 = \"value number 05 here\"\n",
+      "const v06 = \"value number 06 here\"\n",
+      "const v07 = \"CHANGED\"\n"
+    ],
+    "directly_apply_ok": false,
+    "directly_apply": "",
+    "flexi_ok": false,
+    "flexi": "",
+    "dmp_diff_lines": [
+      "-const v01 = \"value number 01 here\"\n",
+      "-const v02 = \"value number 02 here\"\n",
+      "-const v03 = \"value number 03 here\"\n",
+      "-const v04 = \"value number 04 here\"\n",
+      "-const v05 = \"value number 05 here\"\n",
+      "-const v06 = \"value number 06 here\"\n",
+      "-const v07 = \"value number 07 here\"\n",
+      "+  const v01 = \"value number 01 here\"\n",
+      "+  const v02 = \"value number 02 here\"\n",
+      "+  const v03 = \"value number 03 here\"\n",
+      "+  const v04 = \"value number 04 here\"\n",
+      "+  const v05 = \"value number 05 here\"\n",
+      "+  const v06 = \"value number 06 here\"\n",
+      "+  const v07 = \"value number 07 here\"\n",
+      "+  const v08 = \"value number 08 here\"\n",
+      "+  const v09 = \"value number 09 here\"\n",
+      "+  const v10 = \"value number 10 here\"\n",
+      "+  const v11 = \"value number 11 here\"\n",
+      "+  const v12 = \"value number 12 here\"\n"
+    ],
+    "made_explicit": [
+      " const v01 = \"value number 01 here\"\n",
+      " const v02 = \"value number 02 here\"\n",
+      " const v03 = \"value number 03 here\"\n",
+      " const v04 = \"value number 04 here\"\n",
+      " const v05 = \"value number 05 here\"\n",
+      " const v06 = \"value number 06 here\"\n",
+      "-const v07 = \"value number 07 here\"\n",
+      "+const v07 = \"CHANGED\"\n"
+    ],
+    "apply_hunks_ok": true,
+    "apply_hunks": "  const v01 = \"value number 01 here\"\n  const v02 = \"value number 02 here\"\n  const v03 = \"value number 03 here\"\n  const v04 = \"value number 04 here\"\n  const v05 = \"value number 05 here\"\n  const v06 = \"value number 06 here\"\n  const v07 = \"CHANGED\"\n  const v08 = \"value number 08 here\"\n  const v09 = \"value number 09 here\"\n  const v10 = \"value number 10 here\"\n  const v11 = \"value number 11 here\"\n  const v12 = \"value number 12 here\"\n"
+  }
+]

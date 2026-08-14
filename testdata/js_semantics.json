@@ -1,0 +1,1038 @@
+{
+  "trim": [
+    {
+      "in": "",
+      "out": ""
+    },
+    {
+      "in": "   ",
+      "out": ""
+    },
+    {
+      "in": "plain",
+      "out": "plain"
+    },
+    {
+      "in": "  padded  ",
+      "out": "padded"
+    },
+    {
+      "in": "\tt\t",
+      "out": "t"
+    },
+    {
+      "in": "\n\nline\n\n",
+      "out": "line"
+    },
+    {
+      "in": "\r\ncrlf\r\n",
+      "out": "crlf"
+    },
+    {
+      "in": " nbsp ",
+      "out": "nbsp"
+    },
+    {
+      "in": "﻿bom﻿",
+      "out": "bom"
+    },
+    {
+      "in": "nel",
+      "out": "nel"
+    },
+    {
+      "in": "　ideographic　",
+      "out": "ideographic"
+    },
+    {
+      "in": "  separators ",
+      "out": "separators"
+    },
+    {
+      "in": "\u000b\fvtff\u000b\f",
+      "out": "vtff"
+    },
+    {
+      "in": " ogham ",
+      "out": "ogham"
+    },
+    {
+      "in": "​zwsp​",
+      "out": "​zwsp​"
+    },
+    {
+      "in": "  ﻿  mixed  ﻿  ",
+      "out": " mixed "
+    },
+    {
+      "in": "中文",
+      "out": "中文"
+    },
+    {
+      "in": "  中文  ",
+      "out": "中文"
+    }
+  ],
+  "trimEnd": [
+    {
+      "in": "",
+      "out": ""
+    },
+    {
+      "in": "   ",
+      "out": ""
+    },
+    {
+      "in": "plain",
+      "out": "plain"
+    },
+    {
+      "in": "  padded  ",
+      "out": "  padded"
+    },
+    {
+      "in": "\tt\t",
+      "out": "\tt"
+    },
+    {
+      "in": "\n\nline\n\n",
+      "out": "\n\nline"
+    },
+    {
+      "in": "\r\ncrlf\r\n",
+      "out": "\r\ncrlf"
+    },
+    {
+      "in": " nbsp ",
+      "out": " nbsp"
+    },
+    {
+      "in": "﻿bom﻿",
+      "out": "﻿bom"
+    },
+    {
+      "in": "nel",
+      "out": "nel"
+    },
+    {
+      "in": "　ideographic　",
+      "out": "　ideographic"
+    },
+    {
+      "in": "  separators ",
+      "out": "  separators"
+    },
+    {
+      "in": "\u000b\fvtff\u000b\f",
+      "out": "\u000b\fvtff"
+    },
+    {
+      "in": " ogham ",
+      "out": " ogham"
+    },
+    {
+      "in": "​zwsp​",
+      "out": "​zwsp​"
+    },
+    {
+      "in": "  ﻿  mixed  ﻿  ",
+      "out": "  ﻿  mixed "
+    },
+    {
+      "in": "中文",
+      "out": "中文"
+    },
+    {
+      "in": "  中文  ",
+      "out": "  中文"
+    }
+  ],
+  "length": [
+    {
+      "in": "",
+      "out": 0
+    },
+    {
+      "in": "a",
+      "out": 1
+    },
+    {
+      "in": "中文测试",
+      "out": 4
+    },
+    {
+      "in": "今日会员消费",
+      "out": 6
+    },
+    {
+      "in": "中文测试内容一二三四",
+      "out": 10
+    },
+    {
+      "in": "🎉",
+      "out": 2
+    },
+    {
+      "in": "🎉🎊",
+      "out": 4
+    },
+    {
+      "in": "é",
+      "out": 2
+    },
+    {
+      "in": "a\u0000b",
+      "out": 3
+    }
+  ],
+  "firstUnit": [
+    {
+      "in": "",
+      "out": 0
+    },
+    {
+      "in": "a",
+      "out": 97
+    },
+    {
+      "in": "中文测试",
+      "out": 20013
+    },
+    {
+      "in": "今日会员消费",
+      "out": 20170
+    },
+    {
+      "in": "中文测试内容一二三四",
+      "out": 20013
+    },
+    {
+      "in": "🎉",
+      "out": 55356
+    },
+    {
+      "in": "🎉🎊",
+      "out": 55356
+    },
+    {
+      "in": "é",
+      "out": 101
+    },
+    {
+      "in": "a\u0000b",
+      "out": 97
+    },
+    {
+      "in": "",
+      "out": 0
+    }
+  ],
+  "replaceFirst": [
+    {
+      "s": "aXbXc",
+      "search": "X",
+      "replace": "Y",
+      "out": "aYbXc"
+    },
+    {
+      "s": "aXbXc",
+      "search": "X",
+      "replace": "",
+      "out": "abXc"
+    },
+    {
+      "s": "abc",
+      "search": "zzz",
+      "replace": "Y",
+      "out": "abc"
+    },
+    {
+      "s": "abc",
+      "search": "",
+      "replace": "-",
+      "out": "-abc"
+    },
+    {
+      "s": "price $5",
+      "search": "$5",
+      "replace": "$&!",
+      "out": "price $&!"
+    },
+    {
+      "s": "a$1b",
+      "search": "$1",
+      "replace": "$1$1",
+      "out": "a$1$1b"
+    },
+    {
+      "s": "中文中文",
+      "search": "中文",
+      "replace": "英文",
+      "out": "英文中文"
+    },
+    {
+      "s": "line\nline\n",
+      "search": "line\n",
+      "replace": "LINE\n",
+      "out": "LINE\nline\n"
+    }
+  ],
+  "indexOf": [
+    {
+      "s": "hello world",
+      "v": "o",
+      "from": -5,
+      "out": 4
+    },
+    {
+      "s": "hello world",
+      "v": "o",
+      "from": -1,
+      "out": 4
+    },
+    {
+      "s": "hello world",
+      "v": "o",
+      "from": 0,
+      "out": 4
+    },
+    {
+      "s": "hello world",
+      "v": "o",
+      "from": 1,
+      "out": 4
+    },
+    {
+      "s": "hello world",
+      "v": "o",
+      "from": 3,
+      "out": 4
+    },
+    {
+      "s": "hello world",
+      "v": "o",
+      "from": 100,
+      "out": -1
+    },
+    {
+      "s": "hello world",
+      "v": "world",
+      "from": -5,
+      "out": 6
+    },
+    {
+      "s": "hello world",
+      "v": "world",
+      "from": -1,
+      "out": 6
+    },
+    {
+      "s": "hello world",
+      "v": "world",
+      "from": 0,
+      "out": 6
+    },
+    {
+      "s": "hello world",
+      "v": "world",
+      "from": 1,
+      "out": 6
+    },
+    {
+      "s": "hello world",
+      "v": "world",
+      "from": 3,
+      "out": 6
+    },
+    {
+      "s": "hello world",
+      "v": "world",
+      "from": 100,
+      "out": -1
+    },
+    {
+      "s": "hello world",
+      "v": "zzz",
+      "from": -5,
+      "out": -1
+    },
+    {
+      "s": "hello world",
+      "v": "zzz",
+      "from": -1,
+      "out": -1
+    },
+    {
+      "s": "hello world",
+      "v": "zzz",
+      "from": 0,
+      "out": -1
+    },
+    {
+      "s": "hello world",
+      "v": "zzz",
+      "from": 1,
+      "out": -1
+    },
+    {
+      "s": "hello world",
+      "v": "zzz",
+      "from": 3,
+      "out": -1
+    },
+    {
+      "s": "hello world",
+      "v": "zzz",
+      "from": 100,
+      "out": -1
+    },
+    {
+      "s": "a\nb\nc\n",
+      "v": "\n",
+      "from": -5,
+      "out": 1
+    },
+    {
+      "s": "a\nb\nc\n",
+      "v": "\n",
+      "from": -1,
+      "out": 1
+    },
+    {
+      "s": "a\nb\nc\n",
+      "v": "\n",
+      "from": 0,
+      "out": 1
+    },
+    {
+      "s": "a\nb\nc\n",
+      "v": "\n",
+      "from": 1,
+      "out": 1
+    },
+    {
+      "s": "a\nb\nc\n",
+      "v": "\n",
+      "from": 3,
+      "out": 3
+    },
+    {
+      "s": "a\nb\nc\n",
+      "v": "\n",
+      "from": 100,
+      "out": -1
+    },
+    {
+      "s": "abc",
+      "v": "",
+      "from": -5,
+      "out": 0
+    },
+    {
+      "s": "abc",
+      "v": "",
+      "from": -1,
+      "out": 0
+    },
+    {
+      "s": "abc",
+      "v": "",
+      "from": 0,
+      "out": 0
+    },
+    {
+      "s": "abc",
+      "v": "",
+      "from": 1,
+      "out": 1
+    },
+    {
+      "s": "abc",
+      "v": "",
+      "from": 3,
+      "out": 3
+    },
+    {
+      "s": "abc",
+      "v": "",
+      "from": 100,
+      "out": 3
+    },
+    {
+      "s": "",
+      "v": "x",
+      "from": -5,
+      "out": -1
+    },
+    {
+      "s": "",
+      "v": "x",
+      "from": -1,
+      "out": -1
+    },
+    {
+      "s": "",
+      "v": "x",
+      "from": 0,
+      "out": -1
+    },
+    {
+      "s": "",
+      "v": "x",
+      "from": 1,
+      "out": -1
+    },
+    {
+      "s": "",
+      "v": "x",
+      "from": 3,
+      "out": -1
+    },
+    {
+      "s": "",
+      "v": "x",
+      "from": 100,
+      "out": -1
+    },
+    {
+      "s": "",
+      "v": "",
+      "from": -5,
+      "out": 0
+    },
+    {
+      "s": "",
+      "v": "",
+      "from": -1,
+      "out": 0
+    },
+    {
+      "s": "",
+      "v": "",
+      "from": 0,
+      "out": 0
+    },
+    {
+      "s": "",
+      "v": "",
+      "from": 1,
+      "out": 0
+    },
+    {
+      "s": "",
+      "v": "",
+      "from": 3,
+      "out": 0
+    },
+    {
+      "s": "",
+      "v": "",
+      "from": 100,
+      "out": 0
+    }
+  ],
+  "lastIndexOf": [
+    {
+      "s": "hello world",
+      "v": "o",
+      "from": -5,
+      "out": -1
+    },
+    {
+      "s": "hello world",
+      "v": "o",
+      "from": -1,
+      "out": -1
+    },
+    {
+      "s": "hello world",
+      "v": "o",
+      "from": 0,
+      "out": -1
+    },
+    {
+      "s": "hello world",
+      "v": "o",
+      "from": 1,
+      "out": -1
+    },
+    {
+      "s": "hello world",
+      "v": "o",
+      "from": 3,
+      "out": -1
+    },
+    {
+      "s": "hello world",
+      "v": "o",
+      "from": 100,
+      "out": 7
+    },
+    {
+      "s": "hello world",
+      "v": "world",
+      "from": -5,
+      "out": -1
+    },
+    {
+      "s": "hello world",
+      "v": "world",
+      "from": -1,
+      "out": -1
+    },
+    {
+      "s": "hello world",
+      "v": "world",
+      "from": 0,
+      "out": -1
+    },
+    {
+      "s": "hello world",
+      "v": "world",
+      "from": 1,
+      "out": -1
+    },
+    {
+      "s": "hello world",
+      "v": "world",
+      "from": 3,
+      "out": -1
+    },
+    {
+      "s": "hello world",
+      "v": "world",
+      "from": 100,
+      "out": 6
+    },
+    {
+      "s": "hello world",
+      "v": "zzz",
+      "from": -5,
+      "out": -1
+    },
+    {
+      "s": "hello world",
+      "v": "zzz",
+      "from": -1,
+      "out": -1
+    },
+    {
+      "s": "hello world",
+      "v": "zzz",
+      "from": 0,
+      "out": -1
+    },
+    {
+      "s": "hello world",
+      "v": "zzz",
+      "from": 1,
+      "out": -1
+    },
+    {
+      "s": "hello world",
+      "v": "zzz",
+      "from": 3,
+      "out": -1
+    },
+    {
+      "s": "hello world",
+      "v": "zzz",
+      "from": 100,
+      "out": -1
+    },
+    {
+      "s": "a\nb\nc\n",
+      "v": "\n",
+      "from": -5,
+      "out": -1
+    },
+    {
+      "s": "a\nb\nc\n",
+      "v": "\n",
+      "from": -1,
+      "out": -1
+    },
+    {
+      "s": "a\nb\nc\n",
+      "v": "\n",
+      "from": 0,
+      "out": -1
+    },
+    {
+      "s": "a\nb\nc\n",
+      "v": "\n",
+      "from": 1,
+      "out": 1
+    },
+    {
+      "s": "a\nb\nc\n",
+      "v": "\n",
+      "from": 3,
+      "out": 3
+    },
+    {
+      "s": "a\nb\nc\n",
+      "v": "\n",
+      "from": 100,
+      "out": 5
+    },
+    {
+      "s": "abc",
+      "v": "",
+      "from": -5,
+      "out": 0
+    },
+    {
+      "s": "abc",
+      "v": "",
+      "from": -1,
+      "out": 0
+    },
+    {
+      "s": "abc",
+      "v": "",
+      "from": 0,
+      "out": 0
+    },
+    {
+      "s": "abc",
+      "v": "",
+      "from": 1,
+      "out": 1
+    },
+    {
+      "s": "abc",
+      "v": "",
+      "from": 3,
+      "out": 3
+    },
+    {
+      "s": "abc",
+      "v": "",
+      "from": 100,
+      "out": 3
+    },
+    {
+      "s": "",
+      "v": "x",
+      "from": -5,
+      "out": -1
+    },
+    {
+      "s": "",
+      "v": "x",
+      "from": -1,
+      "out": -1
+    },
+    {
+      "s": "",
+      "v": "x",
+      "from": 0,
+      "out": -1
+    },
+    {
+      "s": "",
+      "v": "x",
+      "from": 1,
+      "out": -1
+    },
+    {
+      "s": "",
+      "v": "x",
+      "from": 3,
+      "out": -1
+    },
+    {
+      "s": "",
+      "v": "x",
+      "from": 100,
+      "out": -1
+    },
+    {
+      "s": "",
+      "v": "",
+      "from": -5,
+      "out": 0
+    },
+    {
+      "s": "",
+      "v": "",
+      "from": -1,
+      "out": 0
+    },
+    {
+      "s": "",
+      "v": "",
+      "from": 0,
+      "out": 0
+    },
+    {
+      "s": "",
+      "v": "",
+      "from": 1,
+      "out": 0
+    },
+    {
+      "s": "",
+      "v": "",
+      "from": 3,
+      "out": 0
+    },
+    {
+      "s": "",
+      "v": "",
+      "from": 100,
+      "out": 0
+    }
+  ],
+  "substring": [
+    {
+      "s": "",
+      "start": 0,
+      "end": 0,
+      "out": ""
+    },
+    {
+      "s": "",
+      "start": 0,
+      "end": 3,
+      "out": ""
+    },
+    {
+      "s": "",
+      "start": 2,
+      "end": 4,
+      "out": ""
+    },
+    {
+      "s": "",
+      "start": 4,
+      "end": 2,
+      "out": ""
+    },
+    {
+      "s": "",
+      "start": -3,
+      "end": 2,
+      "out": ""
+    },
+    {
+      "s": "",
+      "start": 2,
+      "end": -3,
+      "out": ""
+    },
+    {
+      "s": "",
+      "start": 0,
+      "end": 100,
+      "out": ""
+    },
+    {
+      "s": "",
+      "start": 100,
+      "end": 0,
+      "out": ""
+    },
+    {
+      "s": "",
+      "start": 100,
+      "end": 200,
+      "out": ""
+    },
+    {
+      "s": "",
+      "start": -5,
+      "end": -1,
+      "out": ""
+    },
+    {
+      "s": "abcdef",
+      "start": 0,
+      "end": 0,
+      "out": ""
+    },
+    {
+      "s": "abcdef",
+      "start": 0,
+      "end": 3,
+      "out": "abc"
+    },
+    {
+      "s": "abcdef",
+      "start": 2,
+      "end": 4,
+      "out": "cd"
+    },
+    {
+      "s": "abcdef",
+      "start": 4,
+      "end": 2,
+      "out": "cd"
+    },
+    {
+      "s": "abcdef",
+      "start": -3,
+      "end": 2,
+      "out": "ab"
+    },
+    {
+      "s": "abcdef",
+      "start": 2,
+      "end": -3,
+      "out": "ab"
+    },
+    {
+      "s": "abcdef",
+      "start": 0,
+      "end": 100,
+      "out": "abcdef"
+    },
+    {
+      "s": "abcdef",
+      "start": 100,
+      "end": 0,
+      "out": "abcdef"
+    },
+    {
+      "s": "abcdef",
+      "start": 100,
+      "end": 200,
+      "out": ""
+    },
+    {
+      "s": "abcdef",
+      "start": -5,
+      "end": -1,
+      "out": ""
+    },
+    {
+      "s": "a\nb\nc",
+      "start": 0,
+      "end": 0,
+      "out": ""
+    },
+    {
+      "s": "a\nb\nc",
+      "start": 0,
+      "end": 3,
+      "out": "a\nb"
+    },
+    {
+      "s": "a\nb\nc",
+      "start": 2,
+      "end": 4,
+      "out": "b\n"
+    },
+    {
+      "s": "a\nb\nc",
+      "start": 4,
+      "end": 2,
+      "out": "b\n"
+    },
+    {
+      "s": "a\nb\nc",
+      "start": -3,
+      "end": 2,
+      "out": "a\n"
+    },
+    {
+      "s": "a\nb\nc",
+      "start": 2,
+      "end": -3,
+      "out": "a\n"
+    },
+    {
+      "s": "a\nb\nc",
+      "start": 0,
+      "end": 100,
+      "out": "a\nb\nc"
+    },
+    {
+      "s": "a\nb\nc",
+      "start": 100,
+      "end": 0,
+      "out": "a\nb\nc"
+    },
+    {
+      "s": "a\nb\nc",
+      "start": 100,
+      "end": 200,
+      "out": ""
+    },
+    {
+      "s": "a\nb\nc",
+      "start": -5,
+      "end": -1,
+      "out": ""
+    }
+  ],
+  "tokenizeLines": [
+    {
+      "in": "",
+      "out": []
+    },
+    {
+      "in": "a",
+      "out": [
+        "a"
+      ]
+    },
+    {
+      "in": "a\n",
+      "out": [
+        "a\n"
+      ]
+    },
+    {
+      "in": "a\nb\n",
+      "out": [
+        "a\n",
+        "b\n"
+      ]
+    },
+    {
+      "in": "a\nb",
+      "out": [
+        "a\n",
+        "b"
+      ]
+    },
+    {
+      "in": "\n",
+      "out": [
+        "\n"
+      ]
+    },
+    {
+      "in": "\n\n\n",
+      "out": [
+        "\n",
+        "\n",
+        "\n"
+      ]
+    },
+    {
+      "in": "a\r\nb\r\n",
+      "out": [
+        "a\r\n",
+        "b\r\n"
+      ]
+    },
+    {
+      "in": "a\n\nb\n",
+      "out": [
+        "a\n",
+        "\n",
+        "b\n"
+      ]
+    },
+    {
+      "in": "中文\n内容\n",
+      "out": [
+        "中文\n",
+        "内容\n"
+      ]
+    }
+  ]
+}

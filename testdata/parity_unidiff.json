@@ -1,0 +1,882 @@
+[
+  {
+    "name": "identical",
+    "a": [
+      "a\n",
+      "b\n"
+    ],
+    "b": [
+      "a\n",
+      "b\n"
+    ],
+    "context": 0,
+    "err": false,
+    "out": ""
+  },
+  {
+    "name": "identical",
+    "a": [
+      "a\n",
+      "b\n"
+    ],
+    "b": [
+      "a\n",
+      "b\n"
+    ],
+    "context": 1,
+    "err": false,
+    "out": ""
+  },
+  {
+    "name": "identical",
+    "a": [
+      "a\n",
+      "b\n"
+    ],
+    "b": [
+      "a\n",
+      "b\n"
+    ],
+    "context": 3,
+    "err": false,
+    "out": ""
+  },
+  {
+    "name": "identical",
+    "a": [
+      "a\n",
+      "b\n"
+    ],
+    "b": [
+      "a\n",
+      "b\n"
+    ],
+    "context": 8,
+    "err": false,
+    "out": ""
+  },
+  {
+    "name": "change-middle",
+    "a": [
+      "a\n",
+      "b\n",
+      "c\n"
+    ],
+    "b": [
+      "a\n",
+      "B\n",
+      "c\n"
+    ],
+    "context": 0,
+    "err": false,
+    "out": "--- a\n+++ b\n@@ -3 +3 @@\n-b\n+B"
+  },
+  {
+    "name": "change-middle",
+    "a": [
+      "a\n",
+      "b\n",
+      "c\n"
+    ],
+    "b": [
+      "a\n",
+      "B\n",
+      "c\n"
+    ],
+    "context": 1,
+    "err": false,
+    "out": "--- a\n+++ b\n@@ -2,3 +2,3 @@\n \n-b\n+B\n "
+  },
+  {
+    "name": "change-middle",
+    "a": [
+      "a\n",
+      "b\n",
+      "c\n"
+    ],
+    "b": [
+      "a\n",
+      "B\n",
+      "c\n"
+    ],
+    "context": 3,
+    "err": false,
+    "out": "--- a\n+++ b\n@@ -1,6 +1,6 @@\n a\n \n-b\n+B\n \n c\n "
+  },
+  {
+    "name": "change-middle",
+    "a": [
+      "a\n",
+      "b\n",
+      "c\n"
+    ],
+    "b": [
+      "a\n",
+      "B\n",
+      "c\n"
+    ],
+    "context": 8,
+    "err": false,
+    "out": "--- a\n+++ b\n@@ -1,6 +1,6 @@\n a\n \n-b\n+B\n \n c\n "
+  },
+  {
+    "name": "insert-head",
+    "a": [
+      "b\n",
+      "c\n"
+    ],
+    "b": [
+      "a\n",
+      "b\n",
+      "c\n"
+    ],
+    "context": 0,
+    "err": false,
+    "out": "--- a\n+++ b\n@@ -0,0 +1,2 @@\n+a\n+"
+  },
+  {
+    "name": "insert-head",
+    "a": [
+      "b\n",
+      "c\n"
+    ],
+    "b": [
+      "a\n",
+      "b\n",
+      "c\n"
+    ],
+    "context": 1,
+    "err": false,
+    "out": "--- a\n+++ b\n@@ -1 +1,3 @@\n+a\n+\n b"
+  },
+  {
+    "name": "insert-head",
+    "a": [
+      "b\n",
+      "c\n"
+    ],
+    "b": [
+      "a\n",
+      "b\n",
+      "c\n"
+    ],
+    "context": 3,
+    "err": false,
+    "out": "--- a\n+++ b\n@@ -1,3 +1,5 @@\n+a\n+\n b\n \n c"
+  },
+  {
+    "name": "insert-head",
+    "a": [
+      "b\n",
+      "c\n"
+    ],
+    "b": [
+      "a\n",
+      "b\n",
+      "c\n"
+    ],
+    "context": 8,
+    "err": false,
+    "out": "--- a\n+++ b\n@@ -1,4 +1,6 @@\n+a\n+\n b\n \n c\n "
+  },
+  {
+    "name": "insert-tail",
+    "a": [
+      "a\n",
+      "b\n"
+    ],
+    "b": [
+      "a\n",
+      "b\n",
+      "c\n"
+    ],
+    "context": 0,
+    "err": false,
+    "out": "--- a\n+++ b\n@@ -4,0 +5,2 @@\n+c\n+"
+  },
+  {
+    "name": "insert-tail",
+    "a": [
+      "a\n",
+      "b\n"
+    ],
+    "b": [
+      "a\n",
+      "b\n",
+      "c\n"
+    ],
+    "context": 1,
+    "err": false,
+    "out": "--- a\n+++ b\n@@ -4 +4,3 @@\n \n+c\n+"
+  },
+  {
+    "name": "insert-tail",
+    "a": [
+      "a\n",
+      "b\n"
+    ],
+    "b": [
+      "a\n",
+      "b\n",
+      "c\n"
+    ],
+    "context": 3,
+    "err": false,
+    "out": "--- a\n+++ b\n@@ -2,3 +2,5 @@\n \n b\n \n+c\n+"
+  },
+  {
+    "name": "insert-tail",
+    "a": [
+      "a\n",
+      "b\n"
+    ],
+    "b": [
+      "a\n",
+      "b\n",
+      "c\n"
+    ],
+    "context": 8,
+    "err": false,
+    "out": "--- a\n+++ b\n@@ -1,4 +1,6 @@\n a\n \n b\n \n+c\n+"
+  },
+  {
+    "name": "delete-middle",
+    "a": [
+      "a\n",
+      "b\n",
+      "c\n"
+    ],
+    "b": [
+      "a\n",
+      "c\n"
+    ],
+    "context": 0,
+    "err": false,
+    "out": "--- a\n+++ b\n@@ -3,2 +2,0 @@\n-b\n-"
+  },
+  {
+    "name": "delete-middle",
+    "a": [
+      "a\n",
+      "b\n",
+      "c\n"
+    ],
+    "b": [
+      "a\n",
+      "c\n"
+    ],
+    "context": 1,
+    "err": false,
+    "out": "--- a\n+++ b\n@@ -2,4 +2,2 @@\n \n-b\n-\n c"
+  },
+  {
+    "name": "delete-middle",
+    "a": [
+      "a\n",
+      "b\n",
+      "c\n"
+    ],
+    "b": [
+      "a\n",
+      "c\n"
+    ],
+    "context": 3,
+    "err": false,
+    "out": "--- a\n+++ b\n@@ -1,6 +1,4 @@\n a\n \n-b\n-\n c\n "
+  },
+  {
+    "name": "delete-middle",
+    "a": [
+      "a\n",
+      "b\n",
+      "c\n"
+    ],
+    "b": [
+      "a\n",
+      "c\n"
+    ],
+    "context": 8,
+    "err": false,
+    "out": "--- a\n+++ b\n@@ -1,6 +1,4 @@\n a\n \n-b\n-\n c\n "
+  },
+  {
+    "name": "replace-all",
+    "a": [
+      "a\n",
+      "b\n"
+    ],
+    "b": [
+      "x\n",
+      "y\n"
+    ],
+    "context": 0,
+    "err": false,
+    "out": "--- a\n+++ b\n@@ -1 +1 @@\n-a\n+x\n@@ -3 +3 @@\n-b\n+y"
+  },
+  {
+    "name": "replace-all",
+    "a": [
+      "a\n",
+      "b\n"
+    ],
+    "b": [
+      "x\n",
+      "y\n"
+    ],
+    "context": 1,
+    "err": false,
+    "out": "--- a\n+++ b\n@@ -1,4 +1,4 @@\n-a\n+x\n \n-b\n+y\n "
+  },
+  {
+    "name": "replace-all",
+    "a": [
+      "a\n",
+      "b\n"
+    ],
+    "b": [
+      "x\n",
+      "y\n"
+    ],
+    "context": 3,
+    "err": false,
+    "out": "--- a\n+++ b\n@@ -1,4 +1,4 @@\n-a\n+x\n \n-b\n+y\n "
+  },
+  {
+    "name": "replace-all",
+    "a": [
+      "a\n",
+      "b\n"
+    ],
+    "b": [
+      "x\n",
+      "y\n"
+    ],
+    "context": 8,
+    "err": false,
+    "out": "--- a\n+++ b\n@@ -1,4 +1,4 @@\n-a\n+x\n \n-b\n+y\n "
+  },
+  {
+    "name": "adjacent-del-add",
+    "a": [
+      "a\n",
+      "b\n",
+      "c\n"
+    ],
+    "b": [
+      "a\n",
+      "X\n",
+      "Y\n",
+      "c\n"
+    ],
+    "context": 0,
+    "err": false,
+    "out": "--- a\n+++ b\n@@ -3 +3 @@\n-b\n+X\n@@ -4,0 +5,2 @@\n+Y\n+"
+  },
+  {
+    "name": "adjacent-del-add",
+    "a": [
+      "a\n",
+      "b\n",
+      "c\n"
+    ],
+    "b": [
+      "a\n",
+      "X\n",
+      "Y\n",
+      "c\n"
+    ],
+    "context": 1,
+    "err": false,
+    "out": "--- a\n+++ b\n@@ -2,4 +2,6 @@\n \n-b\n+X\n \n+Y\n+\n c"
+  },
+  {
+    "name": "adjacent-del-add",
+    "a": [
+      "a\n",
+      "b\n",
+      "c\n"
+    ],
+    "b": [
+      "a\n",
+      "X\n",
+      "Y\n",
+      "c\n"
+    ],
+    "context": 3,
+    "err": false,
+    "out": "--- a\n+++ b\n@@ -1,6 +1,8 @@\n a\n \n-b\n+X\n \n+Y\n+\n c\n "
+  },
+  {
+    "name": "adjacent-del-add",
+    "a": [
+      "a\n",
+      "b\n",
+      "c\n"
+    ],
+    "b": [
+      "a\n",
+      "X\n",
+      "Y\n",
+      "c\n"
+    ],
+    "context": 8,
+    "err": false,
+    "out": "--- a\n+++ b\n@@ -1,6 +1,8 @@\n a\n \n-b\n+X\n \n+Y\n+\n c\n "
+  },
+  {
+    "name": "empty-a",
+    "a": [],
+    "b": [
+      "a\n",
+      "b\n"
+    ],
+    "context": 0,
+    "err": false,
+    "out": "--- a\n+++ b\n@@ -0,0 +1 @@\n+a\n@@ -1,0 +3,2 @@\n+b\n+"
+  },
+  {
+    "name": "empty-a",
+    "a": [],
+    "b": [
+      "a\n",
+      "b\n"
+    ],
+    "context": 1,
+    "err": false,
+    "out": "--- a\n+++ b\n@@ -1 +1,4 @@\n+a\n \n+b\n+"
+  },
+  {
+    "name": "empty-a",
+    "a": [],
+    "b": [
+      "a\n",
+      "b\n"
+    ],
+    "context": 3,
+    "err": false,
+    "out": "--- a\n+++ b\n@@ -1 +1,4 @@\n+a\n \n+b\n+"
+  },
+  {
+    "name": "empty-a",
+    "a": [],
+    "b": [
+      "a\n",
+      "b\n"
+    ],
+    "context": 8,
+    "err": false,
+    "out": "--- a\n+++ b\n@@ -1 +1,4 @@\n+a\n \n+b\n+"
+  },
+  {
+    "name": "empty-b",
+    "a": [
+      "a\n",
+      "b\n"
+    ],
+    "b": [],
+    "context": 0,
+    "err": false,
+    "out": "--- a\n+++ b\n@@ -1 +0,0 @@\n-a\n@@ -3,2 +1,0 @@\n-b\n-"
+  },
+  {
+    "name": "empty-b",
+    "a": [
+      "a\n",
+      "b\n"
+    ],
+    "b": [],
+    "context": 1,
+    "err": false,
+    "out": "--- a\n+++ b\n@@ -1,4 +1 @@\n-a\n \n-b\n-"
+  },
+  {
+    "name": "empty-b",
+    "a": [
+      "a\n",
+      "b\n"
+    ],
+    "b": [],
+    "context": 3,
+    "err": false,
+    "out": "--- a\n+++ b\n@@ -1,4 +1 @@\n-a\n \n-b\n-"
+  },
+  {
+    "name": "empty-b",
+    "a": [
+      "a\n",
+      "b\n"
+    ],
+    "b": [],
+    "context": 8,
+    "err": false,
+    "out": "--- a\n+++ b\n@@ -1,4 +1 @@\n-a\n \n-b\n-"
+  },
+  {
+    "name": "repeated-lines",
+    "a": [
+      "a\n",
+      "a\n",
+      "a\n"
+    ],
+    "b": [
+      "a\n",
+      "b\n",
+      "a\n"
+    ],
+    "context": 0,
+    "err": false,
+    "out": "--- a\n+++ b\n@@ -3 +3 @@\n-a\n+b"
+  },
+  {
+    "name": "repeated-lines",
+    "a": [
+      "a\n",
+      "a\n",
+      "a\n"
+    ],
+    "b": [
+      "a\n",
+      "b\n",
+      "a\n"
+    ],
+    "context": 1,
+    "err": false,
+    "out": "--- a\n+++ b\n@@ -2,3 +2,3 @@\n \n-a\n+b\n "
+  },
+  {
+    "name": "repeated-lines",
+    "a": [
+      "a\n",
+      "a\n",
+      "a\n"
+    ],
+    "b": [
+      "a\n",
+      "b\n",
+      "a\n"
+    ],
+    "context": 3,
+    "err": false,
+    "out": "--- a\n+++ b\n@@ -1,6 +1,6 @@\n a\n \n-a\n+b\n \n a\n "
+  },
+  {
+    "name": "repeated-lines",
+    "a": [
+      "a\n",
+      "a\n",
+      "a\n"
+    ],
+    "b": [
+      "a\n",
+      "b\n",
+      "a\n"
+    ],
+    "context": 8,
+    "err": false,
+    "out": "--- a\n+++ b\n@@ -1,6 +1,6 @@\n a\n \n-a\n+b\n \n a\n "
+  },
+  {
+    "name": "cjk",
+    "a": [
+      "中文\n",
+      "内容\n"
+    ],
+    "b": [
+      "中文\n",
+      "已改\n"
+    ],
+    "context": 0,
+    "err": false,
+    "out": "--- a\n+++ b\n@@ -3 +3 @@\n-内容\n+已改"
+  },
+  {
+    "name": "cjk",
+    "a": [
+      "中文\n",
+      "内容\n"
+    ],
+    "b": [
+      "中文\n",
+      "已改\n"
+    ],
+    "context": 1,
+    "err": false,
+    "out": "--- a\n+++ b\n@@ -2,3 +2,3 @@\n \n-内容\n+已改\n "
+  },
+  {
+    "name": "cjk",
+    "a": [
+      "中文\n",
+      "内容\n"
+    ],
+    "b": [
+      "中文\n",
+      "已改\n"
+    ],
+    "context": 3,
+    "err": false,
+    "out": "--- a\n+++ b\n@@ -1,4 +1,4 @@\n 中文\n \n-内容\n+已改\n "
+  },
+  {
+    "name": "cjk",
+    "a": [
+      "中文\n",
+      "内容\n"
+    ],
+    "b": [
+      "中文\n",
+      "已改\n"
+    ],
+    "context": 8,
+    "err": false,
+    "out": "--- a\n+++ b\n@@ -1,4 +1,4 @@\n 中文\n \n-内容\n+已改\n "
+  },
+  {
+    "name": "blank-lines",
+    "a": [
+      "a\n",
+      "\n",
+      "b\n"
+    ],
+    "b": [
+      "a\n",
+      "\n",
+      "B\n"
+    ],
+    "context": 0,
+    "err": false,
+    "out": "--- a\n+++ b\n@@ -5 +5 @@\n-b\n+B"
+  },
+  {
+    "name": "blank-lines",
+    "a": [
+      "a\n",
+      "\n",
+      "b\n"
+    ],
+    "b": [
+      "a\n",
+      "\n",
+      "B\n"
+    ],
+    "context": 1,
+    "err": false,
+    "out": "--- a\n+++ b\n@@ -4,3 +4,3 @@\n \n-b\n+B\n "
+  },
+  {
+    "name": "blank-lines",
+    "a": [
+      "a\n",
+      "\n",
+      "b\n"
+    ],
+    "b": [
+      "a\n",
+      "\n",
+      "B\n"
+    ],
+    "context": 3,
+    "err": false,
+    "out": "--- a\n+++ b\n@@ -2,5 +2,5 @@\n \n \n \n-b\n+B\n "
+  },
+  {
+    "name": "blank-lines",
+    "a": [
+      "a\n",
+      "\n",
+      "b\n"
+    ],
+    "b": [
+      "a\n",
+      "\n",
+      "B\n"
+    ],
+    "context": 8,
+    "err": false,
+    "out": "--- a\n+++ b\n@@ -1,6 +1,6 @@\n a\n \n \n \n-b\n+B\n "
+  },
+  {
+    "name": "multi-change",
+    "a": [
+      "a\n",
+      "b\n",
+      "c\n",
+      "d\n",
+      "e\n"
+    ],
+    "b": [
+      "A\n",
+      "b\n",
+      "C\n",
+      "d\n",
+      "E\n"
+    ],
+    "context": 0,
+    "err": false,
+    "out": "--- a\n+++ b\n@@ -1 +1 @@\n-a\n+A\n@@ -5 +5 @@\n-c\n+C\n@@ -9 +9 @@\n-e\n+E"
+  },
+  {
+    "name": "multi-change",
+    "a": [
+      "a\n",
+      "b\n",
+      "c\n",
+      "d\n",
+      "e\n"
+    ],
+    "b": [
+      "A\n",
+      "b\n",
+      "C\n",
+      "d\n",
+      "E\n"
+    ],
+    "context": 1,
+    "err": false,
+    "out": "--- a\n+++ b\n@@ -1,2 +1,2 @@\n-a\n+A\n \n@@ -4,3 +4,3 @@\n \n-c\n+C\n \n@@ -8,3 +8,3 @@\n \n-e\n+E\n "
+  },
+  {
+    "name": "multi-change",
+    "a": [
+      "a\n",
+      "b\n",
+      "c\n",
+      "d\n",
+      "e\n"
+    ],
+    "b": [
+      "A\n",
+      "b\n",
+      "C\n",
+      "d\n",
+      "E\n"
+    ],
+    "context": 3,
+    "err": false,
+    "out": "--- a\n+++ b\n@@ -1,10 +1,10 @@\n-a\n+A\n \n b\n \n-c\n+C\n \n d\n \n-e\n+E\n "
+  },
+  {
+    "name": "multi-change",
+    "a": [
+      "a\n",
+      "b\n",
+      "c\n",
+      "d\n",
+      "e\n"
+    ],
+    "b": [
+      "A\n",
+      "b\n",
+      "C\n",
+      "d\n",
+      "E\n"
+    ],
+    "context": 8,
+    "err": false,
+    "out": "--- a\n+++ b\n@@ -1,10 +1,10 @@\n-a\n+A\n \n b\n \n-c\n+C\n \n d\n \n-e\n+E\n "
+  },
+  {
+    "name": "long-sequence",
+    "a": [
+      "1\n",
+      "2\n",
+      "3\n",
+      "4\n",
+      "5\n",
+      "6\n",
+      "7\n",
+      "8\n"
+    ],
+    "b": [
+      "1\n",
+      "2\n",
+      "X\n",
+      "4\n",
+      "5\n",
+      "Y\n",
+      "7\n",
+      "8\n"
+    ],
+    "context": 0,
+    "err": false,
+    "out": "--- a\n+++ b\n@@ -5 +5 @@\n-3\n+X\n@@ -11 +11 @@\n-6\n+Y"
+  },
+  {
+    "name": "long-sequence",
+    "a": [
+      "1\n",
+      "2\n",
+      "3\n",
+      "4\n",
+      "5\n",
+      "6\n",
+      "7\n",
+      "8\n"
+    ],
+    "b": [
+      "1\n",
+      "2\n",
+      "X\n",
+      "4\n",
+      "5\n",
+      "Y\n",
+      "7\n",
+      "8\n"
+    ],
+    "context": 1,
+    "err": false,
+    "out": "--- a\n+++ b\n@@ -4,3 +4,3 @@\n \n-3\n+X\n \n@@ -10,3 +10,3 @@\n \n-6\n+Y\n "
+  },
+  {
+    "name": "long-sequence",
+    "a": [
+      "1\n",
+      "2\n",
+      "3\n",
+      "4\n",
+      "5\n",
+      "6\n",
+      "7\n",
+      "8\n"
+    ],
+    "b": [
+      "1\n",
+      "2\n",
+      "X\n",
+      "4\n",
+      "5\n",
+      "Y\n",
+      "7\n",
+      "8\n"
+    ],
+    "context": 3,
+    "err": false,
+    "out": "--- a\n+++ b\n@@ -2,13 +2,13 @@\n \n 2\n \n-3\n+X\n \n 4\n \n 5\n \n-6\n+Y\n \n 7\n "
+  },
+  {
+    "name": "long-sequence",
+    "a": [
+      "1\n",
+      "2\n",
+      "3\n",
+      "4\n",
+      "5\n",
+      "6\n",
+      "7\n",
+      "8\n"
+    ],
+    "b": [
+      "1\n",
+      "2\n",
+      "X\n",
+      "4\n",
+      "5\n",
+      "Y\n",
+      "7\n",
+      "8\n"
+    ],
+    "context": 8,
+    "err": false,
+    "out": "--- a\n+++ b\n@@ -1,16 +1,16 @@\n 1\n \n 2\n \n-3\n+X\n \n 4\n \n 5\n \n-6\n+Y\n \n 7\n \n 8\n "
+  }
+]

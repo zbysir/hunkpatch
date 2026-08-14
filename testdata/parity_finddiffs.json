@@ -1,0 +1,144 @@
+[
+  {
+    "name": "a-and-b-prefix",
+    "content": "```diff\n--- a/foo.tsx\n+++ b/foo.tsx\n@@ @@\n-x\n+X\n```",
+    "result": [
+      {
+        "old": "foo.tsx",
+        "new": "foo.tsx",
+        "hunks": [
+          [
+            "-x\n",
+            "+X\n"
+          ]
+        ]
+      }
+    ]
+  },
+  {
+    "name": "no-prefix",
+    "content": "```diff\n--- foo.tsx\n+++ foo.tsx\n@@ @@\n-x\n+X\n```",
+    "result": [
+      {
+        "old": "foo.tsx",
+        "new": "foo.tsx",
+        "hunks": [
+          [
+            "-x\n",
+            "+X\n"
+          ]
+        ]
+      }
+    ]
+  },
+  {
+    "name": "only-b-prefix",
+    "content": "```diff\n--- foo.tsx\n+++ b/foo.tsx\n@@ @@\n-x\n+X\n```",
+    "result": [
+      {
+        "old": "foo.tsx",
+        "new": "foo.tsx",
+        "hunks": [
+          [
+            "-x\n",
+            "+X\n"
+          ]
+        ]
+      }
+    ]
+  },
+  {
+    "name": "multi-file",
+    "content": "```diff\n--- a/one.tsx\n+++ b/one.tsx\n@@ @@\n-x\n+X\n--- a/two.tsx\n+++ b/two.tsx\n@@ @@\n-y\n+Y\n```",
+    "result": [
+      {
+        "old": "one.tsx",
+        "new": "one.tsx",
+        "hunks": [
+          [
+            "-x\n",
+            "+X\n"
+          ]
+        ]
+      },
+      {
+        "old": "two.tsx",
+        "new": "two.tsx",
+        "hunks": [
+          [
+            "-y\n",
+            "+Y\n"
+          ]
+        ]
+      }
+    ]
+  },
+  {
+    "name": "multi-hunk-same-file",
+    "content": "```diff\n--- a/f.tsx\n+++ b/f.tsx\n@@ @@\n-x\n+X\n@@ @@\n-y\n+Y\n```",
+    "result": [
+      {
+        "old": "f.tsx",
+        "new": "f.tsx",
+        "hunks": [
+          [
+            "-x\n",
+            "+X\n"
+          ],
+          [
+            "-y\n",
+            "+Y\n"
+          ]
+        ]
+      }
+    ]
+  },
+  {
+    "name": "no-file-header",
+    "content": "```diff\n@@ @@\n-x\n+X\n```",
+    "result": []
+  },
+  {
+    "name": "no-fence",
+    "content": "@@ @@\n-x\n+X\n",
+    "result": []
+  },
+  {
+    "name": "context-only",
+    "content": "```diff\n--- a/f.tsx\n+++ b/f.tsx\n@@ @@\n context only\n```",
+    "result": []
+  },
+  {
+    "name": "cjk-filename",
+    "content": "```diff\n--- a/页面.tsx\n+++ b/页面.tsx\n@@ @@\n-x\n+X\n```",
+    "result": [
+      {
+        "old": "页面.tsx",
+        "new": "页面.tsx",
+        "hunks": [
+          [
+            "-x\n",
+            "+X\n"
+          ]
+        ]
+      }
+    ]
+  },
+  {
+    "name": "unclosed-fence",
+    "content": "```diff\n--- a/f.tsx\n+++ b/f.tsx\n@@ @@\n-x\n+X\n",
+    "result": [
+      {
+        "old": "f.tsx",
+        "new": "f.tsx",
+        "hunks": [
+          [
+            "-x\n",
+            "+X\n",
+            "\n"
+          ]
+        ]
+      }
+    ]
+  }
+]

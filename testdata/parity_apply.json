@@ -1,0 +1,2865 @@
+[
+  {
+    "name": "shape/simple-replace",
+    "source": "import React from 'react'\nimport { Link, useTranslations } from 'demo'\n\nexport function generateMetadata({ locale }: { locale: string }) {\n  if (locale === \"zh\") {\n    return { title: \"关于我们\", description: \"了解我们\" }\n  }\n\n  return { title: \"About Us\", description: \"Learn about us\" }\n}\n\nconst FAQS_ZH = [\n  { q: \"问题一\", a: \"答案一\" },\n  { q: \"问题二\", a: \"答案二\" },\n]\n\nexport default function About() {\n  const t = useTranslations()\n  return (\n    \u003cdiv className=\"hero-art\" aria-label=\"关系地图\"\u003e\n      \u003csmall\u003e今日会员消费\u003c/small\u003e\n      \u003cstrong\u003e¥ 8,420\u003c/strong\u003e\n      \u003ca href=\"/news\"\u003e新闻\u003c/a\u003e\n    \u003c/div\u003e\n  )\n}\n",
+    "diff": "@@\n-  const t = useTranslations()\n+  const t = useTranslations('about')\n",
+    "ok": true,
+    "out": "import React from 'react'\nimport { Link, useTranslations } from 'demo'\n\nexport function generateMetadata({ locale }: { locale: string }) {\n  if (locale === \"zh\") {\n    return { title: \"关于我们\", description: \"了解我们\" }\n  }\n\n  return { title: \"About Us\", description: \"Learn about us\" }\n}\n\nconst FAQS_ZH = [\n  { q: \"问题一\", a: \"答案一\" },\n  { q: \"问题二\", a: \"答案二\" },\n]\n\nexport default function About() {\n  const t = useTranslations('about')\n  return (\n    \u003cdiv className=\"hero-art\" aria-label=\"关系地图\"\u003e\n      \u003csmall\u003e今日会员消费\u003c/small\u003e\n      \u003cstrong\u003e¥ 8,420\u003c/strong\u003e\n      \u003ca href=\"/news\"\u003e新闻\u003c/a\u003e\n    \u003c/div\u003e\n  )\n}\n"
+  },
+  {
+    "name": "shape/cjk-replace",
+    "source": "import React from 'react'\nimport { Link, useTranslations } from 'demo'\n\nexport function generateMetadata({ locale }: { locale: string }) {\n  if (locale === \"zh\") {\n    return { title: \"关于我们\", description: \"了解我们\" }\n  }\n\n  return { title: \"About Us\", description: \"Learn about us\" }\n}\n\nconst FAQS_ZH = [\n  { q: \"问题一\", a: \"答案一\" },\n  { q: \"问题二\", a: \"答案二\" },\n]\n\nexport default function About() {\n  const t = useTranslations()\n  return (\n    \u003cdiv className=\"hero-art\" aria-label=\"关系地图\"\u003e\n      \u003csmall\u003e今日会员消费\u003c/small\u003e\n      \u003cstrong\u003e¥ 8,420\u003c/strong\u003e\n      \u003ca href=\"/news\"\u003e新闻\u003c/a\u003e\n    \u003c/div\u003e\n  )\n}\n",
+    "diff": "@@\n-    return { title: \"关于我们\", description: \"了解我们\" }\n+    return { title: \"私たちについて\", description: \"私たちを知る\" }\n",
+    "ok": true,
+    "out": "import React from 'react'\nimport { Link, useTranslations } from 'demo'\n\nexport function generateMetadata({ locale }: { locale: string }) {\n  if (locale === \"zh\") {\n    return { title: \"私たちについて\", description: \"私たちを知る\" }\n  }\n\n  return { title: \"About Us\", description: \"Learn about us\" }\n}\n\nconst FAQS_ZH = [\n  { q: \"问题一\", a: \"答案一\" },\n  { q: \"问题二\", a: \"答案二\" },\n]\n\nexport default function About() {\n  const t = useTranslations()\n  return (\n    \u003cdiv className=\"hero-art\" aria-label=\"关系地图\"\u003e\n      \u003csmall\u003e今日会员消费\u003c/small\u003e\n      \u003cstrong\u003e¥ 8,420\u003c/strong\u003e\n      \u003ca href=\"/news\"\u003e新闻\u003c/a\u003e\n    \u003c/div\u003e\n  )\n}\n"
+  },
+  {
+    "name": "shape/insert-with-context",
+    "source": "import React from 'react'\nimport { Link, useTranslations } from 'demo'\n\nexport function generateMetadata({ locale }: { locale: string }) {\n  if (locale === \"zh\") {\n    return { title: \"关于我们\", description: \"了解我们\" }\n  }\n\n  return { title: \"About Us\", description: \"Learn about us\" }\n}\n\nconst FAQS_ZH = [\n  { q: \"问题一\", a: \"答案一\" },\n  { q: \"问题二\", a: \"答案二\" },\n]\n\nexport default function About() {\n  const t = useTranslations()\n  return (\n    \u003cdiv className=\"hero-art\" aria-label=\"关系地图\"\u003e\n      \u003csmall\u003e今日会员消费\u003c/small\u003e\n      \u003cstrong\u003e¥ 8,420\u003c/strong\u003e\n      \u003ca href=\"/news\"\u003e新闻\u003c/a\u003e\n    \u003c/div\u003e\n  )\n}\n",
+    "diff": "@@\n const FAQS_ZH = [\n   { q: \"问题一\", a: \"答案一\" },\n+  { q: \"问题三\", a: \"答案三\" },\n",
+    "ok": true,
+    "out": "import React from 'react'\nimport { Link, useTranslations } from 'demo'\n\nexport function generateMetadata({ locale }: { locale: string }) {\n  if (locale === \"zh\") {\n    return { title: \"关于我们\", description: \"了解我们\" }\n  }\n\n  return { title: \"About Us\", description: \"Learn about us\" }\n}\n\nconst FAQS_ZH = [\n  { q: \"问题一\", a: \"答案一\" },\n  { q: \"问题三\", a: \"答案三\" },\n  { q: \"问题二\", a: \"答案二\" },\n]\n\nexport default function About() {\n  const t = useTranslations()\n  return (\n    \u003cdiv className=\"hero-art\" aria-label=\"关系地图\"\u003e\n      \u003csmall\u003e今日会员消费\u003c/small\u003e\n      \u003cstrong\u003e¥ 8,420\u003c/strong\u003e\n      \u003ca href=\"/news\"\u003e新闻\u003c/a\u003e\n    \u003c/div\u003e\n  )\n}\n"
+  },
+  {
+    "name": "shape/anchor-only-hunk",
+    "source": "import React from 'react'\nimport { Link, useTranslations } from 'demo'\n\nexport function generateMetadata({ locale }: { locale: string }) {\n  if (locale === \"zh\") {\n    return { title: \"关于我们\", description: \"了解我们\" }\n  }\n\n  return { title: \"About Us\", description: \"Learn about us\" }\n}\n\nconst FAQS_ZH = [\n  { q: \"问题一\", a: \"答案一\" },\n  { q: \"问题二\", a: \"答案二\" },\n]\n\nexport default function About() {\n  const t = useTranslations()\n  return (\n    \u003cdiv className=\"hero-art\" aria-label=\"关系地图\"\u003e\n      \u003csmall\u003e今日会员消费\u003c/small\u003e\n      \u003cstrong\u003e¥ 8,420\u003c/strong\u003e\n      \u003ca href=\"/news\"\u003e新闻\u003c/a\u003e\n    \u003c/div\u003e\n  )\n}\n",
+    "diff": "@@\n const FAQS_ZH = [\n",
+    "ok": false,
+    "out": ""
+  },
+  {
+    "name": "shape/noop-same-minus-plus",
+    "source": "import React from 'react'\nimport { Link, useTranslations } from 'demo'\n\nexport function generateMetadata({ locale }: { locale: string }) {\n  if (locale === \"zh\") {\n    return { title: \"关于我们\", description: \"了解我们\" }\n  }\n\n  return { title: \"About Us\", description: \"Learn about us\" }\n}\n\nconst FAQS_ZH = [\n  { q: \"问题一\", a: \"答案一\" },\n  { q: \"问题二\", a: \"答案二\" },\n]\n\nexport default function About() {\n  const t = useTranslations()\n  return (\n    \u003cdiv className=\"hero-art\" aria-label=\"关系地图\"\u003e\n      \u003csmall\u003e今日会员消费\u003c/small\u003e\n      \u003cstrong\u003e¥ 8,420\u003c/strong\u003e\n      \u003ca href=\"/news\"\u003e新闻\u003c/a\u003e\n    \u003c/div\u003e\n  )\n}\n",
+    "diff": "@@\n-const FAQS_ZH = [\n+const FAQS_ZH = [\n",
+    "ok": true,
+    "out": "import React from 'react'\nimport { Link, useTranslations } from 'demo'\n\nexport function generateMetadata({ locale }: { locale: string }) {\n  if (locale === \"zh\") {\n    return { title: \"关于我们\", description: \"了解我们\" }\n  }\n\n  return { title: \"About Us\", description: \"Learn about us\" }\n}\n\nconst FAQS_ZH = [\n  { q: \"问题一\", a: \"答案一\" },\n  { q: \"问题二\", a: \"答案二\" },\n]\n\nexport default function About() {\n  const t = useTranslations()\n  return (\n    \u003cdiv className=\"hero-art\" aria-label=\"关系地图\"\u003e\n      \u003csmall\u003e今日会员消费\u003c/small\u003e\n      \u003cstrong\u003e¥ 8,420\u003c/strong\u003e\n      \u003ca href=\"/news\"\u003e新闻\u003c/a\u003e\n    \u003c/div\u003e\n  )\n}\n"
+  },
+  {
+    "name": "shape/wrong-indent",
+    "source": "import React from 'react'\nimport { Link, useTranslations } from 'demo'\n\nexport function generateMetadata({ locale }: { locale: string }) {\n  if (locale === \"zh\") {\n    return { title: \"关于我们\", description: \"了解我们\" }\n  }\n\n  return { title: \"About Us\", description: \"Learn about us\" }\n}\n\nconst FAQS_ZH = [\n  { q: \"问题一\", a: \"答案一\" },\n  { q: \"问题二\", a: \"答案二\" },\n]\n\nexport default function About() {\n  const t = useTranslations()\n  return (\n    \u003cdiv className=\"hero-art\" aria-label=\"关系地图\"\u003e\n      \u003csmall\u003e今日会员消费\u003c/small\u003e\n      \u003cstrong\u003e¥ 8,420\u003c/strong\u003e\n      \u003ca href=\"/news\"\u003e新闻\u003c/a\u003e\n    \u003c/div\u003e\n  )\n}\n",
+    "diff": "@@\n-  \u003csmall\u003e今日会员消费\u003c/small\u003e\n-  \u003cstrong\u003e¥ 8,420\u003c/strong\u003e\n+  \u003csmall\u003e本日の利用額\u003c/small\u003e\n+  \u003cstrong\u003e¥ 8,420\u003c/strong\u003e\n",
+    "ok": true,
+    "out": "import React from 'react'\nimport { Link, useTranslations } from 'demo'\n\nexport function generateMetadata({ locale }: { locale: string }) {\n  if (locale === \"zh\") {\n    return { title: \"关于我们\", description: \"了解我们\" }\n  }\n\n  return { title: \"About Us\", description: \"Learn about us\" }\n}\n\nconst FAQS_ZH = [\n  { q: \"问题一\", a: \"答案一\" },\n  { q: \"问题二\", a: \"答案二\" },\n]\n\nexport default function About() {\n  const t = useTranslations()\n  return (\n    \u003cdiv className=\"hero-art\" aria-label=\"关系地图\"\u003e\n      \u003csmall\u003e今日会员消费\u003c/small\u003e\n      \u003cstrong\u003e¥ 8,420\u003c/strong\u003e\n      \u003ca href=\"/news\"\u003e新闻\u003c/a\u003e\n    \u003c/div\u003e\n  )\n}\n"
+  },
+  {
+    "name": "shape/right-indent",
+    "source": "import React from 'react'\nimport { Link, useTranslations } from 'demo'\n\nexport function generateMetadata({ locale }: { locale: string }) {\n  if (locale === \"zh\") {\n    return { title: \"关于我们\", description: \"了解我们\" }\n  }\n\n  return { title: \"About Us\", description: \"Learn about us\" }\n}\n\nconst FAQS_ZH = [\n  { q: \"问题一\", a: \"答案一\" },\n  { q: \"问题二\", a: \"答案二\" },\n]\n\nexport default function About() {\n  const t = useTranslations()\n  return (\n    \u003cdiv className=\"hero-art\" aria-label=\"关系地图\"\u003e\n      \u003csmall\u003e今日会员消费\u003c/small\u003e\n      \u003cstrong\u003e¥ 8,420\u003c/strong\u003e\n      \u003ca href=\"/news\"\u003e新闻\u003c/a\u003e\n    \u003c/div\u003e\n  )\n}\n",
+    "diff": "@@\n-      \u003csmall\u003e今日会员消费\u003c/small\u003e\n-      \u003cstrong\u003e¥ 8,420\u003c/strong\u003e\n+      \u003csmall\u003e本日の利用額\u003c/small\u003e\n+      \u003cstrong\u003e¥ 8,420\u003c/strong\u003e\n",
+    "ok": true,
+    "out": "import React from 'react'\nimport { Link, useTranslations } from 'demo'\n\nexport function generateMetadata({ locale }: { locale: string }) {\n  if (locale === \"zh\") {\n    return { title: \"关于我们\", description: \"了解我们\" }\n  }\n\n  return { title: \"About Us\", description: \"Learn about us\" }\n}\n\nconst FAQS_ZH = [\n  { q: \"问题一\", a: \"答案一\" },\n  { q: \"问题二\", a: \"答案二\" },\n]\n\nexport default function About() {\n  const t = useTranslations()\n  return (\n    \u003cdiv className=\"hero-art\" aria-label=\"关系地图\"\u003e\n      \u003csmall\u003e本日の利用額\u003c/small\u003e\n      \u003cstrong\u003e¥ 8,420\u003c/strong\u003e\n      \u003ca href=\"/news\"\u003e新闻\u003c/a\u003e\n    \u003c/div\u003e\n  )\n}\n"
+  },
+  {
+    "name": "shape/lone-brace-context",
+    "source": "import React from 'react'\nimport { Link, useTranslations } from 'demo'\n\nexport function generateMetadata({ locale }: { locale: string }) {\n  if (locale === \"zh\") {\n    return { title: \"关于我们\", description: \"了解我们\" }\n  }\n\n  return { title: \"About Us\", description: \"Learn about us\" }\n}\n\nconst FAQS_ZH = [\n  { q: \"问题一\", a: \"答案一\" },\n  { q: \"问题二\", a: \"答案二\" },\n]\n\nexport default function About() {\n  const t = useTranslations()\n  return (\n    \u003cdiv className=\"hero-art\" aria-label=\"关系地图\"\u003e\n      \u003csmall\u003e今日会员消费\u003c/small\u003e\n      \u003cstrong\u003e¥ 8,420\u003c/strong\u003e\n      \u003ca href=\"/news\"\u003e新闻\u003c/a\u003e\n    \u003c/div\u003e\n  )\n}\n",
+    "diff": "@@\n   }\n+\n+  if (locale === \"ja\") {\n+    return { title: \"日本\" }\n+  }\n",
+    "ok": true,
+    "out": "import React from 'react'\nimport { Link, useTranslations } from 'demo'\n\nexport function generateMetadata({ locale }: { locale: string }) {\n  if (locale === \"zh\") {\n    return { title: \"关于我们\", description: \"了解我们\" }\n  }\n\n  if (locale === \"ja\") {\n    return { title: \"日本\" }\n  }\n\n  return { title: \"About Us\", description: \"Learn about us\" }\n}\n\nconst FAQS_ZH = [\n  { q: \"问题一\", a: \"答案一\" },\n  { q: \"问题二\", a: \"答案二\" },\n]\n\nexport default function About() {\n  const t = useTranslations()\n  return (\n    \u003cdiv className=\"hero-art\" aria-label=\"关系地图\"\u003e\n      \u003csmall\u003e今日会员消费\u003c/small\u003e\n      \u003cstrong\u003e¥ 8,420\u003c/strong\u003e\n      \u003ca href=\"/news\"\u003e新闻\u003c/a\u003e\n    \u003c/div\u003e\n  )\n}\n"
+  },
+  {
+    "name": "shape/fragment-as-line",
+    "source": "import React from 'react'\nimport { Link, useTranslations } from 'demo'\n\nexport function generateMetadata({ locale }: { locale: string }) {\n  if (locale === \"zh\") {\n    return { title: \"关于我们\", description: \"了解我们\" }\n  }\n\n  return { title: \"About Us\", description: \"Learn about us\" }\n}\n\nconst FAQS_ZH = [\n  { q: \"问题一\", a: \"答案一\" },\n  { q: \"问题二\", a: \"答案二\" },\n]\n\nexport default function About() {\n  const t = useTranslations()\n  return (\n    \u003cdiv className=\"hero-art\" aria-label=\"关系地图\"\u003e\n      \u003csmall\u003e今日会员消费\u003c/small\u003e\n      \u003cstrong\u003e¥ 8,420\u003c/strong\u003e\n      \u003ca href=\"/news\"\u003e新闻\u003c/a\u003e\n    \u003c/div\u003e\n  )\n}\n",
+    "diff": "@@\n-    aria-label=\"关系地图\"\n+    aria-label=\"リレーションマップ\"\n",
+    "ok": true,
+    "out": "import React from 'react'\nimport { Link, useTranslations } from 'demo'\n\nexport function generateMetadata({ locale }: { locale: string }) {\n  if (locale === \"zh\") {\n    return { title: \"关于我们\", description: \"了解我们\" }\n  }\n\n  return { title: \"About Us\", description: \"Learn about us\" }\n}\n\nconst FAQS_ZH = [\n  { q: \"问题一\", a: \"答案一\" },\n  { q: \"问题二\", a: \"答案二\" },\n]\n\nexport default function About() {\n  const t = useTranslations()\n  return (\n    \u003cdiv className=\"hero-art\" aria-label=\"关系地图\"\u003e\n      \u003csmall\u003e今日会员消费\u003c/small\u003e\n      \u003cstrong\u003e¥ 8,420\u003c/strong\u003e\n      \u003ca href=\"/news\"\u003e新闻\u003c/a\u003e\n    \u003c/div\u003e\n  )\n}\n"
+  },
+  {
+    "name": "shape/apply-patch-envelope",
+    "source": "import React from 'react'\nimport { Link, useTranslations } from 'demo'\n\nexport function generateMetadata({ locale }: { locale: string }) {\n  if (locale === \"zh\") {\n    return { title: \"关于我们\", description: \"了解我们\" }\n  }\n\n  return { title: \"About Us\", description: \"Learn about us\" }\n}\n\nconst FAQS_ZH = [\n  { q: \"问题一\", a: \"答案一\" },\n  { q: \"问题二\", a: \"答案二\" },\n]\n\nexport default function About() {\n  const t = useTranslations()\n  return (\n    \u003cdiv className=\"hero-art\" aria-label=\"关系地图\"\u003e\n      \u003csmall\u003e今日会员消费\u003c/small\u003e\n      \u003cstrong\u003e¥ 8,420\u003c/strong\u003e\n      \u003ca href=\"/news\"\u003e新闻\u003c/a\u003e\n    \u003c/div\u003e\n  )\n}\n",
+    "diff": "*** Begin Patch\n*** Update File: /a.tsx\n@@\n-      \u003ca href=\"/news\"\u003e新闻\u003c/a\u003e\n+      \u003cLink href=\"/news\"\u003eニュース\u003c/Link\u003e\n*** End Patch",
+    "ok": true,
+    "out": "import React from 'react'\nimport { Link, useTranslations } from 'demo'\n\nexport function generateMetadata({ locale }: { locale: string }) {\n  if (locale === \"zh\") {\n    return { title: \"关于我们\", description: \"了解我们\" }\n  }\n\n  return { title: \"About Us\", description: \"Learn about us\" }\n}\n\nconst FAQS_ZH = [\n  { q: \"问题一\", a: \"答案一\" },\n  { q: \"问题二\", a: \"答案二\" },\n]\n\nexport default function About() {\n  const t = useTranslations()\n  return (\n    \u003cdiv className=\"hero-art\" aria-label=\"关系地图\"\u003e\n      \u003csmall\u003e今日会员消费\u003c/small\u003e\n      \u003cstrong\u003e¥ 8,420\u003c/strong\u003e\n      \u003cLink href=\"/news\"\u003eニュース\u003c/Link\u003e\n    \u003c/div\u003e\n  )\n}\n"
+  },
+  {
+    "name": "shape/multi-hunk",
+    "source": "import React from 'react'\nimport { Link, useTranslations } from 'demo'\n\nexport function generateMetadata({ locale }: { locale: string }) {\n  if (locale === \"zh\") {\n    return { title: \"关于我们\", description: \"了解我们\" }\n  }\n\n  return { title: \"About Us\", description: \"Learn about us\" }\n}\n\nconst FAQS_ZH = [\n  { q: \"问题一\", a: \"答案一\" },\n  { q: \"问题二\", a: \"答案二\" },\n]\n\nexport default function About() {\n  const t = useTranslations()\n  return (\n    \u003cdiv className=\"hero-art\" aria-label=\"关系地图\"\u003e\n      \u003csmall\u003e今日会员消费\u003c/small\u003e\n      \u003cstrong\u003e¥ 8,420\u003c/strong\u003e\n      \u003ca href=\"/news\"\u003e新闻\u003c/a\u003e\n    \u003c/div\u003e\n  )\n}\n",
+    "diff": "@@\n-import React from 'react'\n+import * as React from 'react'\n@@\n-      \u003ca href=\"/news\"\u003e新闻\u003c/a\u003e\n+      \u003cLink href=\"/news\"\u003eニュース\u003c/Link\u003e\n",
+    "ok": true,
+    "out": "import * as React from 'react'\nimport { Link, useTranslations } from 'demo'\n\nexport function generateMetadata({ locale }: { locale: string }) {\n  if (locale === \"zh\") {\n    return { title: \"关于我们\", description: \"了解我们\" }\n  }\n\n  return { title: \"About Us\", description: \"Learn about us\" }\n}\n\nconst FAQS_ZH = [\n  { q: \"问题一\", a: \"答案一\" },\n  { q: \"问题二\", a: \"答案二\" },\n]\n\nexport default function About() {\n  const t = useTranslations()\n  return (\n    \u003cdiv className=\"hero-art\" aria-label=\"关系地图\"\u003e\n      \u003csmall\u003e今日会员消费\u003c/small\u003e\n      \u003cstrong\u003e¥ 8,420\u003c/strong\u003e\n      \u003cLink href=\"/news\"\u003eニュース\u003c/Link\u003e\n    \u003c/div\u003e\n  )\n}\n"
+  },
+  {
+    "name": "shape/incomplete-context",
+    "source": "import React from 'react'\nimport { Link, useTranslations } from 'demo'\n\nexport function generateMetadata({ locale }: { locale: string }) {\n  if (locale === \"zh\") {\n    return { title: \"关于我们\", description: \"了解我们\" }\n  }\n\n  return { title: \"About Us\", description: \"Learn about us\" }\n}\n\nconst FAQS_ZH = [\n  { q: \"问题一\", a: \"答案一\" },\n  { q: \"问题二\", a: \"答案二\" },\n]\n\nexport default function About() {\n  const t = useTranslations()\n  return (\n    \u003cdiv className=\"hero-art\" aria-label=\"关系地图\"\u003e\n      \u003csmall\u003e今日会员消费\u003c/small\u003e\n      \u003cstrong\u003e¥ 8,420\u003c/strong\u003e\n      \u003ca href=\"/news\"\u003e新闻\u003c/a\u003e\n    \u003c/div\u003e\n  )\n}\n",
+    "diff": "@@\n export default function About() {\n   return (\n-    \u003cdiv className=\"hero-art\" aria-label=\"关系地图\"\u003e\n+    \u003cdiv className=\"hero-art\" aria-label=\"map\"\u003e\n",
+    "ok": true,
+    "out": "import React from 'react'\nimport { Link, useTranslations } from 'demo'\n\nexport function generateMetadata({ locale }: { locale: string }) {\n  if (locale === \"zh\") {\n    return { title: \"关于我们\", description: \"了解我们\" }\n  }\n\n  return { title: \"About Us\", description: \"Learn about us\" }\n}\n\nconst FAQS_ZH = [\n  { q: \"问题一\", a: \"答案一\" },\n  { q: \"问题二\", a: \"答案二\" },\n]\n\nexport default function About() {\n  const t = useTranslations()\n  return (\n    \u003cdiv className=\"hero-art\" aria-label=\"map\"\u003e\n      \u003csmall\u003e今日会员消费\u003c/small\u003e\n      \u003cstrong\u003e¥ 8,420\u003c/strong\u003e\n      \u003ca href=\"/news\"\u003e新闻\u003c/a\u003e\n    \u003c/div\u003e\n  )\n}\n"
+  },
+  {
+    "name": "shape/line-not-in-file",
+    "source": "import React from 'react'\nimport { Link, useTranslations } from 'demo'\n\nexport function generateMetadata({ locale }: { locale: string }) {\n  if (locale === \"zh\") {\n    return { title: \"关于我们\", description: \"了解我们\" }\n  }\n\n  return { title: \"About Us\", description: \"Learn about us\" }\n}\n\nconst FAQS_ZH = [\n  { q: \"问题一\", a: \"答案一\" },\n  { q: \"问题二\", a: \"答案二\" },\n]\n\nexport default function About() {\n  const t = useTranslations()\n  return (\n    \u003cdiv className=\"hero-art\" aria-label=\"关系地图\"\u003e\n      \u003csmall\u003e今日会员消费\u003c/small\u003e\n      \u003cstrong\u003e¥ 8,420\u003c/strong\u003e\n      \u003ca href=\"/news\"\u003e新闻\u003c/a\u003e\n    \u003c/div\u003e\n  )\n}\n",
+    "diff": "@@\n-这一行根本不存在\n+替换\n",
+    "ok": true,
+    "out": "import React from 'react'\nimport { Link, useTranslations } from 'demo'\n\nexport function generateMetadata({ locale }: { locale: string }) {\n  if (locale === \"zh\") {\n    return { title: \"关于我们\", description: \"了解我们\" }\n  }\n\n  return { title: \"About Us\", description: \"Learn about us\" }\n}\n\nconst FAQS_ZH = [\n  { q: \"问题一\", a: \"答案一\" },\n  { q: \"问题二\", a: \"答案二\" },\n]\n\nexport default function About() {\n  const t = useTranslations()\n  return (\n    \u003cdiv className=\"hero-art\" aria-label=\"关系地图\"\u003e\n      \u003csmall\u003e今日会员消费\u003c/small\u003e\n      \u003cstrong\u003e¥ 8,420\u003c/strong\u003e\n      \u003ca href=\"/news\"\u003e新闻\u003c/a\u003e\n    \u003c/div\u003e\n  )\n}\n"
+  },
+  {
+    "name": "shape/delete-one-line",
+    "source": "import React from 'react'\nimport { Link, useTranslations } from 'demo'\n\nexport function generateMetadata({ locale }: { locale: string }) {\n  if (locale === \"zh\") {\n    return { title: \"关于我们\", description: \"了解我们\" }\n  }\n\n  return { title: \"About Us\", description: \"Learn about us\" }\n}\n\nconst FAQS_ZH = [\n  { q: \"问题一\", a: \"答案一\" },\n  { q: \"问题二\", a: \"答案二\" },\n]\n\nexport default function About() {\n  const t = useTranslations()\n  return (\n    \u003cdiv className=\"hero-art\" aria-label=\"关系地图\"\u003e\n      \u003csmall\u003e今日会员消费\u003c/small\u003e\n      \u003cstrong\u003e¥ 8,420\u003c/strong\u003e\n      \u003ca href=\"/news\"\u003e新闻\u003c/a\u003e\n    \u003c/div\u003e\n  )\n}\n",
+    "diff": "@@\n-  { q: \"问题二\", a: \"答案二\" },\n",
+    "ok": true,
+    "out": "import React from 'react'\nimport { Link, useTranslations } from 'demo'\n\nexport function generateMetadata({ locale }: { locale: string }) {\n  if (locale === \"zh\") {\n    return { title: \"关于我们\", description: \"了解我们\" }\n  }\n\n  return { title: \"About Us\", description: \"Learn about us\" }\n}\n\nconst FAQS_ZH = [\n  { q: \"问题一\", a: \"答案一\" },\n  \n]\n\nexport default function About() {\n  const t = useTranslations()\n  return (\n    \u003cdiv className=\"hero-art\" aria-label=\"关系地图\"\u003e\n      \u003csmall\u003e今日会员消费\u003c/small\u003e\n      \u003cstrong\u003e¥ 8,420\u003c/strong\u003e\n      \u003ca href=\"/news\"\u003e新闻\u003c/a\u003e\n    \u003c/div\u003e\n  )\n}\n"
+  },
+  {
+    "name": "shape/empty-diff",
+    "source": "import React from 'react'\nimport { Link, useTranslations } from 'demo'\n\nexport function generateMetadata({ locale }: { locale: string }) {\n  if (locale === \"zh\") {\n    return { title: \"关于我们\", description: \"了解我们\" }\n  }\n\n  return { title: \"About Us\", description: \"Learn about us\" }\n}\n\nconst FAQS_ZH = [\n  { q: \"问题一\", a: \"答案一\" },\n  { q: \"问题二\", a: \"答案二\" },\n]\n\nexport default function About() {\n  const t = useTranslations()\n  return (\n    \u003cdiv className=\"hero-art\" aria-label=\"关系地图\"\u003e\n      \u003csmall\u003e今日会员消费\u003c/small\u003e\n      \u003cstrong\u003e¥ 8,420\u003c/strong\u003e\n      \u003ca href=\"/news\"\u003e新闻\u003c/a\u003e\n    \u003c/div\u003e\n  )\n}\n",
+    "diff": "@@\n",
+    "ok": false,
+    "out": ""
+  },
+  {
+    "name": "shape/tail-change",
+    "source": "import React from 'react'\nimport { Link, useTranslations } from 'demo'\n\nexport function generateMetadata({ locale }: { locale: string }) {\n  if (locale === \"zh\") {\n    return { title: \"关于我们\", description: \"了解我们\" }\n  }\n\n  return { title: \"About Us\", description: \"Learn about us\" }\n}\n\nconst FAQS_ZH = [\n  { q: \"问题一\", a: \"答案一\" },\n  { q: \"问题二\", a: \"答案二\" },\n]\n\nexport default function About() {\n  const t = useTranslations()\n  return (\n    \u003cdiv className=\"hero-art\" aria-label=\"关系地图\"\u003e\n      \u003csmall\u003e今日会员消费\u003c/small\u003e\n      \u003cstrong\u003e¥ 8,420\u003c/strong\u003e\n      \u003ca href=\"/news\"\u003e新闻\u003c/a\u003e\n    \u003c/div\u003e\n  )\n}\n",
+    "diff": "@@\n-  )\n-}\n+  )\n+}\n+// trailing\n",
+    "ok": true,
+    "out": "import React from 'react'\nimport { Link, useTranslations } from 'demo'\n\nexport function generateMetadata({ locale }: { locale: string }) {\n  if (locale === \"zh\") {\n    return { title: \"关于我们\", description: \"了解我们\" }\n  }\n\n  return { title: \"About Us\", description: \"Learn about us\" }\n}\n\nconst FAQS_ZH = [\n  { q: \"问题一\", a: \"答案一\" },\n  { q: \"问题二\", a: \"答案二\" },\n]\n\nexport default function About() {\n  const t = useTranslations()\n  return (\n    \u003cdiv className=\"hero-art\" aria-label=\"关系地图\"\u003e\n      \u003csmall\u003e今日会员消费\u003c/small\u003e\n      \u003cstrong\u003e¥ 8,420\u003c/strong\u003e\n      \u003ca href=\"/news\"\u003e新闻\u003c/a\u003e\n    \u003c/div\u003e\n  )\n}\n// trailing\n"
+  },
+  {
+    "name": "shape/with-file-headers",
+    "source": "import React from 'react'\nimport { Link, useTranslations } from 'demo'\n\nexport function generateMetadata({ locale }: { locale: string }) {\n  if (locale === \"zh\") {\n    return { title: \"关于我们\", description: \"了解我们\" }\n  }\n\n  return { title: \"About Us\", description: \"Learn about us\" }\n}\n\nconst FAQS_ZH = [\n  { q: \"问题一\", a: \"答案一\" },\n  { q: \"问题二\", a: \"答案二\" },\n]\n\nexport default function About() {\n  const t = useTranslations()\n  return (\n    \u003cdiv className=\"hero-art\" aria-label=\"关系地图\"\u003e\n      \u003csmall\u003e今日会员消费\u003c/small\u003e\n      \u003cstrong\u003e¥ 8,420\u003c/strong\u003e\n      \u003ca href=\"/news\"\u003e新闻\u003c/a\u003e\n    \u003c/div\u003e\n  )\n}\n",
+    "diff": "--- a/about.tsx\n+++ b/about.tsx\n@@ -1,3 +1,3 @@\n-import React from 'react'\n+import * as React from 'react'\n",
+    "ok": true,
+    "out": "import * as React from 'react'\nimport { Link, useTranslations } from 'demo'\n\nexport function generateMetadata({ locale }: { locale: string }) {\n  if (locale === \"zh\") {\n    return { title: \"关于我们\", description: \"了解我们\" }\n  }\n\n  return { title: \"About Us\", description: \"Learn about us\" }\n}\n\nconst FAQS_ZH = [\n  { q: \"问题一\", a: \"答案一\" },\n  { q: \"问题二\", a: \"答案二\" },\n]\n\nexport default function About() {\n  const t = useTranslations()\n  return (\n    \u003cdiv className=\"hero-art\" aria-label=\"关系地图\"\u003e\n      \u003csmall\u003e今日会员消费\u003c/small\u003e\n      \u003cstrong\u003e¥ 8,420\u003c/strong\u003e\n      \u003ca href=\"/news\"\u003e新闻\u003c/a\u003e\n    \u003c/div\u003e\n  )\n}\n"
+  },
+  {
+    "name": "shape/empty-source",
+    "source": "",
+    "diff": "@@\n-anything\n+else\n",
+    "ok": true,
+    "out": ""
+  },
+  {
+    "name": "shape/single-line-source",
+    "source": "hello\n",
+    "diff": "@@\n-hello\n+world\n",
+    "ok": true,
+    "out": "world\n"
+  },
+  {
+    "name": "shape/no-trailing-newline",
+    "source": "alpha\nbravo",
+    "diff": "@@\n-bravo\n+BRAVO\n",
+    "ok": true,
+    "out": "alpha\nBRAVO\n"
+  },
+  {
+    "name": "shape/crlf-source",
+    "source": "alpha\r\nbravo\r\ncharlie\r\n",
+    "diff": "@@\n-bravo\n+BRAVO\n",
+    "ok": true,
+    "out": "alpha\nBRAVO\ncharlie\n"
+  },
+  {
+    "name": "shape/emoji",
+    "source": "const a = '🎉 party'\nconst b = 2\n",
+    "diff": "@@\n-const a = '🎉 party'\n+const a = '🎊 fiesta'\n",
+    "ok": true,
+    "out": "const a = '🎊 fiesta'\nconst b = 2\n"
+  },
+  {
+    "name": "shape/ambiguous-context",
+    "source": "x\n}\ny\n}\nz\n",
+    "diff": "@@\n }\n+INSERTED\n",
+    "ok": true,
+    "out": "x\n}\nINSERTED\ny\n}\nz\n"
+  },
+  {
+    "name": "shape/tab-indent",
+    "source": "func x() {\n\treturn 1\n}\n",
+    "diff": "@@\n-\treturn 1\n+\treturn 2\n",
+    "ok": true,
+    "out": "func x() {\n\treturn 2\n}\n"
+  },
+  {
+    "name": "generated/s0-b0-@@",
+    "source": "a\nb\nc\nd\ne\n",
+    "diff": "@@\n-a\n+A\n",
+    "ok": true,
+    "out": "A\nb\nc\nd\ne\n"
+  },
+  {
+    "name": "generated/s0-b0-@@ ... @@",
+    "source": "a\nb\nc\nd\ne\n",
+    "diff": "@@ ... @@\n-a\n+A\n",
+    "ok": true,
+    "out": "A\nb\nc\nd\ne\n"
+  },
+  {
+    "name": "generated/s0-b0-@@ -1,2 +1,2 @@",
+    "source": "a\nb\nc\nd\ne\n",
+    "diff": "@@ -1,2 +1,2 @@\n-a\n+A\n",
+    "ok": true,
+    "out": "A\nb\nc\nd\ne\n"
+  },
+  {
+    "name": "generated/s0-b1-@@",
+    "source": "a\nb\nc\nd\ne\n",
+    "diff": "@@\n a\n+INS\n",
+    "ok": true,
+    "out": "a\nINS\nb\nc\nd\ne\n"
+  },
+  {
+    "name": "generated/s0-b1-@@ ... @@",
+    "source": "a\nb\nc\nd\ne\n",
+    "diff": "@@ ... @@\n a\n+INS\n",
+    "ok": true,
+    "out": "a\nINS\nb\nc\nd\ne\n"
+  },
+  {
+    "name": "generated/s0-b1-@@ -1,2 +1,2 @@",
+    "source": "a\nb\nc\nd\ne\n",
+    "diff": "@@ -1,2 +1,2 @@\n a\n+INS\n",
+    "ok": true,
+    "out": "a\nINS\nb\nc\nd\ne\n"
+  },
+  {
+    "name": "generated/s0-b2-@@",
+    "source": "a\nb\nc\nd\ne\n",
+    "diff": "@@\n-a\n",
+    "ok": true,
+    "out": "\nb\nc\nd\ne\n"
+  },
+  {
+    "name": "generated/s0-b2-@@ ... @@",
+    "source": "a\nb\nc\nd\ne\n",
+    "diff": "@@ ... @@\n-a\n",
+    "ok": true,
+    "out": "\nb\nc\nd\ne\n"
+  },
+  {
+    "name": "generated/s0-b2-@@ -1,2 +1,2 @@",
+    "source": "a\nb\nc\nd\ne\n",
+    "diff": "@@ -1,2 +1,2 @@\n-a\n",
+    "ok": true,
+    "out": "\nb\nc\nd\ne\n"
+  },
+  {
+    "name": "generated/s0-b3-@@",
+    "source": "a\nb\nc\nd\ne\n",
+    "diff": "@@\n+ONLY\n",
+    "ok": true,
+    "out": "a\nb\nc\nd\ne\n"
+  },
+  {
+    "name": "generated/s0-b3-@@ ... @@",
+    "source": "a\nb\nc\nd\ne\n",
+    "diff": "@@ ... @@\n+ONLY\n",
+    "ok": true,
+    "out": "a\nb\nc\nd\ne\n"
+  },
+  {
+    "name": "generated/s0-b3-@@ -1,2 +1,2 @@",
+    "source": "a\nb\nc\nd\ne\n",
+    "diff": "@@ -1,2 +1,2 @@\n+ONLY\n",
+    "ok": true,
+    "out": "a\nb\nc\nd\ne\n"
+  },
+  {
+    "name": "generated/s0-b4-@@",
+    "source": "a\nb\nc\nd\ne\n",
+    "diff": "@@\n a\n b\n",
+    "ok": false,
+    "out": ""
+  },
+  {
+    "name": "generated/s0-b4-@@ ... @@",
+    "source": "a\nb\nc\nd\ne\n",
+    "diff": "@@ ... @@\n a\n b\n",
+    "ok": false,
+    "out": ""
+  },
+  {
+    "name": "generated/s0-b4-@@ -1,2 +1,2 @@",
+    "source": "a\nb\nc\nd\ne\n",
+    "diff": "@@ -1,2 +1,2 @@\n a\n b\n",
+    "ok": false,
+    "out": ""
+  },
+  {
+    "name": "generated/s0-b5-@@",
+    "source": "a\nb\nc\nd\ne\n",
+    "diff": "@@\n-a\n+A\n-b\n+B\n",
+    "ok": true,
+    "out": "A\nB\nc\nd\ne\n"
+  },
+  {
+    "name": "generated/s0-b5-@@ ... @@",
+    "source": "a\nb\nc\nd\ne\n",
+    "diff": "@@ ... @@\n-a\n+A\n-b\n+B\n",
+    "ok": true,
+    "out": "A\nB\nc\nd\ne\n"
+  },
+  {
+    "name": "generated/s0-b5-@@ -1,2 +1,2 @@",
+    "source": "a\nb\nc\nd\ne\n",
+    "diff": "@@ -1,2 +1,2 @@\n-a\n+A\n-b\n+B\n",
+    "ok": true,
+    "out": "A\nB\nc\nd\ne\n"
+  },
+  {
+    "name": "generated/s0-b6-@@",
+    "source": "a\nb\nc\nd\ne\n",
+    "diff": "@@\na\n+INS\n",
+    "ok": true,
+    "out": "a\nb\nc\nd\ne\n"
+  },
+  {
+    "name": "generated/s0-b6-@@ ... @@",
+    "source": "a\nb\nc\nd\ne\n",
+    "diff": "@@ ... @@\na\n+INS\n",
+    "ok": true,
+    "out": "a\nb\nc\nd\ne\n"
+  },
+  {
+    "name": "generated/s0-b6-@@ -1,2 +1,2 @@",
+    "source": "a\nb\nc\nd\ne\n",
+    "diff": "@@ -1,2 +1,2 @@\na\n+INS\n",
+    "ok": true,
+    "out": "a\nb\nc\nd\ne\n"
+  },
+  {
+    "name": "generated/s0-b7-@@",
+    "source": "a\nb\nc\nd\ne\n",
+    "diff": "@@\n中\n+INS\n",
+    "ok": true,
+    "out": "a\nb\nc\nd\ne\n"
+  },
+  {
+    "name": "generated/s0-b7-@@ ... @@",
+    "source": "a\nb\nc\nd\ne\n",
+    "diff": "@@ ... @@\n中\n+INS\n",
+    "ok": true,
+    "out": "a\nb\nc\nd\ne\n"
+  },
+  {
+    "name": "generated/s0-b7-@@ -1,2 +1,2 @@",
+    "source": "a\nb\nc\nd\ne\n",
+    "diff": "@@ -1,2 +1,2 @@\n中\n+INS\n",
+    "ok": true,
+    "out": "a\nb\nc\nd\ne\n"
+  },
+  {
+    "name": "generated/s0-b8-@@",
+    "source": "a\nb\nc\nd\ne\n",
+    "diff": "@@\n-\n+X\n",
+    "ok": true,
+    "out": "aX\nb\nc\nd\ne\n"
+  },
+  {
+    "name": "generated/s0-b8-@@ ... @@",
+    "source": "a\nb\nc\nd\ne\n",
+    "diff": "@@ ... @@\n-\n+X\n",
+    "ok": true,
+    "out": "aX\nb\nc\nd\ne\n"
+  },
+  {
+    "name": "generated/s0-b8-@@ -1,2 +1,2 @@",
+    "source": "a\nb\nc\nd\ne\n",
+    "diff": "@@ -1,2 +1,2 @@\n-\n+X\n",
+    "ok": true,
+    "out": "aX\nb\nc\nd\ne\n"
+  },
+  {
+    "name": "generated/s0-b9-@@",
+    "source": "a\nb\nc\nd\ne\n",
+    "diff": "@@\n \n+X\n",
+    "ok": true,
+    "out": "aX\nb\nc\nd\ne\n"
+  },
+  {
+    "name": "generated/s0-b9-@@ ... @@",
+    "source": "a\nb\nc\nd\ne\n",
+    "diff": "@@ ... @@\n \n+X\n",
+    "ok": true,
+    "out": "aX\nb\nc\nd\ne\n"
+  },
+  {
+    "name": "generated/s0-b9-@@ -1,2 +1,2 @@",
+    "source": "a\nb\nc\nd\ne\n",
+    "diff": "@@ -1,2 +1,2 @@\n \n+X\n",
+    "ok": true,
+    "out": "aX\nb\nc\nd\ne\n"
+  },
+  {
+    "name": "generated/s0-b10-@@",
+    "source": "a\nb\nc\nd\ne\n",
+    "diff": "@@\n-中文一\n+中文三\n",
+    "ok": true,
+    "out": "a\nb\nc\nd\ne\n"
+  },
+  {
+    "name": "generated/s0-b10-@@ ... @@",
+    "source": "a\nb\nc\nd\ne\n",
+    "diff": "@@ ... @@\n-中文一\n+中文三\n",
+    "ok": true,
+    "out": "a\nb\nc\nd\ne\n"
+  },
+  {
+    "name": "generated/s0-b10-@@ -1,2 +1,2 @@",
+    "source": "a\nb\nc\nd\ne\n",
+    "diff": "@@ -1,2 +1,2 @@\n-中文一\n+中文三\n",
+    "ok": true,
+    "out": "a\nb\nc\nd\ne\n"
+  },
+  {
+    "name": "generated/s0-b11-@@",
+    "source": "a\nb\nc\nd\ne\n",
+    "diff": "@@\n-  indented\n+  INDENTED\n",
+    "ok": true,
+    "out": "a\nb\nc\nd\ne\n"
+  },
+  {
+    "name": "generated/s0-b11-@@ ... @@",
+    "source": "a\nb\nc\nd\ne\n",
+    "diff": "@@ ... @@\n-  indented\n+  INDENTED\n",
+    "ok": true,
+    "out": "a\nb\nc\nd\ne\n"
+  },
+  {
+    "name": "generated/s0-b11-@@ -1,2 +1,2 @@",
+    "source": "a\nb\nc\nd\ne\n",
+    "diff": "@@ -1,2 +1,2 @@\n-  indented\n+  INDENTED\n",
+    "ok": true,
+    "out": "a\nb\nc\nd\ne\n"
+  },
+  {
+    "name": "generated/s0-b12-@@",
+    "source": "a\nb\nc\nd\ne\n",
+    "diff": "@@\n-\ttab\there\n+\tTAB\n",
+    "ok": true,
+    "out": "a\nb\nc\nd\ne\n"
+  },
+  {
+    "name": "generated/s0-b12-@@ ... @@",
+    "source": "a\nb\nc\nd\ne\n",
+    "diff": "@@ ... @@\n-\ttab\there\n+\tTAB\n",
+    "ok": true,
+    "out": "a\nb\nc\nd\ne\n"
+  },
+  {
+    "name": "generated/s0-b12-@@ -1,2 +1,2 @@",
+    "source": "a\nb\nc\nd\ne\n",
+    "diff": "@@ -1,2 +1,2 @@\n-\ttab\there\n+\tTAB\n",
+    "ok": true,
+    "out": "a\nb\nc\nd\ne\n"
+  },
+  {
+    "name": "generated/s0-b13-@@",
+    "source": "a\nb\nc\nd\ne\n",
+    "diff": "@@\n-x\n+\n",
+    "ok": true,
+    "out": "a\nb\nc\nd\ne\n"
+  },
+  {
+    "name": "generated/s0-b13-@@ ... @@",
+    "source": "a\nb\nc\nd\ne\n",
+    "diff": "@@ ... @@\n-x\n+\n",
+    "ok": true,
+    "out": "a\nb\nc\nd\ne\n"
+  },
+  {
+    "name": "generated/s0-b13-@@ -1,2 +1,2 @@",
+    "source": "a\nb\nc\nd\ne\n",
+    "diff": "@@ -1,2 +1,2 @@\n-x\n+\n",
+    "ok": true,
+    "out": "a\nb\nc\nd\ne\n"
+  },
+  {
+    "name": "generated/s0-b14-@@",
+    "source": "a\nb\nc\nd\ne\n",
+    "diff": "@@\n-a\n+a\n",
+    "ok": true,
+    "out": "a\nb\nc\nd\ne\n"
+  },
+  {
+    "name": "generated/s0-b14-@@ ... @@",
+    "source": "a\nb\nc\nd\ne\n",
+    "diff": "@@ ... @@\n-a\n+a\n",
+    "ok": true,
+    "out": "a\nb\nc\nd\ne\n"
+  },
+  {
+    "name": "generated/s0-b14-@@ -1,2 +1,2 @@",
+    "source": "a\nb\nc\nd\ne\n",
+    "diff": "@@ -1,2 +1,2 @@\n-a\n+a\n",
+    "ok": true,
+    "out": "a\nb\nc\nd\ne\n"
+  },
+  {
+    "name": "generated/s1-b0-@@",
+    "source": "a\na\na\n",
+    "diff": "@@\n-a\n+A\n",
+    "ok": true,
+    "out": "A\na\na\n"
+  },
+  {
+    "name": "generated/s1-b0-@@ ... @@",
+    "source": "a\na\na\n",
+    "diff": "@@ ... @@\n-a\n+A\n",
+    "ok": true,
+    "out": "A\na\na\n"
+  },
+  {
+    "name": "generated/s1-b0-@@ -1,2 +1,2 @@",
+    "source": "a\na\na\n",
+    "diff": "@@ -1,2 +1,2 @@\n-a\n+A\n",
+    "ok": true,
+    "out": "A\na\na\n"
+  },
+  {
+    "name": "generated/s1-b1-@@",
+    "source": "a\na\na\n",
+    "diff": "@@\n a\n+INS\n",
+    "ok": true,
+    "out": "a\nINS\na\na\n"
+  },
+  {
+    "name": "generated/s1-b1-@@ ... @@",
+    "source": "a\na\na\n",
+    "diff": "@@ ... @@\n a\n+INS\n",
+    "ok": true,
+    "out": "a\nINS\na\na\n"
+  },
+  {
+    "name": "generated/s1-b1-@@ -1,2 +1,2 @@",
+    "source": "a\na\na\n",
+    "diff": "@@ -1,2 +1,2 @@\n a\n+INS\n",
+    "ok": true,
+    "out": "a\nINS\na\na\n"
+  },
+  {
+    "name": "generated/s1-b2-@@",
+    "source": "a\na\na\n",
+    "diff": "@@\n-a\n",
+    "ok": true,
+    "out": "\na\na\n"
+  },
+  {
+    "name": "generated/s1-b2-@@ ... @@",
+    "source": "a\na\na\n",
+    "diff": "@@ ... @@\n-a\n",
+    "ok": true,
+    "out": "\na\na\n"
+  },
+  {
+    "name": "generated/s1-b2-@@ -1,2 +1,2 @@",
+    "source": "a\na\na\n",
+    "diff": "@@ -1,2 +1,2 @@\n-a\n",
+    "ok": true,
+    "out": "\na\na\n"
+  },
+  {
+    "name": "generated/s1-b3-@@",
+    "source": "a\na\na\n",
+    "diff": "@@\n+ONLY\n",
+    "ok": true,
+    "out": "a\na\na\n"
+  },
+  {
+    "name": "generated/s1-b3-@@ ... @@",
+    "source": "a\na\na\n",
+    "diff": "@@ ... @@\n+ONLY\n",
+    "ok": true,
+    "out": "a\na\na\n"
+  },
+  {
+    "name": "generated/s1-b3-@@ -1,2 +1,2 @@",
+    "source": "a\na\na\n",
+    "diff": "@@ -1,2 +1,2 @@\n+ONLY\n",
+    "ok": true,
+    "out": "a\na\na\n"
+  },
+  {
+    "name": "generated/s1-b4-@@",
+    "source": "a\na\na\n",
+    "diff": "@@\n a\n b\n",
+    "ok": false,
+    "out": ""
+  },
+  {
+    "name": "generated/s1-b4-@@ ... @@",
+    "source": "a\na\na\n",
+    "diff": "@@ ... @@\n a\n b\n",
+    "ok": false,
+    "out": ""
+  },
+  {
+    "name": "generated/s1-b4-@@ -1,2 +1,2 @@",
+    "source": "a\na\na\n",
+    "diff": "@@ -1,2 +1,2 @@\n a\n b\n",
+    "ok": false,
+    "out": ""
+  },
+  {
+    "name": "generated/s1-b5-@@",
+    "source": "a\na\na\n",
+    "diff": "@@\n-a\n+A\n-b\n+B\n",
+    "ok": true,
+    "out": "a\na\na\n"
+  },
+  {
+    "name": "generated/s1-b5-@@ ... @@",
+    "source": "a\na\na\n",
+    "diff": "@@ ... @@\n-a\n+A\n-b\n+B\n",
+    "ok": true,
+    "out": "a\na\na\n"
+  },
+  {
+    "name": "generated/s1-b5-@@ -1,2 +1,2 @@",
+    "source": "a\na\na\n",
+    "diff": "@@ -1,2 +1,2 @@\n-a\n+A\n-b\n+B\n",
+    "ok": true,
+    "out": "a\na\na\n"
+  },
+  {
+    "name": "generated/s1-b6-@@",
+    "source": "a\na\na\n",
+    "diff": "@@\na\n+INS\n",
+    "ok": true,
+    "out": "a\na\na\n"
+  },
+  {
+    "name": "generated/s1-b6-@@ ... @@",
+    "source": "a\na\na\n",
+    "diff": "@@ ... @@\na\n+INS\n",
+    "ok": true,
+    "out": "a\na\na\n"
+  },
+  {
+    "name": "generated/s1-b6-@@ -1,2 +1,2 @@",
+    "source": "a\na\na\n",
+    "diff": "@@ -1,2 +1,2 @@\na\n+INS\n",
+    "ok": true,
+    "out": "a\na\na\n"
+  },
+  {
+    "name": "generated/s1-b7-@@",
+    "source": "a\na\na\n",
+    "diff": "@@\n中\n+INS\n",
+    "ok": true,
+    "out": "a\na\na\n"
+  },
+  {
+    "name": "generated/s1-b7-@@ ... @@",
+    "source": "a\na\na\n",
+    "diff": "@@ ... @@\n中\n+INS\n",
+    "ok": true,
+    "out": "a\na\na\n"
+  },
+  {
+    "name": "generated/s1-b7-@@ -1,2 +1,2 @@",
+    "source": "a\na\na\n",
+    "diff": "@@ -1,2 +1,2 @@\n中\n+INS\n",
+    "ok": true,
+    "out": "a\na\na\n"
+  },
+  {
+    "name": "generated/s1-b8-@@",
+    "source": "a\na\na\n",
+    "diff": "@@\n-\n+X\n",
+    "ok": true,
+    "out": "aX\na\na\n"
+  },
+  {
+    "name": "generated/s1-b8-@@ ... @@",
+    "source": "a\na\na\n",
+    "diff": "@@ ... @@\n-\n+X\n",
+    "ok": true,
+    "out": "aX\na\na\n"
+  },
+  {
+    "name": "generated/s1-b8-@@ -1,2 +1,2 @@",
+    "source": "a\na\na\n",
+    "diff": "@@ -1,2 +1,2 @@\n-\n+X\n",
+    "ok": true,
+    "out": "aX\na\na\n"
+  },
+  {
+    "name": "generated/s1-b9-@@",
+    "source": "a\na\na\n",
+    "diff": "@@\n \n+X\n",
+    "ok": true,
+    "out": "aX\na\na\n"
+  },
+  {
+    "name": "generated/s1-b9-@@ ... @@",
+    "source": "a\na\na\n",
+    "diff": "@@ ... @@\n \n+X\n",
+    "ok": true,
+    "out": "aX\na\na\n"
+  },
+  {
+    "name": "generated/s1-b9-@@ -1,2 +1,2 @@",
+    "source": "a\na\na\n",
+    "diff": "@@ -1,2 +1,2 @@\n \n+X\n",
+    "ok": true,
+    "out": "aX\na\na\n"
+  },
+  {
+    "name": "generated/s1-b10-@@",
+    "source": "a\na\na\n",
+    "diff": "@@\n-中文一\n+中文三\n",
+    "ok": true,
+    "out": "a\na\na\n"
+  },
+  {
+    "name": "generated/s1-b10-@@ ... @@",
+    "source": "a\na\na\n",
+    "diff": "@@ ... @@\n-中文一\n+中文三\n",
+    "ok": true,
+    "out": "a\na\na\n"
+  },
+  {
+    "name": "generated/s1-b10-@@ -1,2 +1,2 @@",
+    "source": "a\na\na\n",
+    "diff": "@@ -1,2 +1,2 @@\n-中文一\n+中文三\n",
+    "ok": true,
+    "out": "a\na\na\n"
+  },
+  {
+    "name": "generated/s1-b11-@@",
+    "source": "a\na\na\n",
+    "diff": "@@\n-  indented\n+  INDENTED\n",
+    "ok": true,
+    "out": "a\na\na\n"
+  },
+  {
+    "name": "generated/s1-b11-@@ ... @@",
+    "source": "a\na\na\n",
+    "diff": "@@ ... @@\n-  indented\n+  INDENTED\n",
+    "ok": true,
+    "out": "a\na\na\n"
+  },
+  {
+    "name": "generated/s1-b11-@@ -1,2 +1,2 @@",
+    "source": "a\na\na\n",
+    "diff": "@@ -1,2 +1,2 @@\n-  indented\n+  INDENTED\n",
+    "ok": true,
+    "out": "a\na\na\n"
+  },
+  {
+    "name": "generated/s1-b12-@@",
+    "source": "a\na\na\n",
+    "diff": "@@\n-\ttab\there\n+\tTAB\n",
+    "ok": true,
+    "out": "a\na\na\n"
+  },
+  {
+    "name": "generated/s1-b12-@@ ... @@",
+    "source": "a\na\na\n",
+    "diff": "@@ ... @@\n-\ttab\there\n+\tTAB\n",
+    "ok": true,
+    "out": "a\na\na\n"
+  },
+  {
+    "name": "generated/s1-b12-@@ -1,2 +1,2 @@",
+    "source": "a\na\na\n",
+    "diff": "@@ -1,2 +1,2 @@\n-\ttab\there\n+\tTAB\n",
+    "ok": true,
+    "out": "a\na\na\n"
+  },
+  {
+    "name": "generated/s1-b13-@@",
+    "source": "a\na\na\n",
+    "diff": "@@\n-x\n+\n",
+    "ok": true,
+    "out": "a\na\na\n"
+  },
+  {
+    "name": "generated/s1-b13-@@ ... @@",
+    "source": "a\na\na\n",
+    "diff": "@@ ... @@\n-x\n+\n",
+    "ok": true,
+    "out": "a\na\na\n"
+  },
+  {
+    "name": "generated/s1-b13-@@ -1,2 +1,2 @@",
+    "source": "a\na\na\n",
+    "diff": "@@ -1,2 +1,2 @@\n-x\n+\n",
+    "ok": true,
+    "out": "a\na\na\n"
+  },
+  {
+    "name": "generated/s1-b14-@@",
+    "source": "a\na\na\n",
+    "diff": "@@\n-a\n+a\n",
+    "ok": true,
+    "out": "a\na\na\n"
+  },
+  {
+    "name": "generated/s1-b14-@@ ... @@",
+    "source": "a\na\na\n",
+    "diff": "@@ ... @@\n-a\n+a\n",
+    "ok": true,
+    "out": "a\na\na\n"
+  },
+  {
+    "name": "generated/s1-b14-@@ -1,2 +1,2 @@",
+    "source": "a\na\na\n",
+    "diff": "@@ -1,2 +1,2 @@\n-a\n+a\n",
+    "ok": true,
+    "out": "a\na\na\n"
+  },
+  {
+    "name": "generated/s2-b0-@@",
+    "source": "\n\n\n",
+    "diff": "@@\n-a\n+A\n",
+    "ok": true,
+    "out": "\n\n\n"
+  },
+  {
+    "name": "generated/s2-b0-@@ ... @@",
+    "source": "\n\n\n",
+    "diff": "@@ ... @@\n-a\n+A\n",
+    "ok": true,
+    "out": "\n\n\n"
+  },
+  {
+    "name": "generated/s2-b0-@@ -1,2 +1,2 @@",
+    "source": "\n\n\n",
+    "diff": "@@ -1,2 +1,2 @@\n-a\n+A\n",
+    "ok": true,
+    "out": "\n\n\n"
+  },
+  {
+    "name": "generated/s2-b1-@@",
+    "source": "\n\n\n",
+    "diff": "@@\n a\n+INS\n",
+    "ok": true,
+    "out": "\n\n\n"
+  },
+  {
+    "name": "generated/s2-b1-@@ ... @@",
+    "source": "\n\n\n",
+    "diff": "@@ ... @@\n a\n+INS\n",
+    "ok": true,
+    "out": "\n\n\n"
+  },
+  {
+    "name": "generated/s2-b1-@@ -1,2 +1,2 @@",
+    "source": "\n\n\n",
+    "diff": "@@ -1,2 +1,2 @@\n a\n+INS\n",
+    "ok": true,
+    "out": "\n\n\n"
+  },
+  {
+    "name": "generated/s2-b2-@@",
+    "source": "\n\n\n",
+    "diff": "@@\n-a\n",
+    "ok": true,
+    "out": "\n\n\n"
+  },
+  {
+    "name": "generated/s2-b2-@@ ... @@",
+    "source": "\n\n\n",
+    "diff": "@@ ... @@\n-a\n",
+    "ok": true,
+    "out": "\n\n\n"
+  },
+  {
+    "name": "generated/s2-b2-@@ -1,2 +1,2 @@",
+    "source": "\n\n\n",
+    "diff": "@@ -1,2 +1,2 @@\n-a\n",
+    "ok": true,
+    "out": "\n\n\n"
+  },
+  {
+    "name": "generated/s2-b3-@@",
+    "source": "\n\n\n",
+    "diff": "@@\n+ONLY\n",
+    "ok": true,
+    "out": "\n\n\n"
+  },
+  {
+    "name": "generated/s2-b3-@@ ... @@",
+    "source": "\n\n\n",
+    "diff": "@@ ... @@\n+ONLY\n",
+    "ok": true,
+    "out": "\n\n\n"
+  },
+  {
+    "name": "generated/s2-b3-@@ -1,2 +1,2 @@",
+    "source": "\n\n\n",
+    "diff": "@@ -1,2 +1,2 @@\n+ONLY\n",
+    "ok": true,
+    "out": "\n\n\n"
+  },
+  {
+    "name": "generated/s2-b4-@@",
+    "source": "\n\n\n",
+    "diff": "@@\n a\n b\n",
+    "ok": false,
+    "out": ""
+  },
+  {
+    "name": "generated/s2-b4-@@ ... @@",
+    "source": "\n\n\n",
+    "diff": "@@ ... @@\n a\n b\n",
+    "ok": false,
+    "out": ""
+  },
+  {
+    "name": "generated/s2-b4-@@ -1,2 +1,2 @@",
+    "source": "\n\n\n",
+    "diff": "@@ -1,2 +1,2 @@\n a\n b\n",
+    "ok": false,
+    "out": ""
+  },
+  {
+    "name": "generated/s2-b5-@@",
+    "source": "\n\n\n",
+    "diff": "@@\n-a\n+A\n-b\n+B\n",
+    "ok": true,
+    "out": "\n\n\n"
+  },
+  {
+    "name": "generated/s2-b5-@@ ... @@",
+    "source": "\n\n\n",
+    "diff": "@@ ... @@\n-a\n+A\n-b\n+B\n",
+    "ok": true,
+    "out": "\n\n\n"
+  },
+  {
+    "name": "generated/s2-b5-@@ -1,2 +1,2 @@",
+    "source": "\n\n\n",
+    "diff": "@@ -1,2 +1,2 @@\n-a\n+A\n-b\n+B\n",
+    "ok": true,
+    "out": "\n\n\n"
+  },
+  {
+    "name": "generated/s2-b6-@@",
+    "source": "\n\n\n",
+    "diff": "@@\na\n+INS\n",
+    "ok": true,
+    "out": "\n\n\n"
+  },
+  {
+    "name": "generated/s2-b6-@@ ... @@",
+    "source": "\n\n\n",
+    "diff": "@@ ... @@\na\n+INS\n",
+    "ok": true,
+    "out": "\n\n\n"
+  },
+  {
+    "name": "generated/s2-b6-@@ -1,2 +1,2 @@",
+    "source": "\n\n\n",
+    "diff": "@@ -1,2 +1,2 @@\na\n+INS\n",
+    "ok": true,
+    "out": "\n\n\n"
+  },
+  {
+    "name": "generated/s2-b7-@@",
+    "source": "\n\n\n",
+    "diff": "@@\n中\n+INS\n",
+    "ok": true,
+    "out": "\n\n\n"
+  },
+  {
+    "name": "generated/s2-b7-@@ ... @@",
+    "source": "\n\n\n",
+    "diff": "@@ ... @@\n中\n+INS\n",
+    "ok": true,
+    "out": "\n\n\n"
+  },
+  {
+    "name": "generated/s2-b7-@@ -1,2 +1,2 @@",
+    "source": "\n\n\n",
+    "diff": "@@ -1,2 +1,2 @@\n中\n+INS\n",
+    "ok": true,
+    "out": "\n\n\n"
+  },
+  {
+    "name": "generated/s2-b8-@@",
+    "source": "\n\n\n",
+    "diff": "@@\n-\n+X\n",
+    "ok": true,
+    "out": "X\n\n\n"
+  },
+  {
+    "name": "generated/s2-b8-@@ ... @@",
+    "source": "\n\n\n",
+    "diff": "@@ ... @@\n-\n+X\n",
+    "ok": true,
+    "out": "X\n\n\n"
+  },
+  {
+    "name": "generated/s2-b8-@@ -1,2 +1,2 @@",
+    "source": "\n\n\n",
+    "diff": "@@ -1,2 +1,2 @@\n-\n+X\n",
+    "ok": true,
+    "out": "X\n\n\n"
+  },
+  {
+    "name": "generated/s2-b9-@@",
+    "source": "\n\n\n",
+    "diff": "@@\n \n+X\n",
+    "ok": true,
+    "out": "\nX\n\n\n"
+  },
+  {
+    "name": "generated/s2-b9-@@ ... @@",
+    "source": "\n\n\n",
+    "diff": "@@ ... @@\n \n+X\n",
+    "ok": true,
+    "out": "\nX\n\n\n"
+  },
+  {
+    "name": "generated/s2-b9-@@ -1,2 +1,2 @@",
+    "source": "\n\n\n",
+    "diff": "@@ -1,2 +1,2 @@\n \n+X\n",
+    "ok": true,
+    "out": "\nX\n\n\n"
+  },
+  {
+    "name": "generated/s2-b10-@@",
+    "source": "\n\n\n",
+    "diff": "@@\n-中文一\n+中文三\n",
+    "ok": true,
+    "out": "\n\n\n"
+  },
+  {
+    "name": "generated/s2-b10-@@ ... @@",
+    "source": "\n\n\n",
+    "diff": "@@ ... @@\n-中文一\n+中文三\n",
+    "ok": true,
+    "out": "\n\n\n"
+  },
+  {
+    "name": "generated/s2-b10-@@ -1,2 +1,2 @@",
+    "source": "\n\n\n",
+    "diff": "@@ -1,2 +1,2 @@\n-中文一\n+中文三\n",
+    "ok": true,
+    "out": "\n\n\n"
+  },
+  {
+    "name": "generated/s2-b11-@@",
+    "source": "\n\n\n",
+    "diff": "@@\n-  indented\n+  INDENTED\n",
+    "ok": true,
+    "out": "\n\n\n"
+  },
+  {
+    "name": "generated/s2-b11-@@ ... @@",
+    "source": "\n\n\n",
+    "diff": "@@ ... @@\n-  indented\n+  INDENTED\n",
+    "ok": true,
+    "out": "\n\n\n"
+  },
+  {
+    "name": "generated/s2-b11-@@ -1,2 +1,2 @@",
+    "source": "\n\n\n",
+    "diff": "@@ -1,2 +1,2 @@\n-  indented\n+  INDENTED\n",
+    "ok": true,
+    "out": "\n\n\n"
+  },
+  {
+    "name": "generated/s2-b12-@@",
+    "source": "\n\n\n",
+    "diff": "@@\n-\ttab\there\n+\tTAB\n",
+    "ok": true,
+    "out": "\n\n\n"
+  },
+  {
+    "name": "generated/s2-b12-@@ ... @@",
+    "source": "\n\n\n",
+    "diff": "@@ ... @@\n-\ttab\there\n+\tTAB\n",
+    "ok": true,
+    "out": "\n\n\n"
+  },
+  {
+    "name": "generated/s2-b12-@@ -1,2 +1,2 @@",
+    "source": "\n\n\n",
+    "diff": "@@ -1,2 +1,2 @@\n-\ttab\there\n+\tTAB\n",
+    "ok": true,
+    "out": "\n\n\n"
+  },
+  {
+    "name": "generated/s2-b13-@@",
+    "source": "\n\n\n",
+    "diff": "@@\n-x\n+\n",
+    "ok": true,
+    "out": "\n\n\n"
+  },
+  {
+    "name": "generated/s2-b13-@@ ... @@",
+    "source": "\n\n\n",
+    "diff": "@@ ... @@\n-x\n+\n",
+    "ok": true,
+    "out": "\n\n\n"
+  },
+  {
+    "name": "generated/s2-b13-@@ -1,2 +1,2 @@",
+    "source": "\n\n\n",
+    "diff": "@@ -1,2 +1,2 @@\n-x\n+\n",
+    "ok": true,
+    "out": "\n\n\n"
+  },
+  {
+    "name": "generated/s2-b14-@@",
+    "source": "\n\n\n",
+    "diff": "@@\n-a\n+a\n",
+    "ok": true,
+    "out": "\n\n\n"
+  },
+  {
+    "name": "generated/s2-b14-@@ ... @@",
+    "source": "\n\n\n",
+    "diff": "@@ ... @@\n-a\n+a\n",
+    "ok": true,
+    "out": "\n\n\n"
+  },
+  {
+    "name": "generated/s2-b14-@@ -1,2 +1,2 @@",
+    "source": "\n\n\n",
+    "diff": "@@ -1,2 +1,2 @@\n-a\n+a\n",
+    "ok": true,
+    "out": "\n\n\n"
+  },
+  {
+    "name": "generated/s3-b0-@@",
+    "source": "x",
+    "diff": "@@\n-a\n+A\n",
+    "ok": true,
+    "out": "x"
+  },
+  {
+    "name": "generated/s3-b0-@@ ... @@",
+    "source": "x",
+    "diff": "@@ ... @@\n-a\n+A\n",
+    "ok": true,
+    "out": "x"
+  },
+  {
+    "name": "generated/s3-b0-@@ -1,2 +1,2 @@",
+    "source": "x",
+    "diff": "@@ -1,2 +1,2 @@\n-a\n+A\n",
+    "ok": true,
+    "out": "x"
+  },
+  {
+    "name": "generated/s3-b1-@@",
+    "source": "x",
+    "diff": "@@\n a\n+INS\n",
+    "ok": true,
+    "out": "xINS\n"
+  },
+  {
+    "name": "generated/s3-b1-@@ ... @@",
+    "source": "x",
+    "diff": "@@ ... @@\n a\n+INS\n",
+    "ok": true,
+    "out": "xINS\n"
+  },
+  {
+    "name": "generated/s3-b1-@@ -1,2 +1,2 @@",
+    "source": "x",
+    "diff": "@@ -1,2 +1,2 @@\n a\n+INS\n",
+    "ok": true,
+    "out": "xINS\n"
+  },
+  {
+    "name": "generated/s3-b2-@@",
+    "source": "x",
+    "diff": "@@\n-a\n",
+    "ok": true,
+    "out": "x"
+  },
+  {
+    "name": "generated/s3-b2-@@ ... @@",
+    "source": "x",
+    "diff": "@@ ... @@\n-a\n",
+    "ok": true,
+    "out": "x"
+  },
+  {
+    "name": "generated/s3-b2-@@ -1,2 +1,2 @@",
+    "source": "x",
+    "diff": "@@ -1,2 +1,2 @@\n-a\n",
+    "ok": true,
+    "out": "x"
+  },
+  {
+    "name": "generated/s3-b3-@@",
+    "source": "x",
+    "diff": "@@\n+ONLY\n",
+    "ok": true,
+    "out": "xONLY\n"
+  },
+  {
+    "name": "generated/s3-b3-@@ ... @@",
+    "source": "x",
+    "diff": "@@ ... @@\n+ONLY\n",
+    "ok": true,
+    "out": "xONLY\n"
+  },
+  {
+    "name": "generated/s3-b3-@@ -1,2 +1,2 @@",
+    "source": "x",
+    "diff": "@@ -1,2 +1,2 @@\n+ONLY\n",
+    "ok": true,
+    "out": "xONLY\n"
+  },
+  {
+    "name": "generated/s3-b4-@@",
+    "source": "x",
+    "diff": "@@\n a\n b\n",
+    "ok": false,
+    "out": ""
+  },
+  {
+    "name": "generated/s3-b4-@@ ... @@",
+    "source": "x",
+    "diff": "@@ ... @@\n a\n b\n",
+    "ok": false,
+    "out": ""
+  },
+  {
+    "name": "generated/s3-b4-@@ -1,2 +1,2 @@",
+    "source": "x",
+    "diff": "@@ -1,2 +1,2 @@\n a\n b\n",
+    "ok": false,
+    "out": ""
+  },
+  {
+    "name": "generated/s3-b5-@@",
+    "source": "x",
+    "diff": "@@\n-a\n+A\n-b\n+B\n",
+    "ok": true,
+    "out": "x"
+  },
+  {
+    "name": "generated/s3-b5-@@ ... @@",
+    "source": "x",
+    "diff": "@@ ... @@\n-a\n+A\n-b\n+B\n",
+    "ok": true,
+    "out": "x"
+  },
+  {
+    "name": "generated/s3-b5-@@ -1,2 +1,2 @@",
+    "source": "x",
+    "diff": "@@ -1,2 +1,2 @@\n-a\n+A\n-b\n+B\n",
+    "ok": true,
+    "out": "x"
+  },
+  {
+    "name": "generated/s3-b6-@@",
+    "source": "x",
+    "diff": "@@\na\n+INS\n",
+    "ok": true,
+    "out": "xINS\n"
+  },
+  {
+    "name": "generated/s3-b6-@@ ... @@",
+    "source": "x",
+    "diff": "@@ ... @@\na\n+INS\n",
+    "ok": true,
+    "out": "xINS\n"
+  },
+  {
+    "name": "generated/s3-b6-@@ -1,2 +1,2 @@",
+    "source": "x",
+    "diff": "@@ -1,2 +1,2 @@\na\n+INS\n",
+    "ok": true,
+    "out": "xINS\n"
+  },
+  {
+    "name": "generated/s3-b7-@@",
+    "source": "x",
+    "diff": "@@\n中\n+INS\n",
+    "ok": true,
+    "out": "xINS\n"
+  },
+  {
+    "name": "generated/s3-b7-@@ ... @@",
+    "source": "x",
+    "diff": "@@ ... @@\n中\n+INS\n",
+    "ok": true,
+    "out": "xINS\n"
+  },
+  {
+    "name": "generated/s3-b7-@@ -1,2 +1,2 @@",
+    "source": "x",
+    "diff": "@@ -1,2 +1,2 @@\n中\n+INS\n",
+    "ok": true,
+    "out": "xINS\n"
+  },
+  {
+    "name": "generated/s3-b8-@@",
+    "source": "x",
+    "diff": "@@\n-\n+X\n",
+    "ok": true,
+    "out": "xX\n"
+  },
+  {
+    "name": "generated/s3-b8-@@ ... @@",
+    "source": "x",
+    "diff": "@@ ... @@\n-\n+X\n",
+    "ok": true,
+    "out": "xX\n"
+  },
+  {
+    "name": "generated/s3-b8-@@ -1,2 +1,2 @@",
+    "source": "x",
+    "diff": "@@ -1,2 +1,2 @@\n-\n+X\n",
+    "ok": true,
+    "out": "xX\n"
+  },
+  {
+    "name": "generated/s3-b9-@@",
+    "source": "x",
+    "diff": "@@\n \n+X\n",
+    "ok": true,
+    "out": "xX\n"
+  },
+  {
+    "name": "generated/s3-b9-@@ ... @@",
+    "source": "x",
+    "diff": "@@ ... @@\n \n+X\n",
+    "ok": true,
+    "out": "xX\n"
+  },
+  {
+    "name": "generated/s3-b9-@@ -1,2 +1,2 @@",
+    "source": "x",
+    "diff": "@@ -1,2 +1,2 @@\n \n+X\n",
+    "ok": true,
+    "out": "xX\n"
+  },
+  {
+    "name": "generated/s3-b10-@@",
+    "source": "x",
+    "diff": "@@\n-中文一\n+中文三\n",
+    "ok": true,
+    "out": "x"
+  },
+  {
+    "name": "generated/s3-b10-@@ ... @@",
+    "source": "x",
+    "diff": "@@ ... @@\n-中文一\n+中文三\n",
+    "ok": true,
+    "out": "x"
+  },
+  {
+    "name": "generated/s3-b10-@@ -1,2 +1,2 @@",
+    "source": "x",
+    "diff": "@@ -1,2 +1,2 @@\n-中文一\n+中文三\n",
+    "ok": true,
+    "out": "x"
+  },
+  {
+    "name": "generated/s3-b11-@@",
+    "source": "x",
+    "diff": "@@\n-  indented\n+  INDENTED\n",
+    "ok": true,
+    "out": "x"
+  },
+  {
+    "name": "generated/s3-b11-@@ ... @@",
+    "source": "x",
+    "diff": "@@ ... @@\n-  indented\n+  INDENTED\n",
+    "ok": true,
+    "out": "x"
+  },
+  {
+    "name": "generated/s3-b11-@@ -1,2 +1,2 @@",
+    "source": "x",
+    "diff": "@@ -1,2 +1,2 @@\n-  indented\n+  INDENTED\n",
+    "ok": true,
+    "out": "x"
+  },
+  {
+    "name": "generated/s3-b12-@@",
+    "source": "x",
+    "diff": "@@\n-\ttab\there\n+\tTAB\n",
+    "ok": true,
+    "out": "x"
+  },
+  {
+    "name": "generated/s3-b12-@@ ... @@",
+    "source": "x",
+    "diff": "@@ ... @@\n-\ttab\there\n+\tTAB\n",
+    "ok": true,
+    "out": "x"
+  },
+  {
+    "name": "generated/s3-b12-@@ -1,2 +1,2 @@",
+    "source": "x",
+    "diff": "@@ -1,2 +1,2 @@\n-\ttab\there\n+\tTAB\n",
+    "ok": true,
+    "out": "x"
+  },
+  {
+    "name": "generated/s3-b13-@@",
+    "source": "x",
+    "diff": "@@\n-x\n+\n",
+    "ok": true,
+    "out": "\n"
+  },
+  {
+    "name": "generated/s3-b13-@@ ... @@",
+    "source": "x",
+    "diff": "@@ ... @@\n-x\n+\n",
+    "ok": true,
+    "out": "\n"
+  },
+  {
+    "name": "generated/s3-b13-@@ -1,2 +1,2 @@",
+    "source": "x",
+    "diff": "@@ -1,2 +1,2 @@\n-x\n+\n",
+    "ok": true,
+    "out": "\n"
+  },
+  {
+    "name": "generated/s3-b14-@@",
+    "source": "x",
+    "diff": "@@\n-a\n+a\n",
+    "ok": true,
+    "out": "x"
+  },
+  {
+    "name": "generated/s3-b14-@@ ... @@",
+    "source": "x",
+    "diff": "@@ ... @@\n-a\n+a\n",
+    "ok": true,
+    "out": "x"
+  },
+  {
+    "name": "generated/s3-b14-@@ -1,2 +1,2 @@",
+    "source": "x",
+    "diff": "@@ -1,2 +1,2 @@\n-a\n+a\n",
+    "ok": true,
+    "out": "x"
+  },
+  {
+    "name": "generated/s4-b0-@@",
+    "source": "",
+    "diff": "@@\n-a\n+A\n",
+    "ok": true,
+    "out": ""
+  },
+  {
+    "name": "generated/s4-b0-@@ ... @@",
+    "source": "",
+    "diff": "@@ ... @@\n-a\n+A\n",
+    "ok": true,
+    "out": ""
+  },
+  {
+    "name": "generated/s4-b0-@@ -1,2 +1,2 @@",
+    "source": "",
+    "diff": "@@ -1,2 +1,2 @@\n-a\n+A\n",
+    "ok": true,
+    "out": ""
+  },
+  {
+    "name": "generated/s4-b1-@@",
+    "source": "",
+    "diff": "@@\n a\n+INS\n",
+    "ok": true,
+    "out": "INS\n"
+  },
+  {
+    "name": "generated/s4-b1-@@ ... @@",
+    "source": "",
+    "diff": "@@ ... @@\n a\n+INS\n",
+    "ok": true,
+    "out": "INS\n"
+  },
+  {
+    "name": "generated/s4-b1-@@ -1,2 +1,2 @@",
+    "source": "",
+    "diff": "@@ -1,2 +1,2 @@\n a\n+INS\n",
+    "ok": true,
+    "out": "INS\n"
+  },
+  {
+    "name": "generated/s4-b2-@@",
+    "source": "",
+    "diff": "@@\n-a\n",
+    "ok": true,
+    "out": ""
+  },
+  {
+    "name": "generated/s4-b2-@@ ... @@",
+    "source": "",
+    "diff": "@@ ... @@\n-a\n",
+    "ok": true,
+    "out": ""
+  },
+  {
+    "name": "generated/s4-b2-@@ -1,2 +1,2 @@",
+    "source": "",
+    "diff": "@@ -1,2 +1,2 @@\n-a\n",
+    "ok": true,
+    "out": ""
+  },
+  {
+    "name": "generated/s4-b3-@@",
+    "source": "",
+    "diff": "@@\n+ONLY\n",
+    "ok": true,
+    "out": "ONLY\n"
+  },
+  {
+    "name": "generated/s4-b3-@@ ... @@",
+    "source": "",
+    "diff": "@@ ... @@\n+ONLY\n",
+    "ok": true,
+    "out": "ONLY\n"
+  },
+  {
+    "name": "generated/s4-b3-@@ -1,2 +1,2 @@",
+    "source": "",
+    "diff": "@@ -1,2 +1,2 @@\n+ONLY\n",
+    "ok": true,
+    "out": "ONLY\n"
+  },
+  {
+    "name": "generated/s4-b4-@@",
+    "source": "",
+    "diff": "@@\n a\n b\n",
+    "ok": false,
+    "out": ""
+  },
+  {
+    "name": "generated/s4-b4-@@ ... @@",
+    "source": "",
+    "diff": "@@ ... @@\n a\n b\n",
+    "ok": false,
+    "out": ""
+  },
+  {
+    "name": "generated/s4-b4-@@ -1,2 +1,2 @@",
+    "source": "",
+    "diff": "@@ -1,2 +1,2 @@\n a\n b\n",
+    "ok": false,
+    "out": ""
+  },
+  {
+    "name": "generated/s4-b5-@@",
+    "source": "",
+    "diff": "@@\n-a\n+A\n-b\n+B\n",
+    "ok": true,
+    "out": ""
+  },
+  {
+    "name": "generated/s4-b5-@@ ... @@",
+    "source": "",
+    "diff": "@@ ... @@\n-a\n+A\n-b\n+B\n",
+    "ok": true,
+    "out": ""
+  },
+  {
+    "name": "generated/s4-b5-@@ -1,2 +1,2 @@",
+    "source": "",
+    "diff": "@@ -1,2 +1,2 @@\n-a\n+A\n-b\n+B\n",
+    "ok": true,
+    "out": ""
+  },
+  {
+    "name": "generated/s4-b6-@@",
+    "source": "",
+    "diff": "@@\na\n+INS\n",
+    "ok": true,
+    "out": "INS\n"
+  },
+  {
+    "name": "generated/s4-b6-@@ ... @@",
+    "source": "",
+    "diff": "@@ ... @@\na\n+INS\n",
+    "ok": true,
+    "out": "INS\n"
+  },
+  {
+    "name": "generated/s4-b6-@@ -1,2 +1,2 @@",
+    "source": "",
+    "diff": "@@ -1,2 +1,2 @@\na\n+INS\n",
+    "ok": true,
+    "out": "INS\n"
+  },
+  {
+    "name": "generated/s4-b7-@@",
+    "source": "",
+    "diff": "@@\n中\n+INS\n",
+    "ok": true,
+    "out": "INS\n"
+  },
+  {
+    "name": "generated/s4-b7-@@ ... @@",
+    "source": "",
+    "diff": "@@ ... @@\n中\n+INS\n",
+    "ok": true,
+    "out": "INS\n"
+  },
+  {
+    "name": "generated/s4-b7-@@ -1,2 +1,2 @@",
+    "source": "",
+    "diff": "@@ -1,2 +1,2 @@\n中\n+INS\n",
+    "ok": true,
+    "out": "INS\n"
+  },
+  {
+    "name": "generated/s4-b8-@@",
+    "source": "",
+    "diff": "@@\n-\n+X\n",
+    "ok": true,
+    "out": "X\n"
+  },
+  {
+    "name": "generated/s4-b8-@@ ... @@",
+    "source": "",
+    "diff": "@@ ... @@\n-\n+X\n",
+    "ok": true,
+    "out": "X\n"
+  },
+  {
+    "name": "generated/s4-b8-@@ -1,2 +1,2 @@",
+    "source": "",
+    "diff": "@@ -1,2 +1,2 @@\n-\n+X\n",
+    "ok": true,
+    "out": "X\n"
+  },
+  {
+    "name": "generated/s4-b9-@@",
+    "source": "",
+    "diff": "@@\n \n+X\n",
+    "ok": true,
+    "out": "X\n"
+  },
+  {
+    "name": "generated/s4-b9-@@ ... @@",
+    "source": "",
+    "diff": "@@ ... @@\n \n+X\n",
+    "ok": true,
+    "out": "X\n"
+  },
+  {
+    "name": "generated/s4-b9-@@ -1,2 +1,2 @@",
+    "source": "",
+    "diff": "@@ -1,2 +1,2 @@\n \n+X\n",
+    "ok": true,
+    "out": "X\n"
+  },
+  {
+    "name": "generated/s4-b10-@@",
+    "source": "",
+    "diff": "@@\n-中文一\n+中文三\n",
+    "ok": true,
+    "out": ""
+  },
+  {
+    "name": "generated/s4-b10-@@ ... @@",
+    "source": "",
+    "diff": "@@ ... @@\n-中文一\n+中文三\n",
+    "ok": true,
+    "out": ""
+  },
+  {
+    "name": "generated/s4-b10-@@ -1,2 +1,2 @@",
+    "source": "",
+    "diff": "@@ -1,2 +1,2 @@\n-中文一\n+中文三\n",
+    "ok": true,
+    "out": ""
+  },
+  {
+    "name": "generated/s4-b11-@@",
+    "source": "",
+    "diff": "@@\n-  indented\n+  INDENTED\n",
+    "ok": true,
+    "out": ""
+  },
+  {
+    "name": "generated/s4-b11-@@ ... @@",
+    "source": "",
+    "diff": "@@ ... @@\n-  indented\n+  INDENTED\n",
+    "ok": true,
+    "out": ""
+  },
+  {
+    "name": "generated/s4-b11-@@ -1,2 +1,2 @@",
+    "source": "",
+    "diff": "@@ -1,2 +1,2 @@\n-  indented\n+  INDENTED\n",
+    "ok": true,
+    "out": ""
+  },
+  {
+    "name": "generated/s4-b12-@@",
+    "source": "",
+    "diff": "@@\n-\ttab\there\n+\tTAB\n",
+    "ok": true,
+    "out": ""
+  },
+  {
+    "name": "generated/s4-b12-@@ ... @@",
+    "source": "",
+    "diff": "@@ ... @@\n-\ttab\there\n+\tTAB\n",
+    "ok": true,
+    "out": ""
+  },
+  {
+    "name": "generated/s4-b12-@@ -1,2 +1,2 @@",
+    "source": "",
+    "diff": "@@ -1,2 +1,2 @@\n-\ttab\there\n+\tTAB\n",
+    "ok": true,
+    "out": ""
+  },
+  {
+    "name": "generated/s4-b13-@@",
+    "source": "",
+    "diff": "@@\n-x\n+\n",
+    "ok": true,
+    "out": ""
+  },
+  {
+    "name": "generated/s4-b13-@@ ... @@",
+    "source": "",
+    "diff": "@@ ... @@\n-x\n+\n",
+    "ok": true,
+    "out": ""
+  },
+  {
+    "name": "generated/s4-b13-@@ -1,2 +1,2 @@",
+    "source": "",
+    "diff": "@@ -1,2 +1,2 @@\n-x\n+\n",
+    "ok": true,
+    "out": ""
+  },
+  {
+    "name": "generated/s4-b14-@@",
+    "source": "",
+    "diff": "@@\n-a\n+a\n",
+    "ok": true,
+    "out": ""
+  },
+  {
+    "name": "generated/s4-b14-@@ ... @@",
+    "source": "",
+    "diff": "@@ ... @@\n-a\n+a\n",
+    "ok": true,
+    "out": ""
+  },
+  {
+    "name": "generated/s4-b14-@@ -1,2 +1,2 @@",
+    "source": "",
+    "diff": "@@ -1,2 +1,2 @@\n-a\n+a\n",
+    "ok": true,
+    "out": ""
+  },
+  {
+    "name": "generated/s5-b0-@@",
+    "source": "  indented\n    more\n  indented\n",
+    "diff": "@@\n-a\n+A\n",
+    "ok": true,
+    "out": "  indented\n    more\n  indented\n"
+  },
+  {
+    "name": "generated/s5-b0-@@ ... @@",
+    "source": "  indented\n    more\n  indented\n",
+    "diff": "@@ ... @@\n-a\n+A\n",
+    "ok": true,
+    "out": "  indented\n    more\n  indented\n"
+  },
+  {
+    "name": "generated/s5-b0-@@ -1,2 +1,2 @@",
+    "source": "  indented\n    more\n  indented\n",
+    "diff": "@@ -1,2 +1,2 @@\n-a\n+A\n",
+    "ok": true,
+    "out": "  indented\n    more\n  indented\n"
+  },
+  {
+    "name": "generated/s5-b1-@@",
+    "source": "  indented\n    more\n  indented\n",
+    "diff": "@@\n a\n+INS\n",
+    "ok": true,
+    "out": "  indented\n    more\n  indented\n"
+  },
+  {
+    "name": "generated/s5-b1-@@ ... @@",
+    "source": "  indented\n    more\n  indented\n",
+    "diff": "@@ ... @@\n a\n+INS\n",
+    "ok": true,
+    "out": "  indented\n    more\n  indented\n"
+  },
+  {
+    "name": "generated/s5-b1-@@ -1,2 +1,2 @@",
+    "source": "  indented\n    more\n  indented\n",
+    "diff": "@@ -1,2 +1,2 @@\n a\n+INS\n",
+    "ok": true,
+    "out": "  indented\n    more\n  indented\n"
+  },
+  {
+    "name": "generated/s5-b2-@@",
+    "source": "  indented\n    more\n  indented\n",
+    "diff": "@@\n-a\n",
+    "ok": true,
+    "out": "  indented\n    more\n  indented\n"
+  },
+  {
+    "name": "generated/s5-b2-@@ ... @@",
+    "source": "  indented\n    more\n  indented\n",
+    "diff": "@@ ... @@\n-a\n",
+    "ok": true,
+    "out": "  indented\n    more\n  indented\n"
+  },
+  {
+    "name": "generated/s5-b2-@@ -1,2 +1,2 @@",
+    "source": "  indented\n    more\n  indented\n",
+    "diff": "@@ -1,2 +1,2 @@\n-a\n",
+    "ok": true,
+    "out": "  indented\n    more\n  indented\n"
+  },
+  {
+    "name": "generated/s5-b3-@@",
+    "source": "  indented\n    more\n  indented\n",
+    "diff": "@@\n+ONLY\n",
+    "ok": true,
+    "out": "  indented\n    more\n  indented\n"
+  },
+  {
+    "name": "generated/s5-b3-@@ ... @@",
+    "source": "  indented\n    more\n  indented\n",
+    "diff": "@@ ... @@\n+ONLY\n",
+    "ok": true,
+    "out": "  indented\n    more\n  indented\n"
+  },
+  {
+    "name": "generated/s5-b3-@@ -1,2 +1,2 @@",
+    "source": "  indented\n    more\n  indented\n",
+    "diff": "@@ -1,2 +1,2 @@\n+ONLY\n",
+    "ok": true,
+    "out": "  indented\n    more\n  indented\n"
+  },
+  {
+    "name": "generated/s5-b4-@@",
+    "source": "  indented\n    more\n  indented\n",
+    "diff": "@@\n a\n b\n",
+    "ok": false,
+    "out": ""
+  },
+  {
+    "name": "generated/s5-b4-@@ ... @@",
+    "source": "  indented\n    more\n  indented\n",
+    "diff": "@@ ... @@\n a\n b\n",
+    "ok": false,
+    "out": ""
+  },
+  {
+    "name": "generated/s5-b4-@@ -1,2 +1,2 @@",
+    "source": "  indented\n    more\n  indented\n",
+    "diff": "@@ -1,2 +1,2 @@\n a\n b\n",
+    "ok": false,
+    "out": ""
+  },
+  {
+    "name": "generated/s5-b5-@@",
+    "source": "  indented\n    more\n  indented\n",
+    "diff": "@@\n-a\n+A\n-b\n+B\n",
+    "ok": true,
+    "out": "  indented\n    more\n  indented\n"
+  },
+  {
+    "name": "generated/s5-b5-@@ ... @@",
+    "source": "  indented\n    more\n  indented\n",
+    "diff": "@@ ... @@\n-a\n+A\n-b\n+B\n",
+    "ok": true,
+    "out": "  indented\n    more\n  indented\n"
+  },
+  {
+    "name": "generated/s5-b5-@@ -1,2 +1,2 @@",
+    "source": "  indented\n    more\n  indented\n",
+    "diff": "@@ -1,2 +1,2 @@\n-a\n+A\n-b\n+B\n",
+    "ok": true,
+    "out": "  indented\n    more\n  indented\n"
+  },
+  {
+    "name": "generated/s5-b6-@@",
+    "source": "  indented\n    more\n  indented\n",
+    "diff": "@@\na\n+INS\n",
+    "ok": true,
+    "out": "  indented\n    more\n  indented\n"
+  },
+  {
+    "name": "generated/s5-b6-@@ ... @@",
+    "source": "  indented\n    more\n  indented\n",
+    "diff": "@@ ... @@\na\n+INS\n",
+    "ok": true,
+    "out": "  indented\n    more\n  indented\n"
+  },
+  {
+    "name": "generated/s5-b6-@@ -1,2 +1,2 @@",
+    "source": "  indented\n    more\n  indented\n",
+    "diff": "@@ -1,2 +1,2 @@\na\n+INS\n",
+    "ok": true,
+    "out": "  indented\n    more\n  indented\n"
+  },
+  {
+    "name": "generated/s5-b7-@@",
+    "source": "  indented\n    more\n  indented\n",
+    "diff": "@@\n中\n+INS\n",
+    "ok": true,
+    "out": "  indented\n    more\n  indented\n"
+  },
+  {
+    "name": "generated/s5-b7-@@ ... @@",
+    "source": "  indented\n    more\n  indented\n",
+    "diff": "@@ ... @@\n中\n+INS\n",
+    "ok": true,
+    "out": "  indented\n    more\n  indented\n"
+  },
+  {
+    "name": "generated/s5-b7-@@ -1,2 +1,2 @@",
+    "source": "  indented\n    more\n  indented\n",
+    "diff": "@@ -1,2 +1,2 @@\n中\n+INS\n",
+    "ok": true,
+    "out": "  indented\n    more\n  indented\n"
+  },
+  {
+    "name": "generated/s5-b8-@@",
+    "source": "  indented\n    more\n  indented\n",
+    "diff": "@@\n-\n+X\n",
+    "ok": true,
+    "out": "indentedX\n    more\n  indented\n"
+  },
+  {
+    "name": "generated/s5-b8-@@ ... @@",
+    "source": "  indented\n    more\n  indented\n",
+    "diff": "@@ ... @@\n-\n+X\n",
+    "ok": true,
+    "out": "indentedX\n    more\n  indented\n"
+  },
+  {
+    "name": "generated/s5-b8-@@ -1,2 +1,2 @@",
+    "source": "  indented\n    more\n  indented\n",
+    "diff": "@@ -1,2 +1,2 @@\n-\n+X\n",
+    "ok": true,
+    "out": "indentedX\n    more\n  indented\n"
+  },
+  {
+    "name": "generated/s5-b9-@@",
+    "source": "  indented\n    more\n  indented\n",
+    "diff": "@@\n \n+X\n",
+    "ok": true,
+    "out": "indentedX\n    more\n  indented\n"
+  },
+  {
+    "name": "generated/s5-b9-@@ ... @@",
+    "source": "  indented\n    more\n  indented\n",
+    "diff": "@@ ... @@\n \n+X\n",
+    "ok": true,
+    "out": "indentedX\n    more\n  indented\n"
+  },
+  {
+    "name": "generated/s5-b9-@@ -1,2 +1,2 @@",
+    "source": "  indented\n    more\n  indented\n",
+    "diff": "@@ -1,2 +1,2 @@\n \n+X\n",
+    "ok": true,
+    "out": "indentedX\n    more\n  indented\n"
+  },
+  {
+    "name": "generated/s5-b10-@@",
+    "source": "  indented\n    more\n  indented\n",
+    "diff": "@@\n-中文一\n+中文三\n",
+    "ok": true,
+    "out": "  indented\n    more\n  indented\n"
+  },
+  {
+    "name": "generated/s5-b10-@@ ... @@",
+    "source": "  indented\n    more\n  indented\n",
+    "diff": "@@ ... @@\n-中文一\n+中文三\n",
+    "ok": true,
+    "out": "  indented\n    more\n  indented\n"
+  },
+  {
+    "name": "generated/s5-b10-@@ -1,2 +1,2 @@",
+    "source": "  indented\n    more\n  indented\n",
+    "diff": "@@ -1,2 +1,2 @@\n-中文一\n+中文三\n",
+    "ok": true,
+    "out": "  indented\n    more\n  indented\n"
+  },
+  {
+    "name": "generated/s5-b11-@@",
+    "source": "  indented\n    more\n  indented\n",
+    "diff": "@@\n-  indented\n+  INDENTED\n",
+    "ok": true,
+    "out": "INDENTED\n    more\n  indented\n"
+  },
+  {
+    "name": "generated/s5-b11-@@ ... @@",
+    "source": "  indented\n    more\n  indented\n",
+    "diff": "@@ ... @@\n-  indented\n+  INDENTED\n",
+    "ok": true,
+    "out": "INDENTED\n    more\n  indented\n"
+  },
+  {
+    "name": "generated/s5-b11-@@ -1,2 +1,2 @@",
+    "source": "  indented\n    more\n  indented\n",
+    "diff": "@@ -1,2 +1,2 @@\n-  indented\n+  INDENTED\n",
+    "ok": true,
+    "out": "INDENTED\n    more\n  indented\n"
+  },
+  {
+    "name": "generated/s5-b12-@@",
+    "source": "  indented\n    more\n  indented\n",
+    "diff": "@@\n-\ttab\there\n+\tTAB\n",
+    "ok": true,
+    "out": "  indented\n    more\n  indented\n"
+  },
+  {
+    "name": "generated/s5-b12-@@ ... @@",
+    "source": "  indented\n    more\n  indented\n",
+    "diff": "@@ ... @@\n-\ttab\there\n+\tTAB\n",
+    "ok": true,
+    "out": "  indented\n    more\n  indented\n"
+  },
+  {
+    "name": "generated/s5-b12-@@ -1,2 +1,2 @@",
+    "source": "  indented\n    more\n  indented\n",
+    "diff": "@@ -1,2 +1,2 @@\n-\ttab\there\n+\tTAB\n",
+    "ok": true,
+    "out": "  indented\n    more\n  indented\n"
+  },
+  {
+    "name": "generated/s5-b13-@@",
+    "source": "  indented\n    more\n  indented\n",
+    "diff": "@@\n-x\n+\n",
+    "ok": true,
+    "out": "  indented\n    more\n  indented\n"
+  },
+  {
+    "name": "generated/s5-b13-@@ ... @@",
+    "source": "  indented\n    more\n  indented\n",
+    "diff": "@@ ... @@\n-x\n+\n",
+    "ok": true,
+    "out": "  indented\n    more\n  indented\n"
+  },
+  {
+    "name": "generated/s5-b13-@@ -1,2 +1,2 @@",
+    "source": "  indented\n    more\n  indented\n",
+    "diff": "@@ -1,2 +1,2 @@\n-x\n+\n",
+    "ok": true,
+    "out": "  indented\n    more\n  indented\n"
+  },
+  {
+    "name": "generated/s5-b14-@@",
+    "source": "  indented\n    more\n  indented\n",
+    "diff": "@@\n-a\n+a\n",
+    "ok": true,
+    "out": "  indented\n    more\n  indented\n"
+  },
+  {
+    "name": "generated/s5-b14-@@ ... @@",
+    "source": "  indented\n    more\n  indented\n",
+    "diff": "@@ ... @@\n-a\n+a\n",
+    "ok": true,
+    "out": "  indented\n    more\n  indented\n"
+  },
+  {
+    "name": "generated/s5-b14-@@ -1,2 +1,2 @@",
+    "source": "  indented\n    more\n  indented\n",
+    "diff": "@@ -1,2 +1,2 @@\n-a\n+a\n",
+    "ok": true,
+    "out": "  indented\n    more\n  indented\n"
+  },
+  {
+    "name": "generated/s6-b0-@@",
+    "source": "中文一\n中文二\n中文一\n",
+    "diff": "@@\n-a\n+A\n",
+    "ok": true,
+    "out": "中文一\n中文二\n中文一\n"
+  },
+  {
+    "name": "generated/s6-b0-@@ ... @@",
+    "source": "中文一\n中文二\n中文一\n",
+    "diff": "@@ ... @@\n-a\n+A\n",
+    "ok": true,
+    "out": "中文一\n中文二\n中文一\n"
+  },
+  {
+    "name": "generated/s6-b0-@@ -1,2 +1,2 @@",
+    "source": "中文一\n中文二\n中文一\n",
+    "diff": "@@ -1,2 +1,2 @@\n-a\n+A\n",
+    "ok": true,
+    "out": "中文一\n中文二\n中文一\n"
+  },
+  {
+    "name": "generated/s6-b1-@@",
+    "source": "中文一\n中文二\n中文一\n",
+    "diff": "@@\n a\n+INS\n",
+    "ok": true,
+    "out": "中文一\n中文二\n中文一\n"
+  },
+  {
+    "name": "generated/s6-b1-@@ ... @@",
+    "source": "中文一\n中文二\n中文一\n",
+    "diff": "@@ ... @@\n a\n+INS\n",
+    "ok": true,
+    "out": "中文一\n中文二\n中文一\n"
+  },
+  {
+    "name": "generated/s6-b1-@@ -1,2 +1,2 @@",
+    "source": "中文一\n中文二\n中文一\n",
+    "diff": "@@ -1,2 +1,2 @@\n a\n+INS\n",
+    "ok": true,
+    "out": "中文一\n中文二\n中文一\n"
+  },
+  {
+    "name": "generated/s6-b2-@@",
+    "source": "中文一\n中文二\n中文一\n",
+    "diff": "@@\n-a\n",
+    "ok": true,
+    "out": "中文一\n中文二\n中文一\n"
+  },
+  {
+    "name": "generated/s6-b2-@@ ... @@",
+    "source": "中文一\n中文二\n中文一\n",
+    "diff": "@@ ... @@\n-a\n",
+    "ok": true,
+    "out": "中文一\n中文二\n中文一\n"
+  },
+  {
+    "name": "generated/s6-b2-@@ -1,2 +1,2 @@",
+    "source": "中文一\n中文二\n中文一\n",
+    "diff": "@@ -1,2 +1,2 @@\n-a\n",
+    "ok": true,
+    "out": "中文一\n中文二\n中文一\n"
+  },
+  {
+    "name": "generated/s6-b3-@@",
+    "source": "中文一\n中文二\n中文一\n",
+    "diff": "@@\n+ONLY\n",
+    "ok": true,
+    "out": "中文一\n中文二\n中文一\n"
+  },
+  {
+    "name": "generated/s6-b3-@@ ... @@",
+    "source": "中文一\n中文二\n中文一\n",
+    "diff": "@@ ... @@\n+ONLY\n",
+    "ok": true,
+    "out": "中文一\n中文二\n中文一\n"
+  },
+  {
+    "name": "generated/s6-b3-@@ -1,2 +1,2 @@",
+    "source": "中文一\n中文二\n中文一\n",
+    "diff": "@@ -1,2 +1,2 @@\n+ONLY\n",
+    "ok": true,
+    "out": "中文一\n中文二\n中文一\n"
+  },
+  {
+    "name": "generated/s6-b4-@@",
+    "source": "中文一\n中文二\n中文一\n",
+    "diff": "@@\n a\n b\n",
+    "ok": false,
+    "out": ""
+  },
+  {
+    "name": "generated/s6-b4-@@ ... @@",
+    "source": "中文一\n中文二\n中文一\n",
+    "diff": "@@ ... @@\n a\n b\n",
+    "ok": false,
+    "out": ""
+  },
+  {
+    "name": "generated/s6-b4-@@ -1,2 +1,2 @@",
+    "source": "中文一\n中文二\n中文一\n",
+    "diff": "@@ -1,2 +1,2 @@\n a\n b\n",
+    "ok": false,
+    "out": ""
+  },
+  {
+    "name": "generated/s6-b5-@@",
+    "source": "中文一\n中文二\n中文一\n",
+    "diff": "@@\n-a\n+A\n-b\n+B\n",
+    "ok": true,
+    "out": "中文一\n中文二\n中文一\n"
+  },
+  {
+    "name": "generated/s6-b5-@@ ... @@",
+    "source": "中文一\n中文二\n中文一\n",
+    "diff": "@@ ... @@\n-a\n+A\n-b\n+B\n",
+    "ok": true,
+    "out": "中文一\n中文二\n中文一\n"
+  },
+  {
+    "name": "generated/s6-b5-@@ -1,2 +1,2 @@",
+    "source": "中文一\n中文二\n中文一\n",
+    "diff": "@@ -1,2 +1,2 @@\n-a\n+A\n-b\n+B\n",
+    "ok": true,
+    "out": "中文一\n中文二\n中文一\n"
+  },
+  {
+    "name": "generated/s6-b6-@@",
+    "source": "中文一\n中文二\n中文一\n",
+    "diff": "@@\na\n+INS\n",
+    "ok": true,
+    "out": "中文一\n中文二\n中文一\n"
+  },
+  {
+    "name": "generated/s6-b6-@@ ... @@",
+    "source": "中文一\n中文二\n中文一\n",
+    "diff": "@@ ... @@\na\n+INS\n",
+    "ok": true,
+    "out": "中文一\n中文二\n中文一\n"
+  },
+  {
+    "name": "generated/s6-b6-@@ -1,2 +1,2 @@",
+    "source": "中文一\n中文二\n中文一\n",
+    "diff": "@@ -1,2 +1,2 @@\na\n+INS\n",
+    "ok": true,
+    "out": "中文一\n中文二\n中文一\n"
+  },
+  {
+    "name": "generated/s6-b7-@@",
+    "source": "中文一\n中文二\n中文一\n",
+    "diff": "@@\n中\n+INS\n",
+    "ok": true,
+    "out": "中文一\n中文二\n中文一\n"
+  },
+  {
+    "name": "generated/s6-b7-@@ ... @@",
+    "source": "中文一\n中文二\n中文一\n",
+    "diff": "@@ ... @@\n中\n+INS\n",
+    "ok": true,
+    "out": "中文一\n中文二\n中文一\n"
+  },
+  {
+    "name": "generated/s6-b7-@@ -1,2 +1,2 @@",
+    "source": "中文一\n中文二\n中文一\n",
+    "diff": "@@ -1,2 +1,2 @@\n中\n+INS\n",
+    "ok": true,
+    "out": "中文一\n中文二\n中文一\n"
+  },
+  {
+    "name": "generated/s6-b8-@@",
+    "source": "中文一\n中文二\n中文一\n",
+    "diff": "@@\n-\n+X\n",
+    "ok": true,
+    "out": "中文一X\n中文二\n中文一\n"
+  },
+  {
+    "name": "generated/s6-b8-@@ ... @@",
+    "source": "中文一\n中文二\n中文一\n",
+    "diff": "@@ ... @@\n-\n+X\n",
+    "ok": true,
+    "out": "中文一X\n中文二\n中文一\n"
+  },
+  {
+    "name": "generated/s6-b8-@@ -1,2 +1,2 @@",
+    "source": "中文一\n中文二\n中文一\n",
+    "diff": "@@ -1,2 +1,2 @@\n-\n+X\n",
+    "ok": true,
+    "out": "中文一X\n中文二\n中文一\n"
+  },
+  {
+    "name": "generated/s6-b9-@@",
+    "source": "中文一\n中文二\n中文一\n",
+    "diff": "@@\n \n+X\n",
+    "ok": true,
+    "out": "中文一X\n中文二\n中文一\n"
+  },
+  {
+    "name": "generated/s6-b9-@@ ... @@",
+    "source": "中文一\n中文二\n中文一\n",
+    "diff": "@@ ... @@\n \n+X\n",
+    "ok": true,
+    "out": "中文一X\n中文二\n中文一\n"
+  },
+  {
+    "name": "generated/s6-b9-@@ -1,2 +1,2 @@",
+    "source": "中文一\n中文二\n中文一\n",
+    "diff": "@@ -1,2 +1,2 @@\n \n+X\n",
+    "ok": true,
+    "out": "中文一X\n中文二\n中文一\n"
+  },
+  {
+    "name": "generated/s6-b10-@@",
+    "source": "中文一\n中文二\n中文一\n",
+    "diff": "@@\n-中文一\n+中文三\n",
+    "ok": true,
+    "out": "中文三\n中文二\n中文一\n"
+  },
+  {
+    "name": "generated/s6-b10-@@ ... @@",
+    "source": "中文一\n中文二\n中文一\n",
+    "diff": "@@ ... @@\n-中文一\n+中文三\n",
+    "ok": true,
+    "out": "中文三\n中文二\n中文一\n"
+  },
+  {
+    "name": "generated/s6-b10-@@ -1,2 +1,2 @@",
+    "source": "中文一\n中文二\n中文一\n",
+    "diff": "@@ -1,2 +1,2 @@\n-中文一\n+中文三\n",
+    "ok": true,
+    "out": "中文三\n中文二\n中文一\n"
+  },
+  {
+    "name": "generated/s6-b11-@@",
+    "source": "中文一\n中文二\n中文一\n",
+    "diff": "@@\n-  indented\n+  INDENTED\n",
+    "ok": true,
+    "out": "中文一\n中文二\n中文一\n"
+  },
+  {
+    "name": "generated/s6-b11-@@ ... @@",
+    "source": "中文一\n中文二\n中文一\n",
+    "diff": "@@ ... @@\n-  indented\n+  INDENTED\n",
+    "ok": true,
+    "out": "中文一\n中文二\n中文一\n"
+  },
+  {
+    "name": "generated/s6-b11-@@ -1,2 +1,2 @@",
+    "source": "中文一\n中文二\n中文一\n",
+    "diff": "@@ -1,2 +1,2 @@\n-  indented\n+  INDENTED\n",
+    "ok": true,
+    "out": "中文一\n中文二\n中文一\n"
+  },
+  {
+    "name": "generated/s6-b12-@@",
+    "source": "中文一\n中文二\n中文一\n",
+    "diff": "@@\n-\ttab\there\n+\tTAB\n",
+    "ok": true,
+    "out": "中文一\n中文二\n中文一\n"
+  },
+  {
+    "name": "generated/s6-b12-@@ ... @@",
+    "source": "中文一\n中文二\n中文一\n",
+    "diff": "@@ ... @@\n-\ttab\there\n+\tTAB\n",
+    "ok": true,
+    "out": "中文一\n中文二\n中文一\n"
+  },
+  {
+    "name": "generated/s6-b12-@@ -1,2 +1,2 @@",
+    "source": "中文一\n中文二\n中文一\n",
+    "diff": "@@ -1,2 +1,2 @@\n-\ttab\there\n+\tTAB\n",
+    "ok": true,
+    "out": "中文一\n中文二\n中文一\n"
+  },
+  {
+    "name": "generated/s6-b13-@@",
+    "source": "中文一\n中文二\n中文一\n",
+    "diff": "@@\n-x\n+\n",
+    "ok": true,
+    "out": "中文一\n中文二\n中文一\n"
+  },
+  {
+    "name": "generated/s6-b13-@@ ... @@",
+    "source": "中文一\n中文二\n中文一\n",
+    "diff": "@@ ... @@\n-x\n+\n",
+    "ok": true,
+    "out": "中文一\n中文二\n中文一\n"
+  },
+  {
+    "name": "generated/s6-b13-@@ -1,2 +1,2 @@",
+    "source": "中文一\n中文二\n中文一\n",
+    "diff": "@@ -1,2 +1,2 @@\n-x\n+\n",
+    "ok": true,
+    "out": "中文一\n中文二\n中文一\n"
+  },
+  {
+    "name": "generated/s6-b14-@@",
+    "source": "中文一\n中文二\n中文一\n",
+    "diff": "@@\n-a\n+a\n",
+    "ok": true,
+    "out": "中文一\n中文二\n中文一\n"
+  },
+  {
+    "name": "generated/s6-b14-@@ ... @@",
+    "source": "中文一\n中文二\n中文一\n",
+    "diff": "@@ ... @@\n-a\n+a\n",
+    "ok": true,
+    "out": "中文一\n中文二\n中文一\n"
+  },
+  {
+    "name": "generated/s6-b14-@@ -1,2 +1,2 @@",
+    "source": "中文一\n中文二\n中文一\n",
+    "diff": "@@ -1,2 +1,2 @@\n-a\n+a\n",
+    "ok": true,
+    "out": "中文一\n中文二\n中文一\n"
+  },
+  {
+    "name": "generated/s7-b0-@@",
+    "source": "tab\there\nspace here\n",
+    "diff": "@@\n-a\n+A\n",
+    "ok": true,
+    "out": "tab\there\nspace here\n"
+  },
+  {
+    "name": "generated/s7-b0-@@ ... @@",
+    "source": "tab\there\nspace here\n",
+    "diff": "@@ ... @@\n-a\n+A\n",
+    "ok": true,
+    "out": "tab\there\nspace here\n"
+  },
+  {
+    "name": "generated/s7-b0-@@ -1,2 +1,2 @@",
+    "source": "tab\there\nspace here\n",
+    "diff": "@@ -1,2 +1,2 @@\n-a\n+A\n",
+    "ok": true,
+    "out": "tab\there\nspace here\n"
+  },
+  {
+    "name": "generated/s7-b1-@@",
+    "source": "tab\there\nspace here\n",
+    "diff": "@@\n a\n+INS\n",
+    "ok": true,
+    "out": "tab\there\nspace here\n"
+  },
+  {
+    "name": "generated/s7-b1-@@ ... @@",
+    "source": "tab\there\nspace here\n",
+    "diff": "@@ ... @@\n a\n+INS\n",
+    "ok": true,
+    "out": "tab\there\nspace here\n"
+  },
+  {
+    "name": "generated/s7-b1-@@ -1,2 +1,2 @@",
+    "source": "tab\there\nspace here\n",
+    "diff": "@@ -1,2 +1,2 @@\n a\n+INS\n",
+    "ok": true,
+    "out": "tab\there\nspace here\n"
+  },
+  {
+    "name": "generated/s7-b2-@@",
+    "source": "tab\there\nspace here\n",
+    "diff": "@@\n-a\n",
+    "ok": true,
+    "out": "tab\there\nspace here\n"
+  },
+  {
+    "name": "generated/s7-b2-@@ ... @@",
+    "source": "tab\there\nspace here\n",
+    "diff": "@@ ... @@\n-a\n",
+    "ok": true,
+    "out": "tab\there\nspace here\n"
+  },
+  {
+    "name": "generated/s7-b2-@@ -1,2 +1,2 @@",
+    "source": "tab\there\nspace here\n",
+    "diff": "@@ -1,2 +1,2 @@\n-a\n",
+    "ok": true,
+    "out": "tab\there\nspace here\n"
+  },
+  {
+    "name": "generated/s7-b3-@@",
+    "source": "tab\there\nspace here\n",
+    "diff": "@@\n+ONLY\n",
+    "ok": true,
+    "out": "tab\there\nspace here\n"
+  },
+  {
+    "name": "generated/s7-b3-@@ ... @@",
+    "source": "tab\there\nspace here\n",
+    "diff": "@@ ... @@\n+ONLY\n",
+    "ok": true,
+    "out": "tab\there\nspace here\n"
+  },
+  {
+    "name": "generated/s7-b3-@@ -1,2 +1,2 @@",
+    "source": "tab\there\nspace here\n",
+    "diff": "@@ -1,2 +1,2 @@\n+ONLY\n",
+    "ok": true,
+    "out": "tab\there\nspace here\n"
+  },
+  {
+    "name": "generated/s7-b4-@@",
+    "source": "tab\there\nspace here\n",
+    "diff": "@@\n a\n b\n",
+    "ok": false,
+    "out": ""
+  },
+  {
+    "name": "generated/s7-b4-@@ ... @@",
+    "source": "tab\there\nspace here\n",
+    "diff": "@@ ... @@\n a\n b\n",
+    "ok": false,
+    "out": ""
+  },
+  {
+    "name": "generated/s7-b4-@@ -1,2 +1,2 @@",
+    "source": "tab\there\nspace here\n",
+    "diff": "@@ -1,2 +1,2 @@\n a\n b\n",
+    "ok": false,
+    "out": ""
+  },
+  {
+    "name": "generated/s7-b5-@@",
+    "source": "tab\there\nspace here\n",
+    "diff": "@@\n-a\n+A\n-b\n+B\n",
+    "ok": true,
+    "out": "tab\there\nspace here\n"
+  },
+  {
+    "name": "generated/s7-b5-@@ ... @@",
+    "source": "tab\there\nspace here\n",
+    "diff": "@@ ... @@\n-a\n+A\n-b\n+B\n",
+    "ok": true,
+    "out": "tab\there\nspace here\n"
+  },
+  {
+    "name": "generated/s7-b5-@@ -1,2 +1,2 @@",
+    "source": "tab\there\nspace here\n",
+    "diff": "@@ -1,2 +1,2 @@\n-a\n+A\n-b\n+B\n",
+    "ok": true,
+    "out": "tab\there\nspace here\n"
+  },
+  {
+    "name": "generated/s7-b6-@@",
+    "source": "tab\there\nspace here\n",
+    "diff": "@@\na\n+INS\n",
+    "ok": true,
+    "out": "tab\there\nspace here\n"
+  },
+  {
+    "name": "generated/s7-b6-@@ ... @@",
+    "source": "tab\there\nspace here\n",
+    "diff": "@@ ... @@\na\n+INS\n",
+    "ok": true,
+    "out": "tab\there\nspace here\n"
+  },
+  {
+    "name": "generated/s7-b6-@@ -1,2 +1,2 @@",
+    "source": "tab\there\nspace here\n",
+    "diff": "@@ -1,2 +1,2 @@\na\n+INS\n",
+    "ok": true,
+    "out": "tab\there\nspace here\n"
+  },
+  {
+    "name": "generated/s7-b7-@@",
+    "source": "tab\there\nspace here\n",
+    "diff": "@@\n中\n+INS\n",
+    "ok": true,
+    "out": "tab\there\nspace here\n"
+  },
+  {
+    "name": "generated/s7-b7-@@ ... @@",
+    "source": "tab\there\nspace here\n",
+    "diff": "@@ ... @@\n中\n+INS\n",
+    "ok": true,
+    "out": "tab\there\nspace here\n"
+  },
+  {
+    "name": "generated/s7-b7-@@ -1,2 +1,2 @@",
+    "source": "tab\there\nspace here\n",
+    "diff": "@@ -1,2 +1,2 @@\n中\n+INS\n",
+    "ok": true,
+    "out": "tab\there\nspace here\n"
+  },
+  {
+    "name": "generated/s7-b8-@@",
+    "source": "tab\there\nspace here\n",
+    "diff": "@@\n-\n+X\n",
+    "ok": true,
+    "out": "tab\thereX\nspace here\n"
+  },
+  {
+    "name": "generated/s7-b8-@@ ... @@",
+    "source": "tab\there\nspace here\n",
+    "diff": "@@ ... @@\n-\n+X\n",
+    "ok": true,
+    "out": "tab\thereX\nspace here\n"
+  },
+  {
+    "name": "generated/s7-b8-@@ -1,2 +1,2 @@",
+    "source": "tab\there\nspace here\n",
+    "diff": "@@ -1,2 +1,2 @@\n-\n+X\n",
+    "ok": true,
+    "out": "tab\thereX\nspace here\n"
+  },
+  {
+    "name": "generated/s7-b9-@@",
+    "source": "tab\there\nspace here\n",
+    "diff": "@@\n \n+X\n",
+    "ok": true,
+    "out": "tab\thereX\nspace here\n"
+  },
+  {
+    "name": "generated/s7-b9-@@ ... @@",
+    "source": "tab\there\nspace here\n",
+    "diff": "@@ ... @@\n \n+X\n",
+    "ok": true,
+    "out": "tab\thereX\nspace here\n"
+  },
+  {
+    "name": "generated/s7-b9-@@ -1,2 +1,2 @@",
+    "source": "tab\there\nspace here\n",
+    "diff": "@@ -1,2 +1,2 @@\n \n+X\n",
+    "ok": true,
+    "out": "tab\thereX\nspace here\n"
+  },
+  {
+    "name": "generated/s7-b10-@@",
+    "source": "tab\there\nspace here\n",
+    "diff": "@@\n-中文一\n+中文三\n",
+    "ok": true,
+    "out": "tab\there\nspace here\n"
+  },
+  {
+    "name": "generated/s7-b10-@@ ... @@",
+    "source": "tab\there\nspace here\n",
+    "diff": "@@ ... @@\n-中文一\n+中文三\n",
+    "ok": true,
+    "out": "tab\there\nspace here\n"
+  },
+  {
+    "name": "generated/s7-b10-@@ -1,2 +1,2 @@",
+    "source": "tab\there\nspace here\n",
+    "diff": "@@ -1,2 +1,2 @@\n-中文一\n+中文三\n",
+    "ok": true,
+    "out": "tab\there\nspace here\n"
+  },
+  {
+    "name": "generated/s7-b11-@@",
+    "source": "tab\there\nspace here\n",
+    "diff": "@@\n-  indented\n+  INDENTED\n",
+    "ok": true,
+    "out": "tab\there\nspace here\n"
+  },
+  {
+    "name": "generated/s7-b11-@@ ... @@",
+    "source": "tab\there\nspace here\n",
+    "diff": "@@ ... @@\n-  indented\n+  INDENTED\n",
+    "ok": true,
+    "out": "tab\there\nspace here\n"
+  },
+  {
+    "name": "generated/s7-b11-@@ -1,2 +1,2 @@",
+    "source": "tab\there\nspace here\n",
+    "diff": "@@ -1,2 +1,2 @@\n-  indented\n+  INDENTED\n",
+    "ok": true,
+    "out": "tab\there\nspace here\n"
+  },
+  {
+    "name": "generated/s7-b12-@@",
+    "source": "tab\there\nspace here\n",
+    "diff": "@@\n-\ttab\there\n+\tTAB\n",
+    "ok": true,
+    "out": "TAB\nspace here\n"
+  },
+  {
+    "name": "generated/s7-b12-@@ ... @@",
+    "source": "tab\there\nspace here\n",
+    "diff": "@@ ... @@\n-\ttab\there\n+\tTAB\n",
+    "ok": true,
+    "out": "TAB\nspace here\n"
+  },
+  {
+    "name": "generated/s7-b12-@@ -1,2 +1,2 @@",
+    "source": "tab\there\nspace here\n",
+    "diff": "@@ -1,2 +1,2 @@\n-\ttab\there\n+\tTAB\n",
+    "ok": true,
+    "out": "TAB\nspace here\n"
+  },
+  {
+    "name": "generated/s7-b13-@@",
+    "source": "tab\there\nspace here\n",
+    "diff": "@@\n-x\n+\n",
+    "ok": true,
+    "out": "tab\there\nspace here\n"
+  },
+  {
+    "name": "generated/s7-b13-@@ ... @@",
+    "source": "tab\there\nspace here\n",
+    "diff": "@@ ... @@\n-x\n+\n",
+    "ok": true,
+    "out": "tab\there\nspace here\n"
+  },
+  {
+    "name": "generated/s7-b13-@@ -1,2 +1,2 @@",
+    "source": "tab\there\nspace here\n",
+    "diff": "@@ -1,2 +1,2 @@\n-x\n+\n",
+    "ok": true,
+    "out": "tab\there\nspace here\n"
+  },
+  {
+    "name": "generated/s7-b14-@@",
+    "source": "tab\there\nspace here\n",
+    "diff": "@@\n-a\n+a\n",
+    "ok": true,
+    "out": "tab\there\nspace here\n"
+  },
+  {
+    "name": "generated/s7-b14-@@ ... @@",
+    "source": "tab\there\nspace here\n",
+    "diff": "@@ ... @@\n-a\n+a\n",
+    "ok": true,
+    "out": "tab\there\nspace here\n"
+  },
+  {
+    "name": "generated/s7-b14-@@ -1,2 +1,2 @@",
+    "source": "tab\there\nspace here\n",
+    "diff": "@@ -1,2 +1,2 @@\n-a\n+a\n",
+    "ok": true,
+    "out": "tab\there\nspace here\n"
+  },
+  {
+    "name": "fallback/middle-context-wrong",
+    "source": "function alpha() {\n  const one = \"line one alpha\"\n  const two = \"line two beta\"\n  const three = \"line three gamma\"\n  const four = \"line four delta\"\n  const five = \"line five epsilon\"\n  return one + two\n}\n",
+    "diff": "@@\n   const one = \"line one alpha\"\n   const two = \"line two beta\"\n-  const three = \"line three WRONG\"\n+  const three = \"line three CHANGED\"\n   const four = \"line four delta\"\n",
+    "ok": true,
+    "out": "function alpha() {\n  const one = \"line one alpha\"\n  const two = \"line two beta\"\n  const three = \"line three gamma\"\n  const four = \"line four delta\"\n  const five = \"line five epsilon\"\n  return one + two\n}\n"
+  },
+  {
+    "name": "fallback/extra-context-line",
+    "source": "function alpha() {\n  const one = \"line one alpha\"\n  const two = \"line two beta\"\n  const three = \"line three gamma\"\n  const four = \"line four delta\"\n  const five = \"line five epsilon\"\n  return one + two\n}\n",
+    "diff": "@@\n   const one = \"line one alpha\"\n   const inserted = \"not in file\"\n   const two = \"line two beta\"\n-  const three = \"line three gamma\"\n+  const three = \"line three CHANGED\"\n",
+    "ok": true,
+    "out": "function alpha() {\n  const one = \"line one alpha\"\n  const two = \"line two beta\"\n  const three = \"line three CHANGED\"\n  const four = \"line four delta\"\n  const five = \"line five epsilon\"\n  return one + two\n}\n"
+  },
+  {
+    "name": "fallback/missing-context-line",
+    "source": "function alpha() {\n  const one = \"line one alpha\"\n  const two = \"line two beta\"\n  const three = \"line three gamma\"\n  const four = \"line four delta\"\n  const five = \"line five epsilon\"\n  return one + two\n}\n",
+    "diff": "@@\n   const one = \"line one alpha\"\n   const three = \"line three gamma\"\n-  const four = \"line four delta\"\n+  const four = \"line four DELTA\"\n   const five = \"line five epsilon\"\n",
+    "ok": true,
+    "out": "function alpha() {\n  const one = \"line one alpha\"\n  const two = \"line two beta\"\n  const three = \"line three gamma\"\n  const four = \"line four DELTA\"\n  const five = \"line five epsilon\"\n  return one + two\n}\n"
+  },
+  {
+    "name": "fallback/multi-change-wrong-context",
+    "source": "function alpha() {\n  const one = \"line one alpha\"\n  const two = \"line two beta\"\n  const three = \"line three gamma\"\n  const four = \"line four delta\"\n  const five = \"line five epsilon\"\n  return one + two\n}\n",
+    "diff": "@@\n   const one = \"line one alpha\"\n-  const two = \"line two beta\"\n+  const two = \"line two BETA\"\n   const three = \"line three WRONG\"\n-  const four = \"line four delta\"\n+  const four = \"line four DELTA\"\n",
+    "ok": true,
+    "out": "function alpha() {\n  const one = \"line one alpha\"\n  const two = \"line two BETA\"\n  const three = \"line three gamma\"\n  const four = \"line four DELTA\"\n  const five = \"line five epsilon\"\n  return one + two\n}\n"
+  },
+  {
+    "name": "fallback/all-indent-wrong",
+    "source": "function alpha() {\n  const one = \"line one alpha\"\n  const two = \"line two beta\"\n  const three = \"line three gamma\"\n  const four = \"line four delta\"\n  const five = \"line five epsilon\"\n  return one + two\n}\n",
+    "diff": "@@\n const one = \"line one alpha\"\n const two = \"line two beta\"\n-const three = \"line three gamma\"\n+const three = \"line three CHANGED\"\n const four = \"line four delta\"\n",
+    "ok": true,
+    "out": "function alpha() {\n  const one = \"line one alpha\"\n  const two = \"line two beta\"\n  const three = \"line three CHANGED\"\n  const four = \"line four delta\"\n  const five = \"line five epsilon\"\n  return one + two\n}\n"
+  },
+  {
+    "name": "fallback/cjk-partial-wrong-context",
+    "source": "函数 alpha() {\n  常量一 = \"第一行内容比较长一些\"\n  常量二 = \"第二行内容比较长一些\"\n  常量三 = \"第三行内容比较长一些\"\n  常量四 = \"第四行内容比较长一些\"\n}\n",
+    "diff": "@@\n   常量一 = \"第一行内容比较长一些\"\n   常量二 = \"第二行内容抄错了\"\n-  常量三 = \"第三行内容比较长一些\"\n+  常量三 = \"第三行已经改掉\"\n   常量四 = \"第四行内容比较长一些\"\n",
+    "ok": true,
+    "out": "函数 alpha() {\n  常量一 = \"第一行内容比较长一些\"\n  常量二 = \"第二行内容比较长一些\"\n  常量三 = \"第三行已经改掉\"\n  常量四 = \"第四行内容比较长一些\"\n}\n"
+  },
+  {
+    "name": "fallback/insert-with-wrong-context",
+    "source": "function alpha() {\n  const one = \"line one alpha\"\n  const two = \"line two beta\"\n  const three = \"line three gamma\"\n  const four = \"line four delta\"\n  const five = \"line five epsilon\"\n  return one + two\n}\n",
+    "diff": "@@\n   const two = \"line two beta\"\n   const three = \"line three TYPO\"\n+  const extra = \"added\"\n   const four = \"line four delta\"\n",
+    "ok": true,
+    "out": "function alpha() {\n  const one = \"line one alpha\"\n  const two = \"line two beta\"\n  const three = \"line three gamma\"\n  const extra = \"added\"\n  const four = \"line four delta\"\n  const five = \"line five epsilon\"\n  return one + two\n}\n"
+  },
+  {
+    "name": "fallback/delete-with-wrong-context",
+    "source": "function alpha() {\n  const one = \"line one alpha\"\n  const two = \"line two beta\"\n  const three = \"line three gamma\"\n  const four = \"line four delta\"\n  const five = \"line five epsilon\"\n  return one + two\n}\n",
+    "diff": "@@\n   const one = \"line one alpha\"\n   const two = \"line two TYPO\"\n-  const three = \"line three gamma\"\n   const four = \"line four delta\"\n",
+    "ok": true,
+    "out": "function alpha() {\n  const one = \"line one alpha\"\n  const two = \"line two beta\"\n  const four = \"line four delta\"\n  const five = \"line five epsilon\"\n  return one + two\n}\n"
+  },
+  {
+    "name": "fallback/reordered-context",
+    "source": "function alpha() {\n  const one = \"line one alpha\"\n  const two = \"line two beta\"\n  const three = \"line three gamma\"\n  const four = \"line four delta\"\n  const five = \"line five epsilon\"\n  return one + two\n}\n",
+    "diff": "@@\n   const three = \"line three gamma\"\n   const two = \"line two beta\"\n-  const four = \"line four delta\"\n+  const four = \"line four DELTA\"\n",
+    "ok": true,
+    "out": "function alpha() {\n  const one = \"line one alpha\"\n  const two = \"line two beta\"\n  const three = \"line three gamma\"\n  const four = \"line four DELTA\"\n  const five = \"line five epsilon\"\n  return one + two\n}\n"
+  },
+  {
+    "name": "fallback/repeated-lines-file",
+    "source": "aaa bbb ccc\nddd eee fff\naaa bbb ccc\nggg hhh iii\naaa bbb ccc\n",
+    "diff": "@@\n aaa bbb ccc\n-ddd eee TYPO\n+ddd eee CHANGED\n aaa bbb ccc\n",
+    "ok": true,
+    "out": "aaa bbb ccc\nddd eee fff\naaa bbb ccc\nggg hhh iii\naaa bbb ccc\n"
+  },
+  {
+    "name": "unidiff-layer/last-context-wrong",
+    "source": "  const v01 = \"value number 01 here\"\n  const v02 = \"value number 02 here\"\n  const v03 = \"value number 03 here\"\n  const v04 = \"value number 04 here\"\n  const v05 = \"value number 05 here\"\n  const v06 = \"value number 06 here\"\n  const v07 = \"value number 07 here\"\n  const v08 = \"value number 08 here\"\n  const v09 = \"value number 09 here\"\n  const v10 = \"value number 10 here\"\n  const v11 = \"value number 11 here\"\n  const v12 = \"value number 12 here\"\n",
+    "diff": "@@\n   const v01 = \"value number 01 here\"\n   const v02 = \"value number 02 here\"\n   const v03 = \"value number 03 here\"\n   const v04 = \"value number 04 here\"\n   const v05 = \"value number 05 here\"\n   const v06 = \"value number 06 here\"\n   const v07 = \"value number 07 here\"\n-  const v08 = \"WRONG\"\n+  const v08 = \"CHANGED\"\n",
+    "ok": true,
+    "out": "const v01 = \"value number 01 here\"\n  const v02 = \"value number 02 here\"\n  const v03 = \"value number 03 here\"\n  const v04 = \"value number 04 here\"\n  const v05 = \"value number 05 here\"\n  const v06 = \"value number 06 here\"\n  const v07 = \"value number 07 here\"\n\n\n\n\n  const v08 = \"CHANGED\"\n  const v08 = \"value number 08 here\"\n  const v09 = \"value number 09 here\"\n  const v10 = \"value number 10 here\"\n  const v11 = \"value number 11 here\"\n  const v12 = \"value number 12 here\"\n"
+  },
+  {
+    "name": "unidiff-layer/first-context-wrong",
+    "source": "  const v01 = \"value number 01 here\"\n  const v02 = \"value number 02 here\"\n  const v03 = \"value number 03 here\"\n  const v04 = \"value number 04 here\"\n  const v05 = \"value number 05 here\"\n  const v06 = \"value number 06 here\"\n  const v07 = \"value number 07 here\"\n  const v08 = \"value number 08 here\"\n  const v09 = \"value number 09 here\"\n  const v10 = \"value number 10 here\"\n  const v11 = \"value number 11 here\"\n  const v12 = \"value number 12 here\"\n",
+    "diff": "@@\n   const v00 = \"WRONG\"\n   const v02 = \"value number 02 here\"\n   const v03 = \"value number 03 here\"\n   const v04 = \"value number 04 here\"\n   const v05 = \"value number 05 here\"\n   const v06 = \"value number 06 here\"\n   const v07 = \"value number 07 here\"\n-  const v08 = \"value number 08 here\"\n+  const v08 = \"CHANGED\"\n",
+    "ok": true,
+    "out": "  const v01 = \"value number 01 here\"\n  const v02 = \"value number 02 here\"\n  const v03 = \"value number 03 here\"\n  const v04 = \"value number 04 here\"\n  const v05 = \"value number 05 here\"\n  const v06 = \"value number 06 here\"\n  const v07 = \"value number 07 here\"\n  const v08 = \"value number 08 here\"\n  const v09 = \"value number 09 here\"\n  const v10 = \"value number 10 here\"\n  const v11 = \"value number 11 here\"\n  const v12 = \"value number 12 here\"\n"
+  },
+  {
+    "name": "unidiff-layer/middle-context-wrong",
+    "source": "  const v01 = \"value number 01 here\"\n  const v02 = \"value number 02 here\"\n  const v03 = \"value number 03 here\"\n  const v04 = \"value number 04 here\"\n  const v05 = \"value number 05 here\"\n  const v06 = \"value number 06 here\"\n  const v07 = \"value number 07 here\"\n  const v08 = \"value number 08 here\"\n  const v09 = \"value number 09 here\"\n  const v10 = \"value number 10 here\"\n  const v11 = \"value number 11 here\"\n  const v12 = \"value number 12 here\"\n",
+    "diff": "@@\n   const v01 = \"value number 01 here\"\n   const v02 = \"value number 02 here\"\n   const v03 = \"value number 03 here\"\n   const vXX = \"WRONG\"\n   const v05 = \"value number 05 here\"\n   const v06 = \"value number 06 here\"\n   const v07 = \"value number 07 here\"\n   const v08 = \"value number 08 here\"\n-  const v09 = \"value number 09 here\"\n+  const v09 = \"CHANGED\"\n",
+    "ok": true,
+    "out": "const v01 = \"value number 01 here\"\n  const v02 = \"value number 02 here\"\n  const v03 = \"value number 03 here\"\n\n  const vXX = \"WRONG\"\n  const v04 = \"value number 04 here\"\n  const v05 = \"value number 05 here\"\n  const v06 = \"value number 06 here\"\n  const v07 = \"value number 07 here\"\n  const v08 = \"value number 08 here\"\n  const v09 = \"CHANGED\"\n  const v10 = \"value number 10 here\"\n  const v11 = \"value number 11 here\"\n  const v12 = \"value number 12 here\"\n"
+  },
+  {
+    "name": "unidiff-layer/wrong-context-pure-insert",
+    "source": "  const v01 = \"value number 01 here\"\n  const v02 = \"value number 02 here\"\n  const v03 = \"value number 03 here\"\n  const v04 = \"value number 04 here\"\n  const v05 = \"value number 05 here\"\n  const v06 = \"value number 06 here\"\n  const v07 = \"value number 07 here\"\n  const v08 = \"value number 08 here\"\n  const v09 = \"value number 09 here\"\n  const v10 = \"value number 10 here\"\n  const v11 = \"value number 11 here\"\n  const v12 = \"value number 12 here\"\n",
+    "diff": "@@\n   const v01 = \"value number 01 here\"\n   const v02 = \"value number 02 here\"\n   const v03 = \"value number 03 here\"\n   const v04 = \"value number 04 here\"\n   const v05 = \"value number 05 here\"\n   const v06 = \"value number 06 here\"\n   const v07 = \"value number 07 here\"\n   const vYY = \"WRONG\"\n+  const vNEW = \"inserted\"\n",
+    "ok": true,
+    "out": "  const v01 = \"value number 01 here\"\n  const v02 = \"value number 02 here\"\n  const v03 = \"value number 03 here\"\n  const v04 = \"value number 04 here\"\n  const v05 = \"value number 05 here\"\n  const v06 = \"value number 06 here\"\n  const v07 = \"value number 07 here\"\n  const v08 = \"value number 08 here\"\n  const v09 = \"value number 09 here\"\n  const v10 = \"value number 10 here\"\n  const v11 = \"value number 11 here\"\n  const v12 = \"value number 12 here\"\n"
+  },
+  {
+    "name": "unidiff-layer/wrong-context-pure-delete",
+    "source": "  const v01 = \"value number 01 here\"\n  const v02 = \"value number 02 here\"\n  const v03 = \"value number 03 here\"\n  const v04 = \"value number 04 here\"\n  const v05 = \"value number 05 here\"\n  const v06 = \"value number 06 here\"\n  const v07 = \"value number 07 here\"\n  const v08 = \"value number 08 here\"\n  const v09 = \"value number 09 here\"\n  const v10 = \"value number 10 here\"\n  const v11 = \"value number 11 here\"\n  const v12 = \"value number 12 here\"\n",
+    "diff": "@@\n   const v01 = \"value number 01 here\"\n   const v02 = \"value number 02 here\"\n   const v03 = \"value number 03 here\"\n   const v04 = \"value number 04 here\"\n   const v05 = \"value number 05 here\"\n   const v06 = \"value number 06 here\"\n   const v07 = \"value number 07 here\"\n   const vYY = \"WRONG\"\n-  const v09 = \"value number 09 here\"\n",
+    "ok": true,
+    "out": "const v01 = \"value number 01 here\"\n  const v02 = \"value number 02 here\"\n  const v03 = \"value number 03 here\"\n  const v04 = \"value number 04 here\"\n  const v05 = \"value number 05 here\"\n  const v06 = \"value number 06 here\"\n  const v07 = \"value number 07 here\"\n\n\n\n\n  const vYY = \"WRONG\"\n  const v08 = \"value number 08 here\"\n  const v09 = \"value number 09 here\"\n  const v10 = \"value number 10 here\"\n  const v11 = \"value number 11 here\"\n  const v12 = \"value number 12 here\"\n"
+  },
+  {
+    "name": "unidiff-layer/wrong-context-two-changes",
+    "source": "  const v01 = \"value number 01 here\"\n  const v02 = \"value number 02 here\"\n  const v03 = \"value number 03 here\"\n  const v04 = \"value number 04 here\"\n  const v05 = \"value number 05 here\"\n  const v06 = \"value number 06 here\"\n  const v07 = \"value number 07 here\"\n  const v08 = \"value number 08 here\"\n  const v09 = \"value number 09 here\"\n  const v10 = \"value number 10 here\"\n  const v11 = \"value number 11 here\"\n  const v12 = \"value number 12 here\"\n",
+    "diff": "@@\n   const v01 = \"value number 01 here\"\n   const v02 = \"value number 02 here\"\n   const v03 = \"value number 03 here\"\n   const v04 = \"value number 04 here\"\n-  const v05 = \"value number 05 here\"\n+  const v05 = \"A\"\n   const v06 = \"value number 06 here\"\n   const vZZ = \"WRONG\"\n   const v08 = \"value number 08 here\"\n-  const v09 = \"value number 09 here\"\n+  const v09 = \"B\"\n",
+    "ok": true,
+    "out": "const v01 = \"value number 01 here\"\n  const v02 = \"value number 02 here\"\n  const v03 = \"value number 03 here\"\n  const v04 = \"value number 04 here\"\n  const v05 = \"A\"\n  const v06 = \"value number 06 here\"\n  const v07 = \"value number 07 here\"\n  const v08 = \"value number 08 here\"\n  const v09 = \"B\"\n  const v10 = \"value number 10 here\"\n  const v11 = \"value number 11 here\"\n  const v12 = \"value number 12 here\"\n"
+  },
+  {
+    "name": "semantics/utf16-threshold-cjk-repeated",
+    "source": "中文测试\nother line\n中文测试\n",
+    "diff": "@@\n-中文测试\n+已改过\n",
+    "ok": true,
+    "out": "已改过\nother line\n中文测试\n"
+  },
+  {
+    "name": "semantics/utf16-threshold-exactly-ten",
+    "source": "中文测试内容一二三四\nother\n中文测试内容一二三四\n",
+    "diff": "@@\n-中文测试内容一二三四\n+已改过\n",
+    "ok": true,
+    "out": "已改过\nother\n中文测试内容一二三四\n"
+  },
+  {
+    "name": "semantics/empty-result-is-not-success",
+    "source": "abc\n",
+    "diff": "@@\n-abc\n",
+    "ok": true,
+    "out": "\n"
+  },
+  {
+    "name": "semantics/empty-result-is-not-success-multiline",
+    "source": "abc\ndef\n",
+    "diff": "@@\n-abc\n-def\n",
+    "ok": true,
+    "out": "\n"
+  },
+  {
+    "name": "semantics/bom-trim-semantics",
+    "source": "﻿alpha\nbravo\n",
+    "diff": "@@\n-﻿alpha\n+ALPHA\n",
+    "ok": true,
+    "out": "ALPHA\nbravo\n"
+  },
+  {
+    "name": "semantics/nel-trim-semantics",
+    "source": "alpha\nbravo\n",
+    "diff": "@@\n-alpha\n+ALPHA\n",
+    "ok": true,
+    "out": "ALPHA\nbravo\n"
+  },
+  {
+    "name": "semantics/short-context-once",
+    "source": "短\nother line here\n",
+    "diff": "@@\n-短\n+长\n",
+    "ok": true,
+    "out": "长\nother line here\n"
+  },
+  {
+    "name": "semantics/short-context-twice",
+    "source": "短\nx\n短\n",
+    "diff": "@@\n-短\n+长\n",
+    "ok": true,
+    "out": "长\nx\n短\n"
+  },
+  {
+    "name": "semantics/short-context-thrice",
+    "source": "短\nx\n短\ny\n短\n",
+    "diff": "@@\n-短\n+长\n",
+    "ok": true,
+    "out": "长\nx\n短\ny\n短\n"
+  }
+]

@@ -1,0 +1,23 @@
+hunkpatch
+Copyright 2026 zbysir
+
+This product includes software developed as part of aider
+(https://github.com/Aider-AI/aider), Copyright the aider authors, licensed
+under the Apache License, Version 2.0. The hunk-matching algorithm implemented
+here — flexible search/replace with progressively shrinking context —
+originates in aider's udiff coder.
+
+This product is a Go port of the "aider_port" portion of the npm package
+llm-diff-patcher@0.2.1 (https://www.npmjs.com/package/llm-diff-patcher),
+published by npm user "minovap" and declared MIT.
+
+The upstream licensing chain is worth stating plainly, because the two links
+disagree. The algorithm is aider's and aider is Apache-2.0; the npm package,
+whose source directory is literally named aider_port, declares MIT and ships no
+LICENSE file or attribution. This project is released under the Apache License
+2.0 — the more restrictive of the two — so that the original terms are honoured
+regardless of which link you consider controlling. If you are a rights holder in
+either project and want the attribution changed, please open an issue.
+
+This product depends on github.com/sergi/go-diff (MIT), which stands in for the
+JavaScript diff-match-patch library used by the original.

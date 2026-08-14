@@ -1,0 +1,3 @@
+# The package is line-ending sensitive; keep the repo LF everywhere so that a
+# Windows checkout cannot rewrite test fixtures.
+* text=auto eol=lf
